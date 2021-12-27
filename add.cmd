@@ -1,4 +1,4 @@
 git add .
-git commit -m 'NTS'
+git commit -m hostname
 git pull 
 git push origin main 
