@@ -1,5 +1,4 @@
 git add .
-SET nombre_equipo=hostname
-git commit -m %nombre_equipo%
+git commit -m %COMPUTERNAME%
 git pull 
 git push origin main 
