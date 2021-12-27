@@ -1,4 +1,4 @@
 git add .
-git commit -m %USERNAME%
+git commit -m %USERPROFILE%
 git pull 
 git push origin main 
