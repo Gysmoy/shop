@@ -18,7 +18,7 @@ $id = uniqid();
 </head>
 <body page="<?php echo $idPage;?>">
 <header>
-    <img id="logo" src="assets/img/logo.png" alt="">
+    <img id="logo" src="assets/img/logo.svg" alt="">
     <h1 id="name">Rambo Chicken</h1>
     <select id="container">
         <option value="container1">Contenedor 1</option>
