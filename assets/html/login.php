@@ -31,30 +31,13 @@
 </head>
 
 <body>
-
-
-  <div style="position: static;" class="navbar navbar-expand-lg bg-light navbar-light nav-sticky" bis_skin_checked="1">
-    <div class="container-fluid" bis_skin_checked="1">
-      <a href="../../index.html" class="navbar-brand">Mozo <span>en Línea</span></a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse" bis_skin_checked="1">
-        <div class="navbar-nav ml-auto" bis_skin_checked="1">
-          <a href="assets/html/login.html" class="nav-item nav-link">Restaurantes</a>
-          <a href="login.html" class="nav-item nav-link">Clientes</a>
-
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="container">
     <div class="conenedor-form" >
       
       <form class="p-4">
-        <div class="mb-2">
-          <h3>Inicia sesíon en tu cuenta</h3>
+       <a href="../../index.php"><img class="logo" src="../img/shop.svg" alt="logo"></a> 
+        <div class="mb-3 mt-5 text-center">
+          <h4>Inicia sesíon en tu cuenta</h4>
         </div>
         
         <div class="mb-2">
@@ -79,7 +62,7 @@
         </div>
 
         <div class="mb-4">
-          <button class="btn btn-success init-session-btn">INICIAR SESION</button>
+          <button id="init-session-shop" class="btn">Iniciar sesíon</button>
         </div>
         <div>
           

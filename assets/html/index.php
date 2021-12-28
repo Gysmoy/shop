@@ -37,7 +37,7 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="assets/html/login.html" class="nav-item nav-link">Restaurantes</a>
+                        <a href="assets/html/login.php" class="nav-item nav-link">Restaurantes</a>
                         <a href="login.html" class="nav-item nav-link">Clientes</a>
                         <!--a href="booking.html" class="nav-item nav-link">Booking</a-->
                         <!--a href="index.html" class="nav-item nav-link active">Inicio</a-->
@@ -71,8 +71,8 @@
                                 Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
-                                <a class="btn custom-btn" href="">Book Table</a>
+                                <a class="btn custom-btn" href="assets/html/login.php">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="">Registrar Empresa</a>
                             </div>
                         </div>
                     </div>
@@ -86,8 +86,8 @@
                                 Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
-                                <a class="btn custom-btn" href="">Book Table</a>
+                                <a class="btn custom-btn" href="assets/html/login.php">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="">Registrar Empresa</a>
                             </div>
                         </div>
                     </div>
@@ -101,8 +101,8 @@
                                 Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
-                                <a class="btn custom-btn" href="">Book Table</a>
+                                <a class="btn custom-btn" href="assets/html/login.php">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="">Registrar Empresa</a>
                             </div>
                         </div>
                     </div>
