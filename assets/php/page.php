@@ -26,11 +26,11 @@ $id = uniqid();
         <option value="container3">Contenedor 3</option>
     </select>
 </header>
-<main>
+<main data-background="">
     <h1 id="container-title">Contenedor 1</h1>
-    <div id="container">
+    <div id="container" data-background="">
         <div class="dish">
-            
+
         </div>
     </div>
 </main>
