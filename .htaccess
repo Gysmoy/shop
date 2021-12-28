@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^([0-9a-zA-Z-_]+)$ index.php?page=$1 [QSA]
+</IfModule>
