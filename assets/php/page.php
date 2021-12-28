@@ -4,6 +4,7 @@ if (strpos($_SERVER['PHP_SELF'], 'assets') !== false) {
     die();
 }
 $idPage = $_GET['page'];
+$id = uniqid();
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +14,10 @@ $idPage = $_GET['page'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $id;?>">
 </head>
-<body idPage="<?php echo $idPage;?>">
+<body page="<?php echo $idPage;?>">
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="assets/js/getGeneralConfig.js?v=<?php echo $id;?>"></script>
 </body>
 </html>
