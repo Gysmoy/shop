@@ -18,6 +18,7 @@ $id = uniqid();
 </head>
 <body page="<?php echo $idPage;?>">
 <header>
+    <div id="realtime">00:00:00</div>
     <img id="logo" src="assets/img/logo.svg" alt="">
     <h1 id="name">Rambo Chicken</h1>
     <select id="container-select">
@@ -36,6 +37,7 @@ $id = uniqid();
 </main>
 <footer></footer>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/moment.min.js"></script>
 <script type="text/javascript" src="assets/js/getGeneralConfig.js?v=<?php echo $id;?>"></script>
 </body>
 </html>
