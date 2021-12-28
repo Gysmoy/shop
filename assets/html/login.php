@@ -31,52 +31,42 @@
 </head>
 
 <body>
-
-
-  <div style="position: static;" class="navbar navbar-expand-lg bg-light navbar-light nav-sticky" bis_skin_checked="1">
-    <div class="container-fluid" bis_skin_checked="1">
-      <a href="../../index.html" class="navbar-brand">Mozo <span>en Línea</span></a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse" bis_skin_checked="1">
-        <div class="navbar-nav ml-auto" bis_skin_checked="1">
-          <a href="assets/html/login.html" class="nav-item nav-link">Restaurantes</a>
-          <a href="login.html" class="nav-item nav-link">Clientes</a>
-
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="container">
     <div class="conenedor-form" >
       
       <form class="p-4">
-        <h3>INICIE SESION EN SHOP</h3>
-        <div class="mb-4">
-          <label class="form-label" for="">Usuario</label>
-          <input class="form-control" type="text">
+       <a href="../../index.php"><img class="logo" src="../img/shop.svg" alt="logo"></a> 
+        <div class="mb-3 mt-5 text-center">
+          <h4>Inicia sesíon en tu cuenta</h4>
+        </div>
+        
+        <div class="mb-2">
+          <button id="init-session-facebook" class="btn init-session-btn"> <img src="../img/facebook_icon-icons.svg "  class=" icon-init-session" alt="icon facebook"> <p class="text-init-facebook">Inciar sesíon con Facebook</p></button>
+        </div>
+        <div>
+          <button id="init-session-google" class="btn init-session-btn"> <img src="../img/google_icon-icons.svg"  class=" icon-init-session" alt="icon google"> <p class="text-init-google">Iniciar sesíon con Google</p></button>
+        </div>
+
+        <hr>
+        <div class="mb-2 mt-3">
+          <label class="form-label label-form-login" for="">Correo electrónico / celular</label>
+          <input id="user" class="form-control" type="text" placeholder="Correo elecrónico o celular">
         </div>
         <div class="mb-4">
-          <label class="form-label" for="">Password</label>
-          <input class="form-control" type="text">
+          <label class="form-label label-form-login" for="">Contraseña</label>
+          <input id="pass" class="form-control" type="password" placeholder="********">
         </div>
-        <div class="">
+        <div class="label-form-login">
           <p>Aun no tengo una cuenta <a href="#">deseo tegistrarme</a></p>
 
         </div>
 
         <div class="mb-4">
-          <button class="btn btn-success">INICIAR SESION</button>
+          <button id="init-session-shop" class="btn">Iniciar sesíon</button>
         </div>
         <div>
-          <div>
-            <button class="btn btn-success"><i class="mdi mdi-facebook-box"></i> INICIAR SESION CON FACEBOOK</button>
-          </div>
-          <div>
-            <button class="btn btn-success">INICIAR SESION CON GOOGLE</button>
-          </div>
+          
+          
         </div>
 
       </form>
