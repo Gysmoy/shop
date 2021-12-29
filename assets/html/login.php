@@ -32,49 +32,60 @@
 
 <body>
   <div class="container">
-    <div class="conenedor-form" >
-      
-      <form class="p-4">
-       <a href="../../index.php"><img class="logo" src="../img/shop.svg" alt="logo"></a> 
-        <div class="mb-3 mt-5 text-center">
-          <h4>Inicia sesíon en tu cuenta</h4>
-        </div>
-        
-        <div class="mb-2">
-          <button id="init-session-facebook" class="btn init-session-btn"> <img src="../img/facebook_icon-icons.svg "  class=" icon-init-session" alt="icon facebook"> <p class="text-init-facebook">Inciar sesíon con Facebook</p></button>
-        </div>
-        <div>
-          <button id="init-session-google" class="btn init-session-btn"> <img src="../img/google_icon-icons.svg"  class=" icon-init-session" alt="icon google"> <p class="text-init-google">Iniciar sesíon con Google</p></button>
+    <div class="col-md-6 grid-margin stretch-card">
+
+
+      <div class="conenedor-form card p-2">
+        <div class="card-body">
+
+          <form class="p-4">
+            <a href="../../index.php"><img class="logo" src="../img/shop.svg" alt="logo"></a>
+            <div class="mb-3 mt-5 text-center">
+              <h4>Inicia sesíon en tu cuenta</h4>
+            </div>
+
+            <div class="mb-2">
+              <button id="init-session-facebook" class="btn init-session-btn"> <img
+                  src="../img/facebook_icon-icons.svg " class=" icon-init-session" alt="icon facebook">
+                <p class="text-init-facebook">Inciar sesíon con Facebook</p>
+              </button>
+            </div>
+            <div>
+              <button id="init-session-google" class="btn init-session-btn"> <img src="../img/google_icon-icons.svg"
+                  class=" icon-init-session" alt="icon google">
+                <p class="text-init-google">Iniciar sesíon con Google</p>
+              </button>
+            </div>
+
+            <hr>
+            <div class="mb-2 mt-3">
+              <label class="form-label label-form-login" for="">Correo electrónico / celular</label>
+              <input id="user" class="form-control" type="text" placeholder="Correo elecrónico o celular">
+            </div>
+            <div class="mb-4">
+              <label class="form-label label-form-login" for="">Contraseña</label>
+              <input id="pass" class="form-control" type="password" placeholder="********">
+            </div>
+            <div class="label-form-login">
+              <p>Aun no tengo una cuenta <a href="#">deseo tegistrarme</a></p>
+
+            </div>
+
+            <div class="mb-4">
+              <button id="init-session-shop" class="btn">Iniciar sesíon</button>
+            </div>
+            <div>
+
+
+            </div>
+
+          </form>
         </div>
 
-        <hr>
-        <div class="mb-2 mt-3">
-          <label class="form-label label-form-login" for="">Correo electrónico / celular</label>
-          <input id="user" class="form-control" type="text" placeholder="Correo elecrónico o celular">
-        </div>
-        <div class="mb-4">
-          <label class="form-label label-form-login" for="">Contraseña</label>
-          <input id="pass" class="form-control" type="password" placeholder="********">
-        </div>
-        <div class="label-form-login">
-          <p>Aun no tengo una cuenta <a href="#">deseo tegistrarme</a></p>
-
-        </div>
-
-        <div class="mb-4">
-          <button id="init-session-shop" class="btn">Iniciar sesíon</button>
-        </div>
-        <div>
-          
-          
-        </div>
-
-      </form>
+      </div>
 
     </div>
-
   </div>
-
 
   <div>
 
