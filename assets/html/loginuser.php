@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Mozo en línea | Login</title>
+  <title>Mozo en línea | Login usuario</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="Free Website Template" name="keywords">
   <meta content="Free Website Template" name="description">
@@ -27,7 +27,7 @@
 
   <!-- Template Stylesheet -->
   <link href="../css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/login-singup.css">
 </head>
 
 <body>
@@ -38,42 +38,60 @@
       <div class="conenedor-form card p-2">
         <div class="card-body">
 
-          <form class="p-4">
+          <form>
             <a href="../../index.php"><img class="logo" src="../img/shop.svg" alt="logo"></a>
             <div class="mb-3 mt-5 text-center">
-              <h4>Inicia sesíon en tu cuenta</h4>
+              <h4>Mozo en linea | Cliente</h4>
+              <h6>Iniciar sesíon</h6>
             </div>
 
-            <div class="mb-2">
+            <div class="row">
+              <div class="col-md-12 mb-1">
               <button id="init-session-facebook" class="btn init-session-btn"> <img
                   src="../img/facebook_icon-icons.svg " class=" icon-init-session" alt="icon facebook">
-                <p class="text-init-facebook">Inciar sesíon con Facebook</p>
+                <p class="text-init-facebook">Iniciar sesíon con Facebook</p>
               </button>
-            </div>
-            <div>
+              </div>
+
+              <div class="col-md-12 mb-3">
               <button id="init-session-google" class="btn init-session-btn"> <img src="../img/google_icon-icons.svg"
                   class=" icon-init-session" alt="icon google">
                 <p class="text-init-google">Iniciar sesíon con Google</p>
               </button>
+              </div>
+
+              <hr>
+
+              <div class="col-md-12">
+                <div class="mb-1">
+                  <label class="form-label label-form-login" for="">Correo electrónico / usuario</label>
+                  <input id="user" class="form-control" type="text" placeholder="Correo elecrónico o usuario">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="mb-1">
+                  <label class="form-label label-form-login" for="">Contraseña</label>
+                  <input id="pass" class="form-control" type="password" placeholder="********">
+                </div>
+              </div>
+              <div class="label-form-login">
+                <p>Aun no tengo una cuenta <a href="#">deseo tegistrarme</a></p>
+              </div>
+              <div class="col-md-12">
+                <div class="mb-1">
+                  <button id="init-session-shop" class="btn">Iniciar sesíon</button>
+                </div>
+              </div>
+
             </div>
 
-            <hr>
-            <div class="mb-2 mt-3">
-              <label class="form-label label-form-login" for="">Correo electrónico / celular</label>
-              <input id="user" class="form-control" type="text" placeholder="Correo elecrónico o celular">
-            </div>
-            <div class="mb-4">
-              <label class="form-label label-form-login" for="">Contraseña</label>
-              <input id="pass" class="form-control" type="password" placeholder="********">
-            </div>
-            <div class="label-form-login">
-              <p>Aun no tengo una cuenta <a href="#">deseo tegistrarme</a></p>
+           
 
-            </div>
+            
+            
+            
 
-            <div class="mb-4">
-              <button id="init-session-shop" class="btn">Iniciar sesíon</button>
-            </div>
+            
             <div>
 
 

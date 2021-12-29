@@ -66,13 +66,13 @@
                             <img src="assets/img/carousel-1.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>Best <span>Quality</span> Ingredients</h1>
+                            <h1>Estamos en <span>Empresas</span> Restaurantes</h1>
                             <p>
                                 Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="assets/html/login.php">Iniciar Sesíon</a>
-                                <a class="btn custom-btn" href="">Registrar Empresa</a>
+                                <a class="btn custom-btn" href="assets/html/loginempresa.php">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="assets/html/singupempresa.php">Registrar Empresa</a>
                             </div>
                         </div>
                     </div>
@@ -81,13 +81,13 @@
                             <img src="assets/img/carousel-2.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>World’s <span>Best</span> Chef</h1>
+                            <h1>¿Eres <span>Cliente</span> ¡Bienvenido!</h1>
                             <p>
                                 Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="assets/html/login.php">Iniciar Sesíon</a>
-                                <a class="btn custom-btn" href="">Registrar Empresa</a>
+                                <a class="btn custom-btn" href="assets/html/loginuser.php">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="assets/html/singupuser.php">Registrarme</a>
                             </div>
                         </div>
                     </div>
