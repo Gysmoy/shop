@@ -29,10 +29,10 @@ $id = uniqid();
 </header>
 <main data-background="">
     <h1 id="container-title">Contenedor 1</h1>
-    <div id="container" data-background="">
-        <div class="dish">
-
-        </div>
+    <div id="container">
+        <table>
+            <tr></tr>
+        </table>
     </div>
 </main>
 <footer></footer>

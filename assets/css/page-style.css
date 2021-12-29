@@ -1,6 +1,6 @@
 :root {
-    --padding-desktop: 20px;
-    --padding-mobile: 10px;
+    --space-desktop: 20px;
+    --space-mobile: 10px;
 }
 
 * {
@@ -12,7 +12,7 @@
 
 body {
     background-color: rgb(245, 245, 245);
-    padding: var(--padding-desktop);
+    padding: var(--space-desktop);
 }
 
 header {
@@ -27,7 +27,7 @@ header {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .25);
-    padding: var(--padding-desktop);
+    padding: var(--space-desktop);
 }
 
 #realtime {
@@ -88,4 +88,23 @@ main {
     color: #fff;
     padding: 5px 12px;
     border-radius: 0 0 5px 5px;
+}
+#container {
+    margin-top: calc(var(--space-desktop) - 5px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.dish {
+    background-image: url('../img/background.jpg');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 5px;
+    width: 250px;
+    height: 150px;
+    margin: 5px;
+}
+.dish .dish-name {
+    pos
 }
