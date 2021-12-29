@@ -27,7 +27,7 @@ header {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .25);
-    padding: var(--space-desktop);
+    padding: 5% var(--space-desktop);
 }
 
 #realtime {
@@ -70,19 +70,19 @@ header {
 
 main {
     background-color: #fff;
-    min-height: 250px;
     width: 100%;
     max-width: 1200px;
     margin: auto;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .25);
-    padding: 0 20px;
+    padding: 0 calc(var(--space-desktop) - 5px);
     border-top: 4px solid #000;
 }
 #container-title {
     font-size: large;
     width: max-content;
+    margin: 0px 10px;
     max-width: 250px;
     background-color: #000;
     color: #fff;
@@ -90,21 +90,69 @@ main {
     border-radius: 0 0 5px 5px;
 }
 #container {
-    margin-top: calc(var(--space-desktop) - 5px);
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 20px;
 }
 .dish {
+    border-radius: 5px;
+    width: 360px;
+    max-width: 100%;
+    height: 210px;
+    margin: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+table {
+    border: 2px solid #fff;
+    border-spacing: 0;
+}
+.dish td {
+    border: 2px solid #fff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+.dish tr:nth-child(1) td:nth-child(1) {
     background-image: url('../img/background.jpg');
     background-position: center center;
     background-size: cover;
-    border-radius: 5px;
-    width: 250px;
-    height: 150px;
-    margin: 5px;
 }
-.dish .dish-name {
-    pos
+.dish .icon {
+    font-size: larger;
+}
+.dish .price {
+    font-size: small;
+    padding: 2px 4px;
+    margin-top: 8px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .150);
+    width: max-content;
+}
+.dish .price::before {
+    content: 'S/';
+}
+.dish .price .type {
+    padding: 2px 4px;
+    text-align: center;
+    font-size: smaller;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        padding: var(--space-mobile);
+    }
+    header {
+        padding: 5% var(--space-mobile);
+    }
+    main {
+        padding: 0 var(--space-mobile);
+    }
 }
