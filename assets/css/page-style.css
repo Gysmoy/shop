@@ -125,6 +125,12 @@ table {
 .dish .icon {
     font-size: larger;
 }
+.dish .name {
+    max-width: 330px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 .dish .price {
     font-size: small;
     padding: 2px 4px;
@@ -202,6 +208,9 @@ footer {
     }
     main {
         padding: 0 5px;
+        margin-top: 10px;
+    }
+    footer {
         margin-top: 10px;
     }
     #container-title {
