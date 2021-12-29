@@ -1,6 +1,6 @@
 :root {
-    --padding-desktop: 20px;
-    --padding-mobile: 10px;
+    --space-desktop: 20px;
+    --space-mobile: 10px;
 }
 
 * {
@@ -12,10 +12,11 @@
 
 body {
     background-color: rgb(245, 245, 245);
-    padding: var(--padding-desktop);
+    padding: var(--space-desktop);
 }
 
 header {
+    position: relative;
     background-image: url('../img/background.jpg');
     background-position: center center;
     background-size: cover;
@@ -26,7 +27,18 @@ header {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .25);
-    padding: var(--padding-desktop);
+    padding: 5% var(--space-desktop);
+}
+
+#realtime {
+    position: absolute;
+    padding: 2px 5px;
+    right: 10px;
+    top: 10px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #logo {
@@ -58,22 +70,153 @@ header {
 
 main {
     background-color: #fff;
-    min-height: 250px;
     width: 100%;
     max-width: 1200px;
     margin: auto;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .25);
-    padding: 0 20px;
+    padding: 0 calc(var(--space-desktop) - 5px);
     border-top: 4px solid #000;
 }
 #container-title {
     font-size: large;
     width: max-content;
+    margin: 0px 10px;
     max-width: 250px;
     background-color: #000;
     color: #fff;
     padding: 5px 12px;
     border-radius: 0 0 5px 5px;
+}
+#container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.dish {
+    border-radius: 5px;
+    width: 360px;
+    max-width: 100%;
+    height: 210px;
+    margin: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+table {
+    border: 2px solid #fff;
+    border-spacing: 0;
+}
+.dish td {
+    border: 2px solid #fff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+.dish tr:nth-child(1) td:nth-child(1) {
+    background-image: url('../img/background.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+.dish .icon {
+    font-size: larger;
+}
+.dish .name {
+    max-width: 330px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.dish .price {
+    font-size: small;
+    padding: 2px 4px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, .150);
+    width: max-content;
+}
+.dish .price::before {
+    content: 'S/';
+}
+.dish .price .type {
+    padding: 2px 4px;
+    text-align: center;
+    font-size: smaller;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* Estilos footer */
+footer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+}
+.socials {
+    margin-bottom: 20px;
+}
+.socials ul,
+.copyright ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+.socials ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 1);
+    margin: 0 2px;
+    font-size: larger;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+}
+.copyright ul li {
+    padding: 5px 10px;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    margin: 2px;
+    border-radius: 5px;
+}
+.copyright ul li a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border-bottom: 2px dotted rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        padding: var(--space-mobile);
+    }
+    header {
+        padding: 5% 10px;
+    }
+    main {
+        padding: 0 5px;
+        margin-top: 10px;
+    }
+    footer {
+        margin-top: 10px;
+    }
+    #container-title {
+        margin: 0px 5px;
+    }
+    #container {
+        margin-top: 10px;
+    }
 }
