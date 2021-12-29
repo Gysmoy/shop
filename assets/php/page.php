@@ -94,135 +94,26 @@ $id = uniqid();
                 </td>
             </tr>
         </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
+        
     </div>
 </main>
-<footer></footer>
+<footer>
+    <div class="socials">
+        <ul>
+            <li><a href="#" class="social fa fa-facebook"></a></li>
+            <li><a href="#" class="social fa fa-whatsapp"></a></li>
+            <li><a href="#" class="social fa fa-instagram"></a></li>
+            <li><a href="#" class="social fa fa-snapchat-ghost"></a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <ul>
+            <li>Copyright © <a href="./">Mozo en línea</a></li>
+            <li>Versión 3.0.1</li>
+            <li>Diseñado por <a href="#">GK Business</a></li>
+        </ul>
+    </div>
+</footer>
 <script type="text/javascript" src="assets/js/fontawesome.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/moment.min.js"></script>

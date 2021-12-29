@@ -130,6 +130,7 @@ table {
     padding: 2px 4px;
     margin-top: 8px;
     border-radius: 5px;
+    border: 1px solid #fff;
     background-color: rgba(255, 255, 255, .150);
     width: max-content;
 }
@@ -145,14 +146,68 @@ table {
     background-color: rgba(0, 0, 0, 1);
 }
 
+/* Estilos footer */
+footer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+}
+.socials {
+    margin-bottom: 20px;
+}
+.socials ul,
+.copyright ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+.socials ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 1);
+    margin: 0 2px;
+    font-size: larger;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+}
+.copyright ul li {
+    padding: 5px 10px;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    margin: 2px;
+    border-radius: 5px;
+}
+.copyright ul li a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border-bottom: 2px dotted rgba(0, 0, 0, 1);
+}
+
 @media screen and (max-width: 600px) {
     body{
         padding: var(--space-mobile);
     }
     header {
-        padding: 5% var(--space-mobile);
+        padding: 5% 10px;
     }
     main {
-        padding: 0 var(--space-mobile);
+        padding: 0 5px;
+        margin-top: 10px;
+    }
+    #container-title {
+        margin: 0px 5px;
+    }
+    #container {
+        margin-top: 10px;
     }
 }
