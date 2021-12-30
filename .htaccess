@@ -1,4 +1,5 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^([0-9a-zA-Z-_]+)$ index.php?page=$1 [QSA]
+    RewriteRule ^api/image/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ assets/php/image.php?type=$1&id=$2 [QSA]
 </IfModule>
