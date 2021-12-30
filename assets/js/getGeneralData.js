@@ -14,7 +14,10 @@ $(document).ready(function() {
         dataType: 'JSON',
         success: res => {
             console.log(res);
-            $('#logo').attr('src', `api/image/logo/${idPage}`)
+            $('#logo').attr({
+                'src': `api/image/logo/${idPage}`,
+                'title': `Logo de ${res.name}`
+            });
             $('title').text(res.name);
             $('#name').text(res.name).attr('title', res.address);
             res.containers.forEach(container => {
