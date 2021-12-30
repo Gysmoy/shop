@@ -139,5 +139,6 @@ $id = uniqid();
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/moment.min.js"></script>
 <script type="text/javascript" src="assets/js/getGeneralConfig.js?v=<?php echo $id;?>"></script>
+<script type="text/javascript" src="assets/js/changeContainer.js?v=<?php echo $id;?>"></script>
 </body>
 </html>
