@@ -14,6 +14,7 @@ $(document).ready(function() {
         dataType: 'JSON',
         success: res => {
             console.log(res);
+            $('#logo').attr('src', `api/image/logo/${idPage}`)
             $('title').text(res.name);
             $('#name').text(res.name).attr('title', res.address);
             res.containers.forEach(container => {

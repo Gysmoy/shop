@@ -20,7 +20,7 @@ $id = uniqid();
 <body page="<?php echo $idPage;?>">
 <header>
     <div id="realtime">00:00:00</div>
-    <img id="logo" src="assets/img/logo.svg" alt="">
+    <img id="logo" src="api/image/null/null" alt="">
     <h1 id="name"></h1>
     <select id="container-select">
     </select>
