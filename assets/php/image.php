@@ -15,9 +15,7 @@ if(
             INNER JOIN business b ON b.id = gc._business
             WHERE b.path = :path
             ";
-            $params = [
-                ':path' => $_GET['id']
-            ];
+            $params = [':path' => $_GET['id']];
             break;
         case 'background':
             $sql = "SELECT 
@@ -27,9 +25,7 @@ if(
             INNER JOIN business b ON b.id = gc._business
             WHERE b.path = :path
             ";
-            $params = [
-                ':path' => $_GET['id']
-            ];
+            $params = [':path' => $_GET['id']];
             break;
         case 'container':
             $sql = "SELECT 
@@ -38,9 +34,7 @@ if(
             FROM containers
             WHERE id = :id
             ";
-            $params = [
-                ':id' => $_GET['id']
-            ];
+            $params = [':id' => $_GET['id']];
             break;
         case 'mini':
             $sql = "SELECT 
@@ -49,9 +43,7 @@ if(
             FROM dishes
             WHERE id = :id
             ";
-            $params = [
-                ':id' => $_GET['id']
-            ];
+            $params = [':id' => $_GET['id']];
             break;
         case 'dish':
             $sql = "SELECT 
@@ -60,9 +52,7 @@ if(
             FROM dishes
             WHERE id = :id
             ";
-            $params = [
-                ':id' => $_GET['id']
-            ];
+            $params = [':id' => $_GET['id']];
             break;
     }
     $query = $db -> connect() -> prepare($sql);
