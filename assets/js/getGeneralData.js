@@ -13,8 +13,16 @@ $(document).ready(function() {
         type: 'GET',
         dataType: 'JSON',
         success: res => {
+            console.log(res);
             $('title').text(res.name);
-            $('#name').text(res.name);
+            $('#name').text(res.name).attr('title', res.address);
+            res.containers.forEach(container => {
+                var id = container.id;
+                var name = container.name;
+                $('#container-select').append(`
+                <option value="${id}" label="${name}">${name}</option>
+                `);
+            });
         },
         error: e => {
             console.log(e);
