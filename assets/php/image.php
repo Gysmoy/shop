@@ -16,7 +16,7 @@ if(
             WHERE b.path = :path
             ";
             $params = [
-                'path' => $_GET['id']
+                ':path' => $_GET['id']
             ];
             break;
         case 'background':
@@ -28,26 +28,41 @@ if(
             WHERE b.path = :path
             ";
             $params = [
-                'path' => $_GET['id']
+                ':path' => $_GET['id']
             ];
             break;
         case 'container':
             $sql = "SELECT 
-                gc.bg_image AS 'image',
-                gc.bg_type AS 'type'
-            FROM general_config gc
-            INNER JOIN business b ON b.id = gc._business
-            WHERE b.path = :path
+                bg_image AS 'image',
+                bg_type AS 'type'
+            FROM containers
+            WHERE id = :id
             ";
             $params = [
-                'path' => $_GET['id']
+                ':id' => $_GET['id']
             ];
             break;
         case 'mini':
-            # code...
+            $sql = "SELECT 
+                mini_image AS 'image',
+                type_image AS 'type'
+            FROM dishes
+            WHERE id = :id
+            ";
+            $params = [
+                ':id' => $_GET['id']
+            ];
             break;
         case 'dish':
-            # code...
+            $sql = "SELECT 
+                real_image AS 'image',
+                type_image AS 'type'
+            FROM dishes
+            WHERE id = :id
+            ";
+            $params = [
+                ':id' => $_GET['id']
+            ];
             break;
     }
     $query = $db -> connect() -> prepare($sql);
@@ -56,10 +71,13 @@ if(
     if ($row) {
         header('Content-Type: ' . $row['type']);
         echo $row['image'];
+    } else {
+        header('Content-Type: image/png');
+        $img = file_get_contents('../img/imageNotFound.png');
+        echo $img;
     }
 } else {
     header('Content-Type: image/png');
     $img = file_get_contents('../img/imageNotFound.png');
     echo $img;
 }
-?>
