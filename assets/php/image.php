@@ -1,7 +1,8 @@
 <?php
 if(
     isset($_GET['type']) &&
-    isset($_GET['id'])
+    isset($_GET['id']) &&
+    in_array($_GET['type'], ['logo', 'background', 'container', 'mini', 'dish'])
 ){
     require_once 'database.php';
     $db = new Database();
@@ -31,9 +32,21 @@ if(
             ];
             break;
         case 'container':
+            $sql = "SELECT 
+                gc.bg_image AS 'image',
+                gc.bg_type AS 'type'
+            FROM general_config gc
+            INNER JOIN business b ON b.id = gc._business
+            WHERE b.path = :path
+            ";
+            $params = [
+                'path' => $_GET['id']
+            ];
+            break;
+        case 'mini':
             # code...
             break;
-        default:
+        case 'dish':
             # code...
             break;
     }
@@ -45,6 +58,8 @@ if(
         echo $row['image'];
     }
 } else {
-    echo 'Se require un id para mostrar una imagen';
+    header('Content-Type: image/png');
+    $img = file_get_contents('../img/imageNotFound.png');
+    echo $img;
 }
 ?>
