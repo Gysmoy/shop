@@ -65,11 +65,7 @@
                     <button  id="btn-sig1" class="btn btn-success btn-singup">Siguiente</button>
                   </div>
                 </div>
-
               </div>
-             
-              
-              
               
             </section>
 
