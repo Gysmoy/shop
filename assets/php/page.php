@@ -20,16 +20,13 @@ $id = uniqid();
 <body page="<?php echo $idPage;?>">
 <header>
     <div id="realtime">00:00:00</div>
-    <img id="logo" src="assets/img/logo.svg" alt="">
-    <h1 id="name">Rambo Chicken</h1>
+    <img id="logo" src="assets/img/loading.gif" alt="">
+    <h1 id="name"> </h1>
     <select id="container-select">
-        <option value="container1">Contenedor 1</option>
-        <option value="container2">Contenedor 2</option>
-        <option value="container3">Contenedor 3</option>
     </select>
 </header>
 <main data-background="">
-    <h1 id="container-title">Contenedor 1</h1>
+    <h1 id="container-title"> </h1>
     <div id="container">
         <table class="dish">
             <tr>
@@ -138,7 +135,7 @@ $id = uniqid();
 <script type="text/javascript" src="assets/js/fontawesome.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/moment.min.js"></script>
-<script type="text/javascript" src="assets/js/getGeneralConfig.js?v=<?php echo $id;?>"></script>
+<script type="text/javascript" src="assets/js/getGeneralData.js?v=<?php echo $id;?>"></script>
 <script type="text/javascript" src="assets/js/changeContainer.js?v=<?php echo $id;?>"></script>
 </body>
 </html>
