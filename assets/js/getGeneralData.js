@@ -39,8 +39,9 @@ $(document).ready(function() {
             res.containers.forEach(container => {
                 var id = container.id;
                 var name = container.name;
+                var dishes = container.dishes;
                 $('#container-select').append(`
-                <option value="${id}" label="${name}">${name}</option>
+                <option value="${id}" label="${name}" dishes="${dishes}">${name}</option>
                 `);
             });
             $('#container-select').trigger('change');

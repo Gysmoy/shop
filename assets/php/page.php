@@ -84,6 +84,7 @@ $id = uniqid();
 <script type="text/javascript" src="assets/js/fontawesome.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/util_loading.js?v=<?php echo $id;?>"></script>
 <script type="text/javascript" src="assets/js/getGeneralData.js?v=<?php echo $id;?>"></script>
 <script type="text/javascript" src="assets/js/changeContainer.js?v=<?php echo $id;?>"></script>
 </body>
