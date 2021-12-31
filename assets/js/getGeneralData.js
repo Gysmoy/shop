@@ -1,5 +1,13 @@
 function setStyle(style) {
-    
+    var root = `:root {
+        --mainColor: ${style.mainColor};
+        --contrast: ${style.contrast};
+        --header-nameColor: ${style.header.nameColor};
+        --header-shadow: ${style.header.shadow};
+        --main-price-background: ${style.main.price.background};
+        --main-price-color: ${style.main.price.color};
+    }`;
+    $('#styles').text(root);
 }
 $(document).ready(function() {
     // Estableciendo reloj en tiempo real
