@@ -16,6 +16,7 @@ $id = uniqid();
     <title></title>
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/page-style.css?v=<?php echo $id;?>">
+    <style id="styles"></style>
 </head>
 <body page="<?php echo $idPage;?>">
 <header>
@@ -28,90 +29,7 @@ $id = uniqid();
 <main data-background="">
     <h1 id="container-title"> </h1>
     <div id="container">
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón y salchichas de extra</p>
-                </td>
-            </tr>
-        </table>
-        <table class="dish">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i class="icon fa fa-cart-plus"></i>
-                    <fieldset class="price">
-                        <legend class="type">Menú</legend>
-                        12.50
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type">Carta</legend>
-                        15.00
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">Chaufa con alitas fritas y limón extra con doble papa</p>
-                </td>
-            </tr>
-        </table>
+       
         
     </div>
 </main>

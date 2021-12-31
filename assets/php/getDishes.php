@@ -3,7 +3,6 @@ if(
     isset($_GET['id']) 
 ){
  
-
     require_once 'database.php';
     $db = new Database();
 
@@ -21,8 +20,6 @@ if(
         header('Content-Type: json ]');
         echo json_encode($row);
     }
-
-
 }
 
 

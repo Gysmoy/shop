@@ -16,7 +16,7 @@ $(document).ready(function() {
         type: 'GET',
         dataType: 'JSON',
         success: res => {
-            console.log(res);
+           // console.log(res);
             $('header').css({
                 'background-image': `url('api/image/background/${idPage}')`,
                 'background-position': 'center center',
