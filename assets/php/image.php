@@ -1,7 +1,8 @@
 <?php
 if(
     isset($_GET['type']) &&
-    isset($_GET['id'])
+    isset($_GET['id']) &&
+    in_array($_GET['type'], ['logo', 'background', 'container', 'mini', 'dish'])
 ){
     require_once 'database.php';
     $db = new Database();
@@ -14,9 +15,7 @@ if(
             INNER JOIN business b ON b.id = gc._business
             WHERE b.path = :path
             ";
-            $params = [
-                'path' => $_GET['id']
-            ];
+            $params = [':path' => $_GET['id']];
             break;
         case 'background':
             $sql = "SELECT 
@@ -26,15 +25,34 @@ if(
             INNER JOIN business b ON b.id = gc._business
             WHERE b.path = :path
             ";
-            $params = [
-                'path' => $_GET['id']
-            ];
+            $params = [':path' => $_GET['id']];
             break;
         case 'container':
-            # code...
+            $sql = "SELECT 
+                bg_image AS 'image',
+                bg_type AS 'type'
+            FROM containers
+            WHERE id = :id
+            ";
+            $params = [':id' => $_GET['id']];
             break;
-        default:
-            # code...
+        case 'mini':
+            $sql = "SELECT 
+                mini_image AS 'image',
+                type_image AS 'type'
+            FROM dishes
+            WHERE id = :id
+            ";
+            $params = [':id' => $_GET['id']];
+            break;
+        case 'dish':
+            $sql = "SELECT 
+                real_image AS 'image',
+                type_image AS 'type'
+            FROM dishes
+            WHERE id = :id
+            ";
+            $params = [':id' => $_GET['id']];
             break;
     }
     $query = $db -> connect() -> prepare($sql);
@@ -43,8 +61,13 @@ if(
     if ($row) {
         header('Content-Type: ' . $row['type']);
         echo $row['image'];
+    } else {
+        header('Content-Type: image/png');
+        $img = file_get_contents('../img/imageNotFound.png');
+        echo $img;
     }
 } else {
-    echo 'Se require un id para mostrar una imagen';
+    header('Content-Type: image/png');
+    $img = file_get_contents('../img/imageNotFound.png');
+    echo $img;
 }
-?>
