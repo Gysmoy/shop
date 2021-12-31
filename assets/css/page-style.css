@@ -40,13 +40,13 @@ header {
 
 #logo {
     height: 150px;
-    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 0 15px var(--header-shadow));
 }
 #name {
     margin-top: 10px;
     font-size: x-large;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    color: var(--contrast);
+    text-shadow: 0 0 15px var(--header-shadow);
 }
 #container-select {
     width: 150px;
@@ -57,11 +57,11 @@ header {
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .75);
+    box-shadow: 0 0 15px var(--header-shadow);
     font-weight: bold;
-    border: 1px solid #000;
-    background-color: #000;
-    color: #fff;
+    border: 1px solid var(--mainColor);
+    background-color: var(--mainColor);
+    color: var(--contrast);
     outline: none;
 }
 
@@ -74,15 +74,15 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .25);
     padding: 0 calc(var(--space-desktop) - 5px);
-    border-top: 4px solid #000;
+    border-top: 4px solid var(--mainColor);
 }
 #container-title {
     font-size: large;
     width: max-content;
     margin: 0px 10px;
     max-width: 250px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--mainColor);
+    color: var(--contrast);
     padding: 5px 12px;
     border-radius: 0 0 5px 5px;
 }
@@ -103,14 +103,14 @@ main {
     box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 table {
-    border: 2px solid #fff;
+    border: 2px solid var(--contrast);
     border-spacing: 0;
 }
 .dish td {
-    border: 2px solid #fff;
+    border: 2px solid var(--contrast);
     padding: 10px;
-    background-color: rgba(0, 0, 0, 1);
-    color: #fff;
+    background-color: var(--mainColor);
+    color: var(--contrast);
     text-align: center;
     vertical-align: middle;
 }
@@ -133,8 +133,9 @@ table {
     padding: 2px 4px;
     margin-top: 8px;
     border-radius: 5px;
-    border: 1px solid #fff;
-    background-color: rgba(255, 255, 255, .150);
+    border: 1px solid var(--contrast);
+    background-color: var(--main-price-background);
+    color: var(--main-price-color);
     width: max-content;
 }
 .dish .price::before {
@@ -144,9 +145,9 @@ table {
     padding: 2px 4px;
     text-align: center;
     font-size: smaller;
-    border: 1px solid #fff;
+    border: 1px solid var(--contrast);
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: var(--mainColor);
 }
 
 /* Estilos footer */
@@ -175,25 +176,25 @@ footer {
     cursor: pointer;
     width: 40px;
     height: 40px;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: var(--mainColor);
     margin: 0 2px;
     font-size: larger;
     text-align: center;
     padding: 10px;
     border-radius: 50%;
-    color: #fff;
+    color: var(--contrast);
 }
 .copyright ul li {
     padding: 5px 10px;
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
+    border-left: 2px solid var(--mainColor);
+    border-right: 2px solid var(--mainColor);
     margin: 2px;
     border-radius: 5px;
 }
 .copyright ul li a {
-    color: rgba(0, 0, 0, 1);
+    color: var(--mainColor);
     text-decoration: none;
-    border-bottom: 2px dotted rgba(0, 0, 0, 1);
+    border-bottom: 2px dotted var(--mainColor);
 }
 
 @media screen and (max-width: 600px) {
