@@ -8,16 +8,13 @@ $(document).ready(function() {
 
     // Obteniendo configuración general
     var idPage = $('body').attr('page');
-    console.log(idPage);
     $.ajax({
-        url: 'api/config/' + idPage,
+        url: `api/config/${idPage}`,
         type: 'GET',
         dataType: 'JSON',
-        headers: {
-
-        },
         success: res => {
-            console.log(res);
+            $('title').text(res.name);
+            $('#name').text(res.name);
         },
         error: e => {
             console.log(e);
