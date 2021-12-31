@@ -5,7 +5,7 @@ if(
     require_once 'database.php';
     $db = new Database();
 
-    $sql = "SELECT b.name, b.address, b.social, gc.style
+    $sql = "SELECT b.name, b.address, b.social AS socials, gc.style
     FROM general_config gc INNER JOIN business b ON b.id = gc._business 
      WHERE b.path = :path" ;
     $params = [
@@ -30,7 +30,7 @@ if(
     if ($row && $row1) {
         header('Content-Type: json ]');
     
-        $row['social'] = json_decode($row['social'],true);
+        $row['socials'] = json_decode($row['socials'],true);
         $row['style'] = json_decode($row['style'], true);
         $row['containers'] = $row1;
         echo json_encode($row);

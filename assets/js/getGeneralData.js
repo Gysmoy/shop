@@ -1,3 +1,6 @@
+function setStyle(style) {
+    
+}
 $(document).ready(function() {
     // Estableciendo reloj en tiempo real
     moment.locale('es');
@@ -14,6 +17,11 @@ $(document).ready(function() {
         dataType: 'JSON',
         success: res => {
             console.log(res);
+            $('header').css({
+                'background-image': `url('api/image/background/${idPage}')`,
+                'background-position': 'center center',
+                'background-size': 'cover'
+            })
             $('#logo').attr({
                 'src': `api/image/logo/${idPage}`,
                 'title': `Logo de ${res.name}`
@@ -27,6 +35,20 @@ $(document).ready(function() {
                 <option value="${id}" label="${name}">${name}</option>
                 `);
             });
+            $('#container-select').trigger('change');
+            $('.socials ul').html(null);
+            res.socials.forEach(s => {
+                var social = s.social;
+                var url = s.url;
+                $('.socials ul').append(`
+                <li>
+                    <a href="${url}" target="_blank"
+                        class="social fa fa-${social}">
+                    </a>
+                </li>
+                `);
+            });
+            setStyle(res.style);
         },
         error: e => {
             console.log(e);

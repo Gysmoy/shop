@@ -20,13 +20,13 @@ $id = uniqid();
 <body page="<?php echo $idPage;?>">
 <header>
     <div id="realtime">00:00:00</div>
-    <img id="logo" src="api/image/null/null" alt="">
-    <h1 id="name"></h1>
+    <img id="logo" src="assets/img/loading.gif" alt="">
+    <h1 id="name"> </h1>
     <select id="container-select">
     </select>
 </header>
 <main data-background="">
-    <h1 id="container-title">Contenedor 1</h1>
+    <h1 id="container-title"> </h1>
     <div id="container">
         <table class="dish">
             <tr>
