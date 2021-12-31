@@ -27,6 +27,7 @@ $id = uniqid();
             --main-price-color: #fff;
         }
     </style>
+    <style id="main-style"></style>
 </head>
 <body page="<?php echo $idPage;?>">
 <header>

@@ -114,11 +114,11 @@ table {
     text-align: center;
     vertical-align: middle;
 }
-.dish tr:nth-child(1) td:nth-child(1) {
+/*.dish tr:nth-child(1) td:nth-child(1) {
     background-image: url('../img/background.jpg');
     background-position: center center;
     background-size: cover;
-}
+}*/
 .dish .icon {
     font-size: larger;
 }

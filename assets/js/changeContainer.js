@@ -2,8 +2,16 @@ $('#container-select').on('change', function () {
     var select = $('#container-select option:selected');
     var idCont = $(this).val();
     var nameCont = select.attr('label');
-    $('#container-title').text(nameCont)
-
+    $('#container-title').text(nameCont);
+    $('main').css({
+        'background': `linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, .25) 40%,
+            rgba(255, 255, 255, .25)
+        ), url('api/image/container/${idCont}')`,
+        'background-size': 'cover',
+        'background-position': 'center center'
+    })
     var template = ''
     $.ajax({
         url: `api/dishes/${idCont}`,
@@ -18,7 +26,11 @@ $('#container-select').on('change', function () {
             
                 <table class="dish" data-dish='${data}'>
                 <tr>
-                    <td width="100%" height="100%"></td>
+                    <td width="100%" height="100%" style="
+                        background-image: url('api/image/mini/${dish.id}');
+                        background-position: center center;
+                        background-size: cover;
+                    "></td>
                     <td>
                         <i class="icon fa fa-cart-plus"></i>
                         <fieldset class="price">
