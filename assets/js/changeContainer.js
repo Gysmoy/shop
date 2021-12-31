@@ -1,30 +1,50 @@
 $('#container-select').on('change', function () {
     var select = $('#container-select option:selected');
     var container_id = select.val();
-    var container_name = select.text();
-    var select = $('#container-select option:selected');
-    var idCont = $(this).val();
+    var container_name = select.attr('label');
+    var container_dishes = select.attr('dishes');
+
     $('#container-title').text(container_name);
-    $('main').css({
-        'background': `linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, .25) 40%,
-            rgba(255, 255, 255, .25)
-        ), url('api/image/container/${idCont}')`,
-        'background-size': 'cover',
-        'background-position': 'center center'
-    })
-    var template = '';
-    /*$.ajax({
-        url: `api/dishes/${idCont}`,
+    showLoadingDishes(container_dishes);
+    setContainerBackground(container_id);
+    
+    $.ajax({
+        url: `api/dishes/${container_id}`,
         type: 'GET',
         dataType: 'JSON',
         success: res => {
-            setTimeout(() => {
-                $('.dish').removeClass('loading');
-            }, 2800);
-            res.forEach(dish => {
-                var data = JSON.stringify(dish)
+            for (let i = 0; i < res.length; i++) {
+                const dish = res[i];
+                var data = JSON.stringify(dish);
+                var container = $($('#container .dish')[i]);
+                container.attr('data-dish', data);
+                container.removeClass('loading');
+                container.html(`
+                <tr>
+                    <td width="100%" height="100%" class="loading">
+                        <img class="image" src="api/image/mini/${dish.id}" onload="$(this).parent().removeClass('loading')">
+                    </td>
+                    <td>
+                        <i class="icon fa fa-cart-plus"></i>
+                        <fieldset class="price">
+                            <legend class="type">Menú</legend>
+                            ${dish.price}
+                        </fieldset>
+                        <fieldset class="price">
+                            <legend class="type">Carta</legend>
+                            ${dish.price}
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="name">${dish.name}</p>
+                    </td>
+                </tr>
+                `);
+            }
+            /*res.forEach(dish => {
+                console.log(dish)
                 template += `
                 <table class="dish loading" data-dish='${data}'>
                     <tr>
@@ -52,9 +72,7 @@ $('#container-select').on('change', function () {
                     </tr>
                 </table>
                 `;
-            });
-            $('#container').html(template);
+            });*/
         }
     });
-    $('#container').children('.dish').removeClass('loading');*/
 })

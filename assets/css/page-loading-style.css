@@ -1,11 +1,10 @@
-.dish.loading tr:nth-child(1) td:nth-child(1)::before,
-.dish.loading tr:nth-child(1) td:nth-child(1)::after {
+.dish td.loading::before,
+.dish td.loading::after {
     content: ' ';
     position: absolute;
     background-color: var(--contrast);
-    display: block;
 }
-.dish.loading tr:nth-child(1) td:nth-child(1)::before {
+.dish td.loading::before {
     bottom: 50%;
     right: 50%;
     width: 50px;
@@ -13,7 +12,7 @@
     border-radius: 30px 25px 5px;
     animation: image .5s linear infinite alternate;
 }
-.dish.loading tr:nth-child(1) td:nth-child(1)::after {
+.dish td.loading::after {
     top: 50%;
     left: 50%;
     width: 20px;

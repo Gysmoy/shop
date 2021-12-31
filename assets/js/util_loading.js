@@ -4,7 +4,7 @@ function showLoadingDishes(cant = 2) {
         $('#container').append(`
         <table class="dish loading">
             <tr>
-                <td width="100%" height="100%"></td>
+                <td width="100%" height="100%" class="loading"></td>
                 <td>
                     <i></i>
                     <fieldset class="price">
@@ -26,3 +26,15 @@ function showLoadingDishes(cant = 2) {
         `);
     }
 }
+function setContainerBackground(container_id) {
+    $('main').css({
+        'background': `linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, .25) 40%,
+            rgba(255, 255, 255, .25)
+        ), url('api/image/container/${container_id}')`,
+        'background-size': 'cover',
+        'background-position': 'center center'
+    })
+}
+showLoadingDishes();

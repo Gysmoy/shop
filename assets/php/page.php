@@ -40,29 +40,7 @@ $id = uniqid();
 </header>
 <main data-background="">
     <h1 id="container-title"> </h1>
-    <div id="container">
-        <table class="dish loading">
-            <tr>
-                <td width="100%" height="100%"></td>
-                <td>
-                    <i></i>
-                    <fieldset class="price">
-                        <legend class="type"> </legend>
-                          
-                    </fieldset>
-                    <fieldset class="price">
-                        <legend class="type"> </legend>
-                          
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p class="name">               </p>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <div id="container"></div>
 </main>
 <footer>
     <div class="socials">
