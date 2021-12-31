@@ -16,6 +16,7 @@ $id = uniqid();
     <title></title>
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/page-style.css?v=<?php echo $id;?>">
+    <style id="styles"></style>
 </head>
 <body page="<?php echo $idPage;?>">
 <header>
