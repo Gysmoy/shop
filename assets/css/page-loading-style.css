@@ -1,0 +1,45 @@
+.dish.loading tr:nth-child(1) td:nth-child(1) {
+    background-image: url('../img/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20%;
+}
+.dish.loading .name {
+    background: var(--contrast);
+    border-radius: 5px;
+    width: max-content;
+    margin: auto;
+    animation: shine .5s linear infinite alternate;
+}
+.dish.loading td i {
+    display: block;
+    background-color: var(--contrast);
+    font-size: xx-large;
+    width: 40px;
+    height: 30px;
+    margin: auto;
+    border-radius: 5px;
+    animation: shine .5s linear infinite alternate;
+}
+.dish.loading fieldset {
+    background-color: var(--contrast);
+    border-color: var(--contrast);
+    animation: shine .5s linear infinite alternate;
+}
+.dish.loading fieldset legend {
+    background-color: transparent !important;
+    color: transparent;
+    border-color: transparent !important;
+}
+
+@keyframes shine {
+    0% {
+        filter: opacity(0.15);
+    }
+    50% {
+        filter: opacity(0.20);
+    }
+    100% {
+        filter: opacity(0.25);
+    }
+}

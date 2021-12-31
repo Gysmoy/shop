@@ -17,6 +17,7 @@ $id = uniqid();
     <title></title>
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/page-style.css?v=<?php echo $id; ?>">
+    <link rel="stylesheet" href="assets/css/page-loading-style.css?v=<?php echo $id; ?>">
     <style id="styles">
         :root {
             --mainColor: #000000;
@@ -40,6 +41,27 @@ $id = uniqid();
 <main data-background="">
     <h1 id="container-title"> </h1>
     <div id="container">
+        <table class="dish loading">
+            <tr>
+                <td width="100%" height="100%"></td>
+                <td>
+                    <i></i>
+                    <fieldset class="price">
+                        <legend class="type"> </legend>
+                          
+                    </fieldset>
+                    <fieldset class="price">
+                        <legend class="type"> </legend>
+                          
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p class="name">               </p>
+                </td>
+            </tr>
+        </table>
     </div>
 </main>
 <footer>

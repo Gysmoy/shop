@@ -13,68 +13,46 @@ $('#container-select').on('change', function () {
         'background-position': 'center center'
     })
     var template = '';
-    
-    $.ajax({
+    /*$.ajax({
         url: `api/dishes/${idCont}`,
         type: 'GET',
         dataType: 'JSON',
         success: res => {
-
             setTimeout(() => {
-               $('.dish').removeClass('loading');
+                $('.dish').removeClass('loading');
             }, 2800);
-            
             res.forEach(dish => {
-               
                 var data = JSON.stringify(dish)
                 template += `
-            
                 <table class="dish loading" data-dish='${data}'>
-                <tr>
-                    <td width="100%" height="100%" style="
-                        background-image: url('api/image/mini/${dish.id}');
-                        background-position: center center;
-                        background-size: cover;
-                    "></td>
-                    <td>
-                        <i class="icon fa fa-cart-plus"></i>
-                        <fieldset class="price">
-                            <legend class="type">Menú</legend>
-                            ${dish.price}
-                        </fieldset>
-                        <fieldset class="price">
-                            <legend class="type">Carta</legend>
-                            ${dish.price}
-                        </fieldset>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <p class="name">${dish.name}</p>
-                    </td>
-                </tr>
-            </table>
-                `
-
-               
+                    <tr>
+                        <td width="100%" height="100%" style="
+                            background-image: url('api/image/mini/${dish.id}');
+                            background-position: center center;
+                            background-size: cover;
+                            "></td>
+                        <td>
+                            <i class="icon fa fa-cart-plus"></i>
+                            <fieldset class="price">
+                                <legend class="type">Menú</legend>
+                                ${dish.price}
+                            </fieldset>
+                            <fieldset class="price">
+                                <legend class="type">Carta</legend>
+                                ${dish.price}
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="name">${dish.name}</p>
+                        </td>
+                    </tr>
+                </table>
+                `;
             });
-            
-           
-            $('#container').html(template)
-            
+            $('#container').html(template);
         }
-
-        
-        
-
     });
-     $('#container').children('.dish').removeClass('loading');
-    
-    
-     
-
-
-        
- 
-
+    $('#container').children('.dish').removeClass('loading');*/
 })
