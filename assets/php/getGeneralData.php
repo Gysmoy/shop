@@ -4,38 +4,50 @@ if(
 ){
     require_once 'database.php';
     $db = new Database();
-
-    $sql = "SELECT b.name, b.address, b.social AS socials, gc.style
-    FROM general_config gc INNER JOIN business b ON b.id = gc._business 
-     WHERE b.path = :path" ;
-    $params = [
+    // Obteniendo data de Business
+    $query = $db -> connect() -> prepare('SELECT
+        b.name, b.address, b.social AS socials, gc.style
+    FROM general_config gc
+    INNER JOIN business b ON b.id = gc._business 
+    WHERE b.path = :path
+    ');
+    $query -> execute([
         'path' => $_GET['id']
-    ];
-    $query = $db -> connect() -> prepare($sql);
-    $query -> execute($params);
-    $row = $query -> fetch(PDO::FETCH_ASSOC);
+    ]);
+    $business = $query -> fetch(PDO::FETCH_ASSOC);
 
-
-    $sql1 = "SELECT  c.id, c.name 
-    FROM business b INNER JOIN containers c ON b.id = c._business
-     WHERE b.path = :path" ;
-    $params1 = [
+    // Obteniendo data de Containers
+    $query = $db -> connect() -> prepare('SELECT
+        c.id, c.name, COUNT(d.id) AS dishes
+    FROM dishes d
+    INNER JOIN containers c ON c.id = d._container
+    JOIN business b ON b.id = c._business
+    WHERE b.path = :path
+    GROUP BY id
+    ');
+    $query -> execute([
         'path' => $_GET['id']
-    ];
-    $query1 = $db -> connect() -> prepare($sql1);
-    $query1 -> execute($params1);
-    $row1 = $query1 -> fetchAll(PDO::FETCH_ASSOC);
+    ]);
+    $containers = $query -> fetchAll(PDO::FETCH_ASSOC);
 
-
-    if ($row && $row1) {
-        header('Content-Type: json ]');
-    
-        $row['socials'] = json_decode($row['socials'],true);
-        $row['style'] = json_decode($row['style'], true);
-        $row['containers'] = $row1;
-        echo json_encode($row);
+    if ($business && $containers) {
+        $business['socials'] = json_decode($business['socials'], true);
+        $business['style'] = json_decode($business['style'], true);
+        $business['containers'] = $containers;
+        
+        $data = $business;
+    } else {
+        http_response_code(400);
+        $data = [
+            'msg' => 'Esta empresa no se encuentra disponible'
+        ];
     }
-}else{
-    echo 'No exixte el la empresa';
+} else {
+    http_response_code(400);
+    $data = [
+        'msg' => 'Se necesita un dominio para acceder'
+    ];
 }
+header('Content-Type: application/json');
+echo json_encode($data);
 ?>

@@ -1,8 +1,10 @@
 $('#container-select').on('change', function () {
     var select = $('#container-select option:selected');
+    var container_id = select.val();
+    var container_name = select.text();
+    var select = $('#container-select option:selected');
     var idCont = $(this).val();
-    var nameCont = select.attr('label');
-    $('#container-title').text(nameCont);
+    $('#container-title').text(container_name);
     $('main').css({
         'background': `linear-gradient(
             to bottom,
