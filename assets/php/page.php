@@ -39,7 +39,6 @@ $id = uniqid();
 <main data-background="">
     <h1 id="container-title"> </h1>
     <div id="container">
-       
     </div>
 </main>
 <footer>
