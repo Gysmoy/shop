@@ -107,6 +107,7 @@ table {
     border-spacing: 0;
 }
 .dish td {
+    position: relative;
     border: 2px solid var(--contrast);
     padding: 10px;
     background-color: var(--mainColor);

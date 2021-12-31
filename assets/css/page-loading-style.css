@@ -1,8 +1,25 @@
-.dish.loading tr:nth-child(1) td:nth-child(1) {
-    background-image: url('../img/loading.gif');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 20%;
+.dish.loading tr:nth-child(1) td:nth-child(1)::before,
+.dish.loading tr:nth-child(1) td:nth-child(1)::after {
+    content: ' ';
+    position: absolute;
+    background-color: var(--contrast);
+    display: block;
+}
+.dish.loading tr:nth-child(1) td:nth-child(1)::before {
+    bottom: 50%;
+    right: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px 25px 5px;
+    animation: image .5s linear infinite alternate;
+}
+.dish.loading tr:nth-child(1) td:nth-child(1)::after {
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px 25px 30px;
+    animation: image .5s linear infinite alternate-reverse;
 }
 .dish.loading .name {
     background: var(--contrast);
@@ -40,6 +57,23 @@
         filter: opacity(0.20);
     }
     100% {
+        filter: opacity(0.25);
+    }
+}
+@keyframes image {
+    0% {
+        width: 20px;
+        height: 20px;
+        filter: opacity(0.15);
+    }
+    50% {
+        width: 35px;
+        height: 35px;
+        filter: opacity(0.20);
+    }
+    100% {
+        width: 50px;
+        height: 50px;
         filter: opacity(0.25);
     }
 }
