@@ -12,19 +12,24 @@ $('#container-select').on('change', function () {
         'background-size': 'cover',
         'background-position': 'center center'
     })
-    var template = ''
+    var template = '';
+    
     $.ajax({
         url: `api/dishes/${idCont}`,
         type: 'GET',
         dataType: 'JSON',
         success: res => {
-            //console.log(res)
+
+            setTimeout(() => {
+               $('.dish').removeClass('loading');
+            }, 2800);
+            
             res.forEach(dish => {
-                console.log(dish)
+               
                 var data = JSON.stringify(dish)
                 template += `
             
-                <table class="dish" data-dish='${data}'>
+                <table class="dish loading" data-dish='${data}'>
                 <tr>
                     <td width="100%" height="100%" style="
                         background-image: url('api/image/mini/${dish.id}');
@@ -50,10 +55,26 @@ $('#container-select').on('change', function () {
                 </tr>
             </table>
                 `
+
+               
             });
+            
+           
             $('#container').html(template)
+            
         }
 
+        
+        
+
     });
+     $('#container').children('.dish').removeClass('loading');
+    
+    
+     
+
+
+        
+ 
 
 })
