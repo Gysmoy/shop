@@ -33,9 +33,9 @@ $id = uniqid();
 <body page="<?php echo $idPage;?>">
 <header>
     <div id="realtime">00:00:00</div>
-    <img id="logo" src="assets/img/loading.gif" alt="">
-    <h1 id="name"> </h1>
-    <select id="container-select">
+    <img id="logo" class="loading" src="" alt="">
+    <h1 id="name" class="loading">       </h1>
+    <select id="container-select" class="loading">
     </select>
 </header>
 <main data-background="">
@@ -62,6 +62,7 @@ $id = uniqid();
 <script type="text/javascript" src="assets/js/fontawesome.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/image.js?v=<?php echo $id;?>"></script>
 <script type="text/javascript" src="assets/js/util_loading.js?v=<?php echo $id;?>"></script>
 <script type="text/javascript" src="assets/js/getGeneralData.js?v=<?php echo $id;?>"></script>
 <script type="text/javascript" src="assets/js/changeContainer.js?v=<?php echo $id;?>"></script>

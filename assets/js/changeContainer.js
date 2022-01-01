@@ -22,7 +22,10 @@ $('#container-select').on('change', function () {
                 container.html(`
                 <tr>
                     <td width="100%" height="100%" class="loading">
-                        <img class="image" src="api/image/mini/${dish.id}" onload="$(this).parent().removeClass('loading')">
+                        <img class="image" src="api/image/mini/${dish.id}"
+                            onload="removeLoadingClass($(this).parent())"
+                            onerror="loadNotFoundImage(this)"
+                        >
                     </td>
                     <td>
                         <i class="icon fa fa-cart-plus"></i>

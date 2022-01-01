@@ -1,10 +1,17 @@
 .dish td.loading::before,
-.dish td.loading::after {
+.dish td.loading::after,
+#logo.loading::before,
+#logo.loading::after {
     content: ' ';
     position: absolute;
     background-color: var(--contrast);
 }
-.dish td.loading::before {
+#logo.loading::before,
+#logo.loading::after {
+    background-color: var(--mainColor);
+}
+.dish td.loading::before,
+#logo.loading::before {
     bottom: 50%;
     right: 50%;
     width: 50px;
@@ -12,7 +19,8 @@
     border-radius: 30px 25px 5px;
     animation: image .5s linear infinite alternate;
 }
-.dish td.loading::after {
+.dish td.loading::after,
+#logo.loading::after {
     top: 50%;
     left: 50%;
     width: 20px;
@@ -20,12 +28,18 @@
     border-radius: 5px 25px 30px;
     animation: image .5s linear infinite alternate-reverse;
 }
+#name.loading,
+#container-select.loading,
 .dish.loading .name {
     background: var(--contrast);
     border-radius: 5px;
     width: max-content;
     margin: auto;
     animation: shine .5s linear infinite alternate;
+}
+#name.loading,
+#container-select.loading {
+    background: var(--mainColor);
 }
 .dish.loading td i {
     display: block;

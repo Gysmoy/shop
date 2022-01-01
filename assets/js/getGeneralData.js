@@ -32,10 +32,15 @@ $(document).ready(function() {
             })
             $('#logo').attr({
                 'src': `api/image/logo/${idPage}`,
-                'title': `Logo de ${res.name}`
+                'title': `Logo de ${res.name}`,
+                'onload': removeLoadingClass($('#logo'))
             });
             $('title').text(res.name);
-            $('#name').text(res.name).attr('title', res.address);
+            $('#name').text(res.name).attr({
+                'title': res.address,
+                'class': null
+            });
+            $('#container-select').attr('class', null)
             res.containers.forEach(container => {
                 var id = container.id;
                 var name = container.name;
