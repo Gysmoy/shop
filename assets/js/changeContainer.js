@@ -1,22 +1,5 @@
 $('#container-select').on('change', function () {
     var select = $('#container-select option:selected');
-<<<<<<< HEAD
-    var idCont = $(this).val();
-    var nameCont = select.attr('label');
-    $('#container-title').text(nameCont);
-    $('main').css({
-        'background': `linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, .25) 40%,
-            rgba(255, 255, 255, .25)
-        ), url('api/image/container/${idCont}')`,
-        'background-size': 'cover',
-        'background-position': 'center center'
-    })
-    var template = '';
-    $.ajax({
-        url: `api/dishes/${idCont}`,
-=======
     var container_id = select.val();
     var container_name = select.attr('label');
     var container_dishes = select.attr('dishes');
@@ -27,7 +10,6 @@ $('#container-select').on('change', function () {
     
     $.ajax({
         url: `api/dishes/${container_id}`,
->>>>>>> 6a2936d0d3f6fd2bee61dfae7b318bc7ce6f3dea
         type: 'GET',
         dataType: 'JSON',
         success: res => {
@@ -96,8 +78,4 @@ $('#container-select').on('change', function () {
             });*/
         }
     });
-<<<<<<< HEAD
-    $('#container').children('.dish').removeClass('loading');
-=======
->>>>>>> 6a2936d0d3f6fd2bee61dfae7b318bc7ce6f3dea
 })
