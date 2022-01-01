@@ -65,7 +65,7 @@
               <div class="col-md-12">
                 <div class="mb-1">
                   <label class="form-label label-form-login" for="">Correo electrónico / usuario</label>
-                  <input id="user" class="form-control" type="text" placeholder="Correo elecrónico o usuario">
+                  <input id="email" class="form-control" type="text" placeholder="Correo elecrónico o usuario">
                 </div>
               </div>
               <div class="col-md-12">
