@@ -87,7 +87,7 @@
               </div>
               <div class="col-md-12">
                 <div class="mb-1">
-                  <button id="init-session-shop" class="btn">Iniciar sesíon</button>
+                  <button type="submit" id="init-session-shop" class="btn">Iniciar sesíon</button>
                 </div>
               </div>
 
@@ -124,7 +124,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
       integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
       crossorigin="anonymous"></script>
-    <script src="../js/login_src.js"></script>
+      <script src="../js/jquery.min.js"></script>
+    <script src="../js/loginUser.js"></script>
 
   </div>
 
