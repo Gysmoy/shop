@@ -74,6 +74,14 @@
                   <input id="pass" class="form-control" type="password" placeholder="********">
                 </div>
               </div>
+
+              <div id="contVer" class="col-md-12">
+                <div class="mb-1">
+                  <label class="form-label label-form-login" for="">Codigo de verificasion</label>
+                  <input id="verCod" class="form-control" type="password" placeholder="00000000">
+                </div>
+              </div>
+
               <div class="label-form-login">
                 <p>Aun no tengo una cuenta <a href="#">deseo tegistrarme</a></p>
               </div>

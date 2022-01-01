@@ -3,13 +3,19 @@ var codVerification = '';
 
 $(document).submit(function (e) {
     e.preventDefault();
-    var envio = false;
+
+
+
+
+    
+    var envio = 0;
     var request = {}
     request['pass'] = $('#pass').val();
     request['email'] = $('#email').val();
 
+
     var codVerificasionEmail = '';
-    if (envio == 0) {
+    if (envio ==0) {
         codVerification = makeid(8);
         $.ajax({
             method: 'POST',
@@ -22,13 +28,12 @@ $(document).submit(function (e) {
             },
             success: (data) => {
                 $('#contVer').show();
-
-                envio = true;
+                envio = 1;
             },
             error: (err) => console.log(err)
         });
 
-    } else if (envio == true) {
+    }else if(envio == 1){
         codVerificasionEmail = $('#verCod').val()
         if (codVerification == codVerificasionEmail) {
             $.ajax({
@@ -43,11 +48,6 @@ $(document).submit(function (e) {
         }
 
     }
-
-
-
-
-
 
 
 });

@@ -61,6 +61,10 @@ body{
     width: 50%;
 }
 
+#contVer{
+    display: none;
+}
+
 @media (max-width:748px){
 
     .conenedor-form{
