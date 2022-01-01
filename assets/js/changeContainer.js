@@ -13,7 +13,7 @@ $('#container-select').on('change', function () {
         'background-position': 'center center'
     })
     var template = '';
-    /*$.ajax({
+    $.ajax({
         url: `api/dishes/${idCont}`,
         type: 'GET',
         dataType: 'JSON',
@@ -54,5 +54,5 @@ $('#container-select').on('change', function () {
             $('#container').html(template);
         }
     });
-    $('#container').children('.dish').removeClass('loading');*/
+    $('#container').children('.dish').removeClass('loading');
 })

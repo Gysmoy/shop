@@ -41,7 +41,7 @@ $id = uniqid();
 <main data-background="">
     <h1 id="container-title"> </h1>
     <div id="container">
-        <table class="dish loading">
+        <!--table class="dish loading">
             <tr>
                 <td width="100%" height="100%"></td>
                 <td>
@@ -61,7 +61,7 @@ $id = uniqid();
                     <p class="name">               </p>
                 </td>
             </tr>
-        </table>
+        </table -->
     </div>
 </main>
 <footer>
