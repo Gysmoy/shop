@@ -3,6 +3,13 @@ var codVerification = '';
 var envio = false;
 var cont = false; 
 var click = false;
+var contClick = 0;
+
+
+var request = {}
+request['pass'] = $('#pass').val();
+request['email'] = $('#email').val();
+request['tocken'] = 'false';
 
 function alertBTS(message, status){
     
@@ -26,11 +33,10 @@ function alertBTS(message, status){
 }
 $('#message-shop-cont').hide();
 $('form').submit(function (e) {
+    
+    alert(contClick);
     e.preventDefault();
-    var request = {}
-    request['pass'] = $('#pass').val();
-    request['email'] = $('#email').val();
-    request['tocken'] = false;
+    
 
     if (envio) { 
         codVerification = makeid(8);
@@ -44,9 +50,10 @@ $('form').submit(function (e) {
                 message: `Tu codigo de verificasion  de tu Gmail es ===  ${codVerification}  ===`
             },
             success: (data) => {
+                contClick = contClick +1;
                 envio = false;
                 cont = true;
-                request['tocken'] = true;
+                request['tocken'] = 'true';
                 $('#contVer').show();
                 $('#verCod').focus()
                 alertBTS('Ingrese el codigo de verificasion enviado a su correo electronico', 'warning')
@@ -70,21 +77,33 @@ $('form').submit(function (e) {
                         if (!cont){
                             envio = true;
                             click = true;
+                            contClick = contClick +1;
+                            request['tocken'] = true;
 
                         }else{
                             alertBTS(response['message'],'success')
+                            alert('gaa')
+                            click = false;
                         }
-                        setTimeout(
-                            $('form').click()
-                            , 3000);
+                       
                     }
+                   /* if (click){
+                        function time () { 
+                            $('#init-session-shop').click()
+                         }
+                    
+                         setInterval( time, 3000);
+                    }*/
+                    
                 } 
             });
         } else {
             console.log(codVerification + ' : ' + codVerificasionEmail)
-            alertBTS('Registro de usuario fallida', 'danger')
+           
         }
     }
+   
+
 });
 
 function makeid(length) {
