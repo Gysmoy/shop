@@ -4,7 +4,15 @@
     RewriteRule ^api/image/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ assets/php/image.php?type=$1&id=$2 [QSA]
     RewriteRule ^api/config/([0-9a-zA-Z-_]+)$ assets/php/getGeneralData.php?id=$1 [QSA]
     RewriteRule ^api/dishes/([0-9a-zA-Z-_]+)$ assets/php/getDishes.php?id=$1 [QSA]
-    RewriteRule ^api/login  assets/php/login.php [QSA]
+    RewriteRule ^api/singup_user  assets/php/singupuser.php [QSA]
+    RewriteRule ^api/validate_user  assets/php/validateUser.php [QSA]
+    RewriteRule ^api/login_user  assets/php/loginUser.php [QSA]
+
+
+    RewriteRule ^login_user  assets/html/loginuser.php [QSA]
+    RewriteRule ^singup_user  assets/html/singupuser.php [QSA]
+    RewriteRule ^home_user  assets/user/index.php [QSA]
+    RewriteRule ^home_user  assets/user/index.php [QSA]
 
     
 </IfModule>
