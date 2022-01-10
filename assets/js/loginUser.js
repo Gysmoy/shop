@@ -21,7 +21,13 @@ $('form').submit(function (e) {
         dataType: "JSON",
         success: function (response) {
             console.log(response)
-            window.open("../../home_user/","_self")
+            if(response.status=='200'){
+                alertBTS(response.message,'success')
+                window.open("../../home_user/","_self")
+            }else{
+                alertBTS(response.message,'danger')
+            }
+            
         }
     });
 
