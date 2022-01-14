@@ -2154,7 +2154,7 @@
 									},
 									"font": "Arial;13;1",
 									"left": 624,
-									"top": 229,
+									"top": 221,
 									"width": 225,
 									"height": 13,
 									"text": "sales"
@@ -2180,7 +2180,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 252,
+											"top": 244,
 											"width": 215,
 											"height": 13
 										},
@@ -2195,7 +2195,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 267,
+											"top": 259,
 											"width": 215,
 											"height": 13
 										},
@@ -2210,7 +2210,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 282,
+											"top": 274,
 											"width": 215,
 											"height": 13
 										},
@@ -2225,7 +2225,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 297,
+											"top": 289,
 											"width": 215,
 											"height": 13
 										},
@@ -2240,7 +2240,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 312,
+											"top": 304,
 											"width": 215,
 											"height": 13
 										},
@@ -2255,21 +2255,21 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 327,
+											"top": 319,
 											"width": 215,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 624,
-									"top": 247,
+									"top": 239,
 									"width": 225,
 									"height": 98
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 624,
-							"top": 224,
+							"top": 216,
 							"width": 225,
 							"height": 121,
 							"nameLabel": {
