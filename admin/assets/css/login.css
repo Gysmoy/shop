@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'gysmoy_font';
+    src: url(../../../assets/fonts/Letters\ for\ Learners.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: gysmoy_font;
+    box-sizing: border-box;
+}
+body {
+    background-color: #0e1115;
+}
+form {
+    padding: 100px 20px 20px;
+    width: 100%;
+    max-width: 360px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #181d24;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    color: #fdfdfd;
+}
+form img {
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    background-color: #181d24;
+    border-radius: 50%;
+}
+form h1 {
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: larger;
+}
+form input {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    font-size: larger;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+blockquote {
+    margin: auto;
+    width: max-content;
+    font-size: large;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border-left: 4px solid #0099cc;
+    background-color: #0099cc22;
+}
+blockquote.success {
+    border-left: 4px solid #007e33;
+    background-color: #007e3322;
+}
+blockquote.danger {
+    border-left: 4px solid #cc0000;
+    background-color: #cc000022;
+}
+button {
+    padding: 5px 10px;
+    font-size: larger;
+    border-radius: 5px;
+    border: none;
+    background-color: #00c851;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+    margin-bottom: 20px;
+}
+button:hover {
+    background-color: #007e33;
+}
+button i {
+    font-size: small;
+}
