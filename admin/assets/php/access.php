@@ -46,6 +46,7 @@ if (
                 'description' => $row['rol_description']
             ];
             $_SESSION['status'] = boolval($row['status']);
+            $_SESSION['type'] = 'admin'; 
         } else {
             $response['status'] = 400;
             $response['message'] = 'Este usuario se encuentra inactivo';

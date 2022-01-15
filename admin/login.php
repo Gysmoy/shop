@@ -8,7 +8,9 @@ if (isset($_GET['logout'])) {
 }
 if (
   isset($_SESSION['status']) &&
-  $_SESSION['status'] == true
+  $_SESSION['status'] == true &&
+  isset($_SESSION['type']) &&
+  $_SESSION['type'] == 'admin'
 ) {
   header('location: ./');
 }
