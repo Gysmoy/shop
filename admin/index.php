@@ -48,7 +48,7 @@ if (
           <div class="profile-desc">
             <div class="profile-pic">
               <div class="count-indicator">
-                <img class="img-xs rounded-circle " src="assets/images/faces/face15.jpg" alt="">
+                <img class="img-xs rounded-circle " src="assets/php/image.php?id=<?php echo $_SESSION['user']['id'];?>" alt="">
                 <span class="count bg-success"></span>
               </div>
               <div class="profile-name">
@@ -336,7 +336,7 @@ if (
             <li class="nav-item dropdown">
               <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                 <div class="navbar-profile">
-                  <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
+                  <img class="img-xs rounded-circle" src="assets/php/image.php?id=<?php echo $_SESSION['user']['id'];?>" alt="">
                   <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $_SESSION['user']['name']?></p>
                   <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>

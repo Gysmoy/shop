@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #0e1115;
+    background-color: aliceblue;
 }
 form {
     padding: 100px 20px 20px;
@@ -20,7 +20,7 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #181d24;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px #181d24bb;
     border-radius: 10px;
     text-align: center;
     color: #fdfdfd;
@@ -31,8 +31,9 @@ form img {
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-    background-color: #181d24;
+    background-color: aliceblue;
+    border: 5px solid #181d24;
+    box-shadow: 0 0 10px #181d24bb;
     border-radius: 50%;
 }
 form h1 {
