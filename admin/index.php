@@ -14,25 +14,16 @@ if (
 <html lang="es">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Administración | Inicio</title>
-  <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <!-- endinject -->
-  <!-- Layout styles -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
@@ -107,16 +98,16 @@ if (
         <li class="nav-item menu-items">
           <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <span class="menu-icon">
-              <i class="mdi mdi-laptop"></i>
+              <i class="mdi mdi-account-multiple"></i>
             </span>
-            <span class="menu-title">Basic UI Elements</span>
+            <span class="menu-title">Usuarios</span>
             <i class="menu-arrow"></i>
           </a>
           <div class="collapse" id="ui-basic">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+              <li class="nav-item"> <a class="nav-link" href="business.php">Empresas</a></li>
+              <li class="nav-item"> <a class="nav-link" href="clients.php">Clientes</a></li>
+              <li class="nav-item"> <a class="nav-link" href="marketers.php">Marketeros</a></li>
             </ul>
           </div>
         </li>
@@ -157,16 +148,13 @@ if (
             <span class="menu-icon">
               <i class="mdi mdi-security"></i>
             </span>
-            <span class="menu-title">User Pages</span>
+            <span class="menu-title">Administradores</span>
             <i class="menu-arrow"></i>
           </a>
           <div class="collapse" id="auth">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+              <li class="nav-item"> <a class="nav-link" href="users.php">Usuarios</a></li>
+              <li class="nav-item"> <a class="nav-link" href="roles.php">Roles</a></li>
             </ul>
           </div>
         </li>
@@ -379,28 +367,6 @@ if (
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-12 grid-margin stretch-card">
-              <div class="card corona-gradient-card">
-                <div class="card-body py-0 px-0 px-sm-3">
-                  <div class="row align-items-center">
-                    <div class="col-4 col-sm-3 col-xl-2">
-                      <img src="assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
-                    </div>
-                    <div class="col-5 col-sm-7 col-xl-8 p-0">
-                      <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-                      <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro version with 5 unique layouts!</p>
-                    </div>
-                    <div class="col-3 col-sm-2 col-xl-2 ps-0 text-center">
-                      <span>
-                        <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
             <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -486,20 +452,29 @@ if (
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Transaction History</h4>
-                  <canvas id="transaction-history" class="transaction-chart"></canvas>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <h4 class="card-title">Relación de Usuarios</h4>
+                  <canvas id="doughnutChart" style="height:250px"></canvas>
+                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-2 px-4 px-md-3 px-xl-4 rounded mt-3">
                     <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Transfer to Paypal</h6>
+                      <h6 class="mb-1">Empresas</h6>
                       <p class="text-muted mb-0">07 Jan 2019, 09:12AM</p>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
                       <h6 class="font-weight-bold mb-0">$236</h6>
                     </div>
                   </div>
-                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-2 px-4 px-md-3 px-xl-4 rounded">
                     <div class="text-md-center text-xl-left">
-                      <h6 class="mb-1">Tranfer to Stripe</h6>
+                      <h6 class="mb-1">Clientes</h6>
+                      <p class="text-muted mb-0">07 Jan 2019, 09:12AM</p>
+                    </div>
+                    <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                      <h6 class="font-weight-bold mb-0">$593</h6>
+                    </div>
+                  </div>
+                  <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-2 px-4 px-md-3 px-xl-4 rounded">
+                    <div class="text-md-center text-xl-left">
+                      <h6 class="mb-1">Marketeros</h6>
                       <p class="text-muted mb-0">07 Jan 2019, 09:12AM</p>
                     </div>
                     <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
@@ -513,7 +488,7 @@ if (
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
-                    <h4 class="card-title mb-1">Open Projects</h4>
+                    <h4 class="card-title mb-1">Notificaciones recientes</h4>
                     <p class="text-muted mb-1">Your data status</p>
                   </div>
                   <div class="row">
@@ -1074,6 +1049,7 @@ if (
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/user-relation.js"></script>
   <!-- End custom js for this page -->
 </body>
 
