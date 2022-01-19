@@ -9,7 +9,7 @@ if(
     $res['message'] = 'NTS';
     $res['data'] = [];
     header('Content-Type: json ]');
-    require_once 'database.php';
+    require_once '../../../assets/php/database.php';
     $pass =hash('sha256', $_POST['pass']);
 
     $db = new Database();

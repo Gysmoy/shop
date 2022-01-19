@@ -9,13 +9,13 @@ if(
     $res['message'] = 'NTS';
     $res['data'] = [];
     header('Content-Type: json ]');
-    require_once 'database.php';
-
+    require_once '../../../assets/php/database.php';
+    $pass =hash('sha256', $_POST['pass']);
     $db = new Database();
     $sql = "SELECT email, password from `general_users` WHERE email = :email and password = :pass" ;
     $params = [
         'email' => $_POST['email'],
-        'pass'  => $_POST['pass']
+        'pass'  => $pass
     ];
     $query = $db -> connect() -> prepare($sql);
     $query -> execute($params);
