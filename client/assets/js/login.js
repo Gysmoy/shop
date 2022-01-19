@@ -23,7 +23,7 @@ $('form').submit(function (e) {
             console.log(response)
             if(response.status=='200'){
                 alertBTS(response.message,'success')
-                window.open("../../home_user/","_self")
+                window.open("index.php","_self")
             }else{
                 alertBTS(response.message,'danger')
             }

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 $i = uniqid();
 if (isset($_GET['logout'])) {
@@ -38,7 +39,7 @@ if (
   <link href="./lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="../lib/flaticon/font/flaticon.css" rel="stylesheet">
   <!-- Template Stylesheet -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!--link href="assets/css/style.css" rel="stylesheet"-->
   <link rel="stylesheet" href="assets/css/login-singup.css">
 </head>
 <body>
