@@ -1,11 +1,13 @@
 <?php
 session_start();
 $i = uniqid();
+// Cerrar sesión
 if (isset($_GET['logout'])) {
   session_unset();
   session_destroy();
   header('location: ./login.php');
 }
+// Redireccionar sesión
 if (
   isset($_SESSION['status']) &&
   $_SESSION['status'] == true &&
