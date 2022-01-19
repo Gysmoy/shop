@@ -36,10 +36,10 @@ $('form').submit(function (e) {
                 if (codVerification == codVerificasionEmail) {
 
                     alert('los codigos de vedrificasion si son identicos')
-                    /*
+                    
                     $.ajax({
                         type: "post",
-                        url: "../../api/singup_user.php",
+                        url: "../api/client/singup",
                         data: request,
                         dataType: "json",
                         success: function (response) {
@@ -56,9 +56,8 @@ $('form').submit(function (e) {
                                 }
                             }
                         }
-                    });*/
+                    });
                 }
-
             }
         },
         error: (error) => {

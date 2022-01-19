@@ -8,7 +8,7 @@ if(
     $res['message'] = 'NTS';
     $res['data'] = [];
     header('Content-Type: json ]');
-    require_once 'database.php';
+    require_once '../../../assets/php/database.php';
     $db = new Database();
     $sql1 = "SELECT email FROM general_users WHERE email = :email1;";
     $params1 = [
@@ -27,6 +27,6 @@ if(
         echo json_encode($res);
     }
 }
-echo ''
+
 
 ?>

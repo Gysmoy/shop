@@ -10,12 +10,13 @@ if(
     $res['data'] = [];
     header('Content-Type: json ]');
     require_once 'database.php';
+    $pass =hash('sha256', $_POST['pass']);
 
     $db = new Database();
     $sql = "INSERT INTO `general_users`( `email`, `password` ) VALUES (:email, :pass)" ;
     $params = [
         'email' => $_POST['email'],
-        'pass'  => $_POST['pass']
+        'pass'  => $pass
     ];
     $query = $db -> connect() -> prepare($sql);
     $query -> execute($params);
@@ -23,7 +24,5 @@ if(
     $res['message'] = 'Usuario Agregado Correctamente';
     echo json_encode($res);
 }
-
-echo 'singup client'
 
 ?>
