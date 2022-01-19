@@ -109,7 +109,7 @@ button:hover {
 button i {
     font-size: small;
 }
-@media screen and (max-height: 600px) {
+@media (max-height: 600px) {
     form {
         position: relative;
         transform: unset;
@@ -120,13 +120,15 @@ button i {
         margin-bottom: 20px;
     }
 }
-@media screen and (max-width: 360px) {
+@media (max-width: 360px) {
     form {
         position: relative;
         transform: unset;
         top: unset;
         left: unset;
         width: 100% !important;
+        margin-top: 0;
+        margin-bottom: 0;
         border-radius: 0px;
         padding-top: 20px;
         height: 100vh;
