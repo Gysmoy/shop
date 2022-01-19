@@ -1,105 +1,3 @@
-/*-------------------------------------------------------------------
-  ===== Table of Contents =====
-
-  * Bootstrap functions
-  * Template variables
-  * SCSS Compass Functions
-  * Boostrap Main SCSS
-  * Template mixins
-    + Animation Mixins
-    + Background Mixins
-    + Badge Mixins
-    + Button Mixins
-    + Miscellaneous Mixins
-    + BlockQuote Mixins
-    + Cards Mixins
-    + Color Functions Mixins
-    + Tooltips
-    + popovers
-  * Core Styles
-    + Reset Styles
-    + Fonts
-    + Functions
-    + Backgrounds
-    + Typography
-    + Miscellaneous
-    + Footer
-    + Layouts
-    + Utilities
-    + Demo styles
-  * Components
-    + Accordions
-    + Badges
-    + Bootstrap Alerts
-    + Boostrap Progress
-    + Buttons
-    + Breadcrumbs
-    + Cards
-    + Checkboxes and Radios
-    + Dropdowns
-    + Forms
-    + Google maps
-    + Icons
-    + Loaders
-    + Lists
-    + Modals
-    + Pagination
-    + Popover
-    + Preview
-    + Tables
-    + Tabs
-    + Timeline
-    + Todo List
-    + Tooltips
-    + User Profile
-    + Pricing table
-  * Email
-    + Mail Sidebar
-    + Mail List Container
-    + Message Content
-  * Plugin Overrides
-    + Ace Editor
-    + Avgrund Popup
-    + Bootstrap Tour
-    + Chartist
-    + CodeMirror
-    + Colcade
-    + Colorpicker
-    + Context Menu
-    + Data Tables
-    + Datepicker
-    + Dropify
-    + Dropzone
-    + Flot chart
-    + Full Calendar
-    + Google Charts
-    + Icheck
-    + Jquery File Upload
-    + Js-grid
-    + Jvectormap
-    + Light Gallery
-    + Listify
-    + No-ui-slider
-    + Owl-carousel
-    + Progressbar-js
-    + Pws-tabs
-    + Quill Editor
-    + Rating
-    + Select2
-    + Summernote Editor
-    + SweetAlert
-    + Switchery
-    + Tags
-    + TinyMCE Editor
-    + Toast
-    + Typeahead
-    + Wysi Editor
-    + X-editable
-    + Wizard
-  * Landing screens
-    + Auth
-    + Lock Screen
--------------------------------------------------------------------*/
 /*-------------------------------------------------------------------*/
 /* === Import Bootstrap functions and variables === */
 /*-------------------------------------------------------------------*/
@@ -15686,6 +15584,7 @@ body {
 .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus,
 .tt-query:focus,
 .tt-hint:focus {
+  box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none; }
 
@@ -19838,7 +19737,9 @@ div.tagsinput {
   background: rgba(0, 0, 0, 0.8);
   width: 100px;
   margin-left: -50px;
-  -webkit-transition: 0.1s left, 0.1s top; }
+  transition: .1s left, .1s top;
+  -webkit-transition: 0.1s left, 0.1s top;
+}
 
 .wysi-editor .wrap {
   max-width: 700px;
