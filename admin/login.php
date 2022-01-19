@@ -12,7 +12,7 @@ if (
   isset($_SESSION['type']) &&
   $_SESSION['type'] == 'admin'
 ) {
-  header('location: ./');
+  header('location: ./index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -32,6 +32,14 @@ if (
   <form id="login" action="../api/admin/access" method="POST" autocomplete="off">
     <img src="../assets/img/lock.svg" alt="Iniciar sesión en SHOP">
     <h1>Administración | Login</h1>
+    <!--button type="button" class="btn-google">
+      <i class="fa fa-google"></i>
+      Iniciar sesión con Google
+    </button>
+    <button type="button" class="btn-facebook">
+      <i class="fa fa-facebook"></i>
+      Iniciar sesión con Facebook
+    </button-->
     <label for="username">Usuario o correo electrónico</label>
     <input type="text" id="username" placeholder="ejemplo@dominio.com">
     <label for="password">Contraseña</label>
