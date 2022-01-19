@@ -81,13 +81,13 @@
                             <img src="assets/img/carousel-2.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>¿Eres <span>Cliente</span> ¡Bienvenido!</h1>
+                            <h1>¿Eres <span> Cliente </span> ¡Bienvenido! </h1>
                             <p>
                                 Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="assets/html/loginuser.php">Iniciar Sesíon</a>
-                                <a class="btn custom-btn" href="assets/html/singupuser.php">Registrarme</a>
+                                <a class="btn custom-btn" href="client/login.php">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="client/singup.php">Registrarme</a>
                             </div>
                         </div>
                     </div>
