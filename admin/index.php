@@ -1,4 +1,5 @@
 <?php
+$version = uniqid();
 include_once 'assets/php/session.php';
 ?>
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ include_once 'assets/php/session.php';
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $version;?>">
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
