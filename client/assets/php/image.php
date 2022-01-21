@@ -4,13 +4,13 @@ if (
   isset($_SESSION['status']) &&
   $_SESSION['status'] == true &&
   isset($_SESSION['type']) &&
-  $_SESSION['type'] == 'admin'
+  $_SESSION['type'] == 'client'
 ) {
   include_once '../../../assets/php/database.php';
   $db = new Database();
   $query = $db -> connect() -> prepare('SELECT
     profile
-  FROM admins
+  FROM general_users
   WHERE id = ?
   ');
   $query -> execute([$_GET['id']]);

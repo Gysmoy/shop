@@ -11,7 +11,7 @@ if (
   isset($_SESSION['status']) &&
   $_SESSION['status'] == true &&
   isset($_SESSION['type']) &&
-  $_SESSION['type'] == 'admin'
+  $_SESSION['type'] == 'client'
 ) {
   header('location: ./');
 }

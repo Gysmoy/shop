@@ -1,27 +1,15 @@
 <?php
 $response = [];
 if (
-    isset($_POST['username']) &&
+    isset($_POST['email']) &&
     isset($_POST['password'])
 ) {
     include_once '../../../assets/php/database.php';
     $db = new Database();
-    $query = $db -> connect() -> prepare('SELECT
-        a.id, a.username, a.name, a.dni, a.email,
-        a.phone, a.address, r.id AS rol_id, r.rol AS rol_name,
-        r.description AS rol_description, a.status
-    FROM admins a INNER
-    JOIN admin_roles r ON a._rol = r.id
-    WHERE 
-        (
-            a.username = ? OR
-            a.email = ?
-        ) AND
-        a.password = ?
-    ');
+    $query = $db -> connect() -> prepare('SELECT id ,email, names, surnames, birth_date, status
+    FROM general_users WHERE email = ? and password = ?');
     $query -> execute([
-        $_POST['username'],
-        $_POST['username'],
+        $_POST['email'],
         hash('sha256', $_POST['password'])
     ]);
     $row = $query -> fetch(PDO::FETCH_ASSOC);
@@ -29,24 +17,22 @@ if (
         if ($row['status']) {
             $response['status'] = 200;
             $response['message'] = 'Inicio de sesión correcto';
+            $response['data'] = $row;
             // Seteando la sesión
             session_start();
             $_SESSION['user'] = [
                 'id' => $row['id'],
-                'username' => $row['username'],
-                'name' => $row['name'],
-                'dni' => $row['dni'],
-                'email' => $row['email'],
-                'phone' => $row['phone'],
-                'address' => $row['address']
+                'names' => $row['names'],
+                'surnames' => $row['surnames'],
+                'birth_date' => $row['birth_date']
             ];
             $_SESSION['rol'] = [
-                'id' => $row['rol_id'],
-                'name' => $row['rol_name'],
-                'description' => $row['rol_description']
+                'id' => 'client',
+                'name' => 'Cliente General',
+                'description' => 'Cliente General'
             ];
             $_SESSION['status'] = boolval($row['status']);
-            $_SESSION['type'] = 'admin';
+            $_SESSION['type'] = 'client';
         } else {
             $response['status'] = 400;
             $response['message'] = 'Este usuario se encuentra inactivo';

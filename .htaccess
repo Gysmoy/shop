@@ -7,9 +7,10 @@
     RewriteRule ^api/singup_user  assets/php/singupuser.php [QSA]
     RewriteRule ^api/login_user  assets/php/loginUser.php [QSA]
 
-    RewriteRule ^api/client/login  client/assets/php/login.php [QSA]
+    RewriteRule ^api/client/access  client/assets/php/access.php [QSA]
     RewriteRule ^api/client/singup  client/assets/php/singup.php [QSA]
     RewriteRule ^api/client/validate  client/assets/php/validation.php [QSA]
+    RewriteRule ^api/client/image  client/assets/php/image.php [QSA]
 
     RewriteRule ^home_user  assets/user/index.php [QSA]
     RewriteRule ^home_user  assets/user/index.php [QSA]

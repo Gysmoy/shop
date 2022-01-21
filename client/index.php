@@ -1,8 +1,8 @@
 <?php
-/*
+
 $version = uniqid();
 include_once 'assets/php/session.php';
-*/
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,7 +25,7 @@ include_once 'assets/php/session.php';
   <div class="container-scroller">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <?php
-      include_once 'assets/php/navbar.php';
+     include_once 'assets/php/navbar.php';
       ?>
     </nav>
     <!-- partial -->
