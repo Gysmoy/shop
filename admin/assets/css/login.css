@@ -109,7 +109,7 @@ button:hover {
 button i {
     font-size: small;
 }
-@media (max-height: 600px) {
+@media (max-height: 720px) {
     form {
         position: relative;
         transform: unset;
