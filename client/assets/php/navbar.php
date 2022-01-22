@@ -7,7 +7,7 @@
     <div class="profile-desc">
     <div class="profile-pic">
         <div class="count-indicator">
-        <img class="img-xs rounded-circle " src="assets/php/image.php?id=
+        <img class="img-xs rounded-circle " src="http://localhost:8085/shop/api/client/image?id=
         <?php echo $_SESSION['user' ]['id']; ?>" alt="profile">
         <span class="count bg-success"></span>
         </div>

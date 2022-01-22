@@ -150,7 +150,7 @@
     <li class="nav-item dropdown">
         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
         <div class="navbar-profile">
-            <img class="img-xs rounded-circle" src="assets/php/image.php?id=<?php echo $_SESSION[
+            <img class="img-xs rounded-circle" src="http://localhost:8085/shop/api/client/image?id=<?php echo $_SESSION[
                 'user'
             ]['id']; ?>" alt="">
             <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $_SESSION[
@@ -162,7 +162,7 @@
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
         <h6 class="p-3 mb-0">Perfil</h6>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item preview-item">
+        <a href="assets/page/config.php" class="dropdown-item preview-item">
             <div class="preview-thumbnail">
             <div class="preview-icon bg-dark rounded-circle">
                 <i class="mdi mdi-settings text-success"></i>
