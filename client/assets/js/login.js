@@ -12,11 +12,11 @@ $('#init-session-google').click(function (e) {
 $('form').submit(function (e) {
     e.preventDefault();
     var request = {}
-    request['pass'] = $('#pass').val();
+    request['password'] = $('#pass').val();
     request['email'] = $('#email').val();
     $.ajax({
         type: "POST",
-        url: "../api/client/login",
+        url: "../api/client/access",
         data: request,
         dataType: "JSON",
         success: function (response) {
@@ -27,7 +27,6 @@ $('form').submit(function (e) {
             }else{
                 alertBTS(response.message,'danger')
             }
-            
         }
     });
 
