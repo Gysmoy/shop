@@ -1,6 +1,6 @@
 <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-    <a class="sidebar-brand brand-logo" href="index.php">Mozo en línea</a>
-    <a class="sidebar-brand brand-logo-mini" href="index.php">M</a>
+    <a class="sidebar-brand brand-logo" href="home.php">Mozo en línea</a>
+    <a class="sidebar-brand brand-logo-mini" href="home.php">M</a>
 </div>
 <ul class="nav">
 <li class="nav-item profile">
@@ -62,7 +62,7 @@
     <span class="nav-link">Panel de navegación</span>
 </li>
 <li class="nav-item menu-items">
-    <a class="nav-link" href="index.php">
+    <a class="nav-link" href="home.php">
     <span class="menu-icon">
         <i class="mdi mdi-home"></i>
     </span>
