@@ -26,15 +26,12 @@ include_once 'assets/php/session.php';
       include_once 'assets/php/navbar.php';
       ?>
     </nav>
-    <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_navbar.html -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <?php
         include_once 'assets/php/header.php';
         ?>
       </nav>
-      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
