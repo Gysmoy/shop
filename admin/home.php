@@ -721,6 +721,7 @@ include_once 'assets/php/session.php';
   <script src="assets/js/dashboard.js"></script>
   <script src="../assets/js//moment.min.js"></script>
   <script src="assets/js/user-relation.js"></script>
+  <script src="assets/js/session.js"></script>
   <!-- End custom js for this page -->
 </body>
 

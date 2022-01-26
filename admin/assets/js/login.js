@@ -1,3 +1,14 @@
+$('#showHidePassword').on('click', function(){
+    var btn = $(this);
+    var input = $('#password');
+    if (btn.hasClass('fa-eye')) {
+        input.attr('type', 'password');
+        btn.attr('class', 'fa fa-eye-slash');
+    } else {
+        input.attr('type', 'text');
+        btn.attr('class', 'fa fa-eye');
+    }
+})
 $('#login').submit(function(form){
     form.preventDefault();
     $('#btn-icon').attr('class', 'fa fa-spin fa-spinner');
