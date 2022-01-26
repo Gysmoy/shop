@@ -55,13 +55,13 @@ if (
             </div>
             <div class="row">
               <div class="col-md-12 mb-1">
-              <button id="init-session-facebook" class="btn init-session-btn"> <img
-                  src="assets/img/facebook_icon-icons.svg " class=" icon-init-session" alt="icon facebook">
+              <button type="button" id="init-session-facebook" class="btn init-session-btn"> <img
+                  src="assets/img/facebook_icon-icons.svg" class=" icon-init-session" alt="icon facebook">
                 <p class="text-init-facebook">Iniciar sesíon con Facebook</p>
               </button>
               </div>
               <div class="col-md-12 mb-3">
-              <button id="init-session-google" class="btn init-session-btn"> <img src="assets/img/google_icon-icons.svg"
+              <button type="button" id="init-session-google" class="btn init-session-btn"> <img src="assets/img/google_icon-icons.svg"
                   class=" icon-init-session" alt="icon google">
                 <p class="text-init-google">Iniciar sesíon con Google</p>
               </button>

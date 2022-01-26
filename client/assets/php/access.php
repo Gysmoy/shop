@@ -6,7 +6,7 @@ if (
 ) {
     include_once '../../../assets/php/database.php';
     $db = new Database();
-    $query = $db -> connect() -> prepare('SELECT id ,email, names, surnames, birth_date, status
+    $query = $db -> connect() -> prepare('SELECT  id, email, names, lastname1, lastname2, ubigeo, social_networks, birth_date, status
     FROM general_users WHERE email = ? and password = ?');
     $query -> execute([
         $_POST['email'],
@@ -22,9 +22,6 @@ if (
             session_start();
             $_SESSION['user'] = [
                 'id' => $row['id'],
-                'names' => $row['names'],
-                'surnames' => $row['surnames'],
-                'birth_date' => $row['birth_date']
             ];
             $_SESSION['rol'] = [
                 'id' => 'client',

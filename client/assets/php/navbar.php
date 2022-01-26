@@ -7,12 +7,13 @@
     <div class="profile-desc">
     <div class="profile-pic">
         <div class="count-indicator">
-        <img class="img-xs rounded-circle " src="http://localhost:8085/shop/api/client/image?id=
+        <span id_client="<?php echo $_SESSION['user' ]['id']; ?>" id="id_client"></span>
+        <img  class="img-xs rounded-circle " src="http://localhost:8085/shop/api/client/image?id=
         <?php echo $_SESSION['user' ]['id']; ?>" alt="profile">
         <span class="count bg-success"></span>
         </div>
         <div class="profile-name">
-        <h5 class="mb-0 font-weight-normal"><?php echo ( $_SESSION['user']['names']); ?></h5>
+        <h5 class="mb-0 font-weight-normal"><?php //echo ( $_SESSION['user']['names']); ?></h5>
         <span title="<?php echo $_SESSION['rol']['description']; ?>"><?php echo $_SESSION['rol']['name']; ?></span>
         </div>
     </div>
@@ -57,7 +58,7 @@
     <span class="nav-link">Panel de navegación</span>
 </li>
 <li class="nav-item menu-items">
-    <a class="nav-link" href="index.php">
+    <a class="nav-link" href="../../index.php">
     <span class="menu-icon">
         <i class="mdi mdi-home"></i>
     </span>

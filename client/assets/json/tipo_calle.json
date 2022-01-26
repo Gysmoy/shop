@@ -1,0 +1,114 @@
+[
+	{
+		"id": "-1",
+		"descripcion": "ELIJA UNA OPCION"
+	},
+	{
+		"id": "AL",
+		"descripcion": "ALAMEDA"
+	},
+	{
+		"id": "AV",
+		"descripcion": "AVENIDA"
+	},
+	{
+		"id": "BJ",
+		"descripcion": "BAJADA"
+	},
+	{
+		"id": "BL",
+		"descripcion": "BOULEVARD"
+	},
+	{
+		"id": "CA",
+		"descripcion": "CALLE"
+	},
+	{
+		"id": "CR",
+		"descripcion": "CARRETERA"
+	},
+	{
+		"id": "CP",
+		"descripcion": "COOPERATIVA"
+	},
+	{
+		"id": "ES",
+		"descripcion": "ESQUINA"
+	},
+	{
+		"id": "FD",
+		"descripcion": "FUNDO"
+	},
+	{
+		"id": "GA",
+		"descripcion": "GALERIA"
+	},
+	{
+		"id": "HC",
+		"descripcion": "HACIENDA"
+	},
+	{
+		"id": "JR",
+		"descripcion": "JIRON"
+	},
+	{
+		"id": "MC",
+		"descripcion": "MALECON"
+	},
+	{
+		"id": "OV",
+		"descripcion": "OVALO"
+	},
+	{
+		"id": "PQ",
+		"descripcion": "PARQUE"
+	},
+	{
+		"id": "PS",
+		"descripcion": "PASAJE"
+	},
+	{
+		"id": "PA",
+		"descripcion": "PASEO"
+	},
+	{
+		"id": "PZ",
+		"descripcion": "PLAZA"
+	},
+	{
+		"id": "PR",
+		"descripcion": "PROLONGACION"
+	},
+	{
+		"id": "PJ",
+		"descripcion": "PUEBLO JOVEN"
+	},
+	{
+		"id": "PT",
+		"descripcion": "PUENTE"
+	},
+	{
+		"id": "SD",
+		"descripcion": "SIN DIRECCIÓN"
+	},
+	{
+		"id": "ST",
+		"descripcion": "SIN TIPO"
+	},
+	{
+		"id": "VL",
+		"descripcion": "VILLA"
+	},
+	{
+		"id": "CJ",
+		"descripcion": "CALLEJON"
+	},
+	{
+		"id": "PL",
+		"descripcion": "PLAZUELA"
+	},
+	{
+		"id": "TB",
+		"descripcion": "TAMBO"
+	}
+]

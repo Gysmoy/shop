@@ -1,0 +1,30 @@
+[
+	{
+		"id": "-1",
+		"descripcion": "ELIJA UNA OPCION"
+	},
+	{
+		"id": "WH",
+		"descripcion": "WHATSAPP"
+	},
+	{
+		"id": "FA",
+		"descripcion": "FACEBOOK"
+	},
+	{
+		"id": "EM",
+		"descripcion": "EMAIL"
+	},
+	{
+		"id": "TE",
+		"descripcion": "TELEFONO"
+	},
+	{
+		"id": "IN",
+		"descripcion": "INSTAGRAM"
+	},
+	{
+		"id": "TW",
+		"descripcion": "TWITTER"
+	}
+]

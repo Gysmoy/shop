@@ -69,7 +69,7 @@
         <div class="dropdown-divider"></div>
         <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
-            <img src="assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+         
             </div>
             <div class="preview-item-content">
             <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
@@ -150,12 +150,8 @@
     <li class="nav-item dropdown">
         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
         <div class="navbar-profile">
-            <img class="img-xs rounded-circle" src="http://localhost:8085/shop/api/client/image?id=<?php echo $_SESSION[
-                'user'
-            ]['id']; ?>" alt="">
-            <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo $_SESSION[
-                'user'
-            ]['names']; ?></p>
+            <img class="img-xs rounded-circle" src="http://localhost:8085/shop/api/client/image?id=<?php echo $_SESSION['user']['id']; ?>" alt="">
+            <p  class="mb-0 d-none d-sm-block navbar-profile-name"><?php //echo $_SESSION['user']['names']; ?></p>
             <i class="mdi mdi-menu-down d-none d-sm-block"></i>
         </div>
         </a>
