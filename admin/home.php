@@ -1,6 +1,5 @@
 <?php
 $version = uniqid();
-include_once 'assets/php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

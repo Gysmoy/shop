@@ -7,12 +7,12 @@
     <div class="profile-desc">
     <div class="profile-pic">
         <div class="count-indicator">
-        <img id="session_user_image" class="img-xs rounded-circle" src="assets/php/image.php?id=undefined" alt="">
+        <img session="user_image" class="img-xs rounded-circle" src="assets/php/image.php?id=undefined" alt="">
         <span class="count bg-success"></span>
         </div>
         <div class="profile-name">
-        <h5 id="session_user_name" class="mb-0 font-weight-normal"></h5>
-        <span id="session_rol_name"></span>
+        <h5 session="user_name" class="mb-0 font-weight-normal"></h5>
+        <span session="rol_name"></span>
         </div>
     </div>
     <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
