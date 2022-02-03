@@ -1,6 +1,5 @@
 <?php
-$version = uniqid();
-?>
+$version = uniqid(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,141 +13,36 @@ $version = uniqid();
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $version;?>">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $version; ?>">
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
 <body class="boxed-layout">
   <div class="container-scroller">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
-      <?php
-      include_once 'assets/php/navbar.php';
-      ?>
+      <?php include_once 'assets/php/navbar.php'; ?>
     </nav>
     <div class="container-fluid page-body-wrapper">
       <nav class="navbar p-0 fixed-top d-flex flex-row">
-        <?php
-        include_once 'assets/php/header.php';
-        ?>
+        <?php include_once 'assets/php/header.php'; ?>
       </nav>
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">$12.34</h3>
-                        <p class="text-success ms-2 mb-0 font-weight-medium">+3.5%</p>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="icon icon-box-success ">
-                        <span class="mdi mdi-arrow-top-right icon-item"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <h6 class="text-muted font-weight-normal">Potential growth</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">$17.34</h3>
-                        <p class="text-success ms-2 mb-0 font-weight-medium">+11%</p>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="icon icon-box-success">
-                        <span class="mdi mdi-arrow-top-right icon-item"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <h6 class="text-muted font-weight-normal">Revenue current</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">$12.34</h3>
-                        <p class="text-danger ms-2 mb-0 font-weight-medium">-2.4%</p>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="icon icon-box-danger">
-                        <span class="mdi mdi-arrow-bottom-left icon-item"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <h6 class="text-muted font-weight-normal">Daily Income</h6>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <div class="d-flex align-items-center align-self-start">
-                        <h3 class="mb-0">$31.53</h3>
-                        <p class="text-success ms-2 mb-0 font-weight-medium">+3.5%</p>
-                      </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="icon icon-box-success ">
-                        <span class="mdi mdi-arrow-top-right icon-item"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <h6 class="text-muted font-weight-normal">Expense current</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Relación de Usuarios</h4>
-                  <canvas id="doughnutChart" style="height:250px"></canvas>
-                  <h4 class="card-title mt-4">Registros recientes</h4>
-                  <div class="table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th> Tipo </th>
-                          <th> Último registro </th>
-                          <th> # </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td> Empresas </td>
-                          <td id="lr_business_date"></td>
-                          <td id="lr_business_quantity"></td>
-                        </tr>
-                        <tr>
-                          <td> Clientes </td>
-                          <td id="lr_clients_date"></td>
-                          <td id="lr_clients_quantity"></td>
-                        </tr>
-                        <tr>
-                          <td> Marketeros </td>
-                          <td id="lr_marketers_date"></td>
-                          <td id="lr_marketers_quantity"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <h4 class="card-title">CONFIGURACIÓN DE PERFIL</h4>
+                  <div class="row portfolio-grid">
+                    <div class="col-12">
+                        <figure class="effect-text-in">
+                            <img session="user_image" src="assets/php/image.php?id=undefined" alt="image">
+                            <figcaption>
+                            <h4 session="user_name"></h4>
+                            <p>Haga click para cambiar de imagen</p>
+                            </figcaption>
+                        </figure>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,98 +51,34 @@ $version = uniqid();
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
-                    <h4 class="card-title mb-1">Notificaciones recientes</h4>
-                    <p class="text-muted mb-1">Your data status</p>
+                    <h4 class="card-title mb-1">CONFIGURACIÓN DE CUENTA</h4>
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <div class="preview-list">
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-primary">
-                              <i class="mdi mdi-file-document"></i>
-                            </div>
-                          </div>
-                          <div class="preview-item-content d-sm-flex flex-grow">
-                            <div class="flex-grow">
-                              <h6 class="preview-subject">Admin dashboard design</h6>
-                              <p class="text-muted mb-0">Broadcast web app mockup</p>
-                            </div>
-                            <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                              <p class="text-muted">15 minutes ago</p>
-                              <p class="text-muted mb-0">30 tasks, 5 issues </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-success">
-                              <i class="mdi mdi-cloud-download"></i>
-                            </div>
-                          </div>
-                          <div class="preview-item-content d-sm-flex flex-grow">
-                            <div class="flex-grow">
-                              <h6 class="preview-subject">Wordpress Development</h6>
-                              <p class="text-muted mb-0">Upload new design</p>
-                            </div>
-                            <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                              <p class="text-muted">1 hour ago</p>
-                              <p class="text-muted mb-0">23 tasks, 5 issues </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-info">
-                              <i class="mdi mdi-clock"></i>
-                            </div>
-                          </div>
-                          <div class="preview-item-content d-sm-flex flex-grow">
-                            <div class="flex-grow">
-                              <h6 class="preview-subject">Project meeting</h6>
-                              <p class="text-muted mb-0">New project discussion</p>
-                            </div>
-                            <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                              <p class="text-muted">35 minutes ago</p>
-                              <p class="text-muted mb-0">15 tasks, 2 issues</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-danger">
-                              <i class="mdi mdi-email-open"></i>
-                            </div>
-                          </div>
-                          <div class="preview-item-content d-sm-flex flex-grow">
-                            <div class="flex-grow">
-                              <h6 class="preview-subject">Broadcast Mail</h6>
-                              <p class="text-muted mb-0">Sent release details to team</p>
-                            </div>
-                            <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                              <p class="text-muted">55 minutes ago</p>
-                              <p class="text-muted mb-0">35 tasks, 7 issues </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="preview-item">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-warning">
-                              <i class="mdi mdi-chart-pie"></i>
-                            </div>
-                          </div>
-                          <div class="preview-item-content d-sm-flex flex-grow">
-                            <div class="flex-grow">
-                              <h6 class="preview-subject">UI Design</h6>
-                              <p class="text-muted mb-0">New application planning</p>
-                            </div>
-                            <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                              <p class="text-muted">50 minutes ago</p>
-                              <p class="text-muted mb-0">27 tasks, 4 issues </p>
-                            </div>
-                          </div>
-                        </div>
+                    <form class="forms-sample mt-4">
+                      <div class="form-group">
+                        <label for="exampleInputUsername1">Nombre de usuario</label>
+                        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
                       </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Correo electrónico</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                      </div>
+                      <div class="form-check form-check-flat form-check-primary">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"> Remember me <i class="input-helper"></i></label>
+                      </div>
+                      <button type="submit" class="btn btn-primary me-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
                     </div>
                   </div>
                 </div>

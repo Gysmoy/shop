@@ -46,6 +46,7 @@ if (
     <input type="text" id="username" placeholder="ejemplo@dominio.com">
     <label for="password">Contraseña</label>
     <input type="password" id="password" placeholder="••••••••••">
+    <i id="showHidePassword" class="fa fa-eye-slash"></i>
     <blockquote>
       Ingrese sus credenciales para iniciar sesión
     </blockquote>
@@ -53,6 +54,7 @@ if (
       <i id="btn-icon" class="fa fa-user"></i>
       Acceder
     </button>
+    <span id="supported_by" >Soportado por <a href="#">SD Perú</a></span>
   </form>
   <script src="../assets/js/jquery.min.js"></script>
   <script src="assets/js/login.js?<?php echo $i; ?>"></script>

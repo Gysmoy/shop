@@ -57,6 +57,19 @@ form input {
     border-radius: 5px;
     border: none;
 }
+#showHidePassword {
+    position: absolute;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: small;
+    margin-top: -45px;
+    cursor: pointer;
+    right: 25px;
+    color: #181d2466;
+}
+#showHidePassword:hover {
+    background-color: #181d2422;
+}
 blockquote {
     margin: auto;
     width: max-content;
@@ -108,6 +121,20 @@ button:hover {
 }
 button i {
     font-size: small;
+}
+#supported_by {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: -40px;
+    font-size: larger;
+    color: #181d24;
+}
+#supported_by a {
+    text-decoration-line: underline;
+    color: #0099cc;
+    text-decoration-color: #0099cc;
 }
 @media (max-height: 720px) {
     form {
