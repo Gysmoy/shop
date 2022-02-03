@@ -12,22 +12,27 @@ $('#init-session-google').click(function (e) {
 $('form').submit(function (e) {
     e.preventDefault();
     var request = {}
-    request['password'] = $('#pass').val();
+    
     request['email'] = $('#email').val();
+    request['password'] = $('#pass').val();
     $.ajax({
         type: "POST",
         url: "../api/client/access",
-        data: request,
-        dataType: "JSON",
-        success: function (response) {
-            console.log(response)
-            if(response.status=='200'){
-                alertBTS(response.message,'success')
-                window.open("index.php","_self")
-            }else{
-                alertBTS(response.message,'danger')
-            }
+        dataType: "json",
+        data: request
+        
+    }).done( function (data){
+        if(data.status=='200'){
+            alertBTS(data.message,'success')
+            setTimeout( () => { window.open("index.php","_self"), 2500 });
+           
+        }else{
+            alertBTS(data.message,'danger')
         }
+    }).fail( function (data){
+        alertBTS((data.responseJSON.message),'danger')
+        console.log(data)
     });
+    
 
 });

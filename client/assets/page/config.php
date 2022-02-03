@@ -85,15 +85,15 @@ include_once '../../assets/php/session.php';
                             <div class="col-md-8 mt-3 content pl- row">
                               <div class="form-group  col-lg-6 ">
                                 <label>Nombres</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="conf-names" type="text" class="form-control" placeholder="">
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Apellido paterno</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="conf-primer-apellido" type="text" class="form-control" placeholder="">
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Apellido materno</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="conf-segundo-apellido" type="text" class="form-control" placeholder="">
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Departamento</label>
@@ -113,7 +113,7 @@ include_once '../../assets/php/session.php';
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Calle</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="conf-calle" type="text" class="form-control" placeholder="">
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Tipo red social</label>
@@ -121,7 +121,7 @@ include_once '../../assets/php/session.php';
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Red social</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="conf-redSocial" type="text" class="form-control" placeholder="">
                               </div>
                               <div class="form-group col-lg-12">
                               <button type="button" class="btn btn-success btn-fw form-group col-lg-12">Aseptar</button>

@@ -22,7 +22,23 @@ if (
             session_start();
             $_SESSION['user'] = [
                 'id' => $row['id'],
+                'email' => $row['email'],
+                'names' => $row['names'],
+                'lastname1' => $row['lastname1'],
+                'lastname2' => $row['lastname2'],
+                /*'ubigeo'['departamento'] => $row['ubigeo']['departamento'],
+                'ubigeo'['provincia'] => $row['ubigeo']['provincia'],
+                'ubigeo'['distrito'] => $row['ubigeo']['distrito'],
+                'ubigeo'['tipoCalle'] => $row['ubigeo']['tipoCalle'],
+                'ubigeo'['ubigeo'] => $row['ubigeo']['ubigeo'],
+                'ubigeo'['calle'] => $row['ubigeo']['calle'],*/
+                'social_networks' => json_decode($row['social_networks']),
+                'birth_date' => $row['birth_date'],
+                
             ];
+            $_SESSION['user']['ubigeo'] = json_decode($row['ubigeo'], true);
+            
+         
             $_SESSION['rol'] = [
                 'id' => 'client',
                 'name' => 'Cliente General',

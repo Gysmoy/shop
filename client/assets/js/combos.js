@@ -62,7 +62,6 @@ function fn_ubigeo_departamento(cboid, opcionxdefecto) {
     const unicos = [];
     $('#' + cboid).empty();
     $.getJSON('../json/ubigeo.json', function (data) {
-        console.log(data)
         $("#" + cboid).append('<option></option>');
         data.forEach(datos => {
             if (!unicos.includes(datos.cod_dpto_gw)) {
