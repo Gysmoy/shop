@@ -12,17 +12,27 @@
 
 .cont-options{
     display: inline-block;
-   
     text-align: center;
-
 }
+
 .cont-options a{
    text-align: center;
    padding: 2px;
 }
+
 .icons{
-   
     color: #0090e7;
-    font-size: 20px;
+    font-size: 18px;
     width: 40px;
+}
+.cont-icon-social{
+    padding: 16px;
+}
+
+.icons-social-icon{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    margin-top: -10px;
+    margin-left: -11px;
 }

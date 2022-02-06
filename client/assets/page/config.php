@@ -82,7 +82,7 @@ include_once '../../assets/php/session.php';
                               </div>
                             </div>
                            
-                            <div class="col-md-8 mt-3 content pl- row">
+                            <div class="col-md-8 mt-3 content row">
                               <div class="form-group  col-lg-6 ">
                                 <label>Nombres</label>
                                 <input id="conf-names" type="text" class="form-control" placeholder="">
@@ -115,14 +115,42 @@ include_once '../../assets/php/session.php';
                                 <label>Calle</label>
                                 <input id="conf-calle" type="text" class="form-control" placeholder="">
                               </div>
-                              <div class="form-group  col-lg-6 ">
+                              <div class="form-group col-lg-6">
+                                <label>Redes Sociales</label>
+                               
+                                <div class="row" id="social-networks">
+                                  <!--div class="col-md-1 ">
+                                    <div class="badge cont-icon-social badge-pill badge-primary" title="Twitter"><i class="icons-social-icon mdi mdi-twitter"></i></div>
+                                  </div>
+                                  <div class="col-md-1 ">
+                                    <div class="badge cont-icon-social badge-pill badge-danger" title="Instagram"><i class="icons-social-icon mdi mdi-instagram"></i></div>
+                                  </div>
+                                  <div class="col-md-1 ">
+                                    <div class="badge cont-icon-social badge-pill badge-success" title="Teléfono"><i class="icons-social-icon mdi mdi-phone"></i></div>
+                                  </div>
+                                  <div class="col-md-1 ">
+                                    <div class="badge cont-icon-social badge-pill badge-primary" title="Facebook"><i class="icons-social-icon mdi mdi-facebook"></i></div>
+                                  </div>
+                                  <div class="col-md-1 ">
+                                    <div class="badge cont-icon-social badge-pill badge-danger" title="Email"><i class="icons-social-icon mdi mdi-email-outline"></i></div>
+                                  </div>
+                                  <div class="col-md-1 ">
+                                    <div class="badge cont-icon-social badge-pill badge-success" title="WhatsApp"><i class="icons-social-icon mdi mdi-whatsapp"></i></div>
+                                  </div-->
+                                  <div class="col-md-1 ">
+                                    <div class="badge badge-pill badge-outline-success">+</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--div class="form-group  col-lg-6 ">
                                 <label>Tipo red social</label>
                                 <select class="form-control" name="" id="cbo-tipoRedSocial"></select>
                               </div>
                               <div class="form-group  col-lg-6 ">
                                 <label>Red social</label>
                                 <input id="conf-redSocial" type="text" class="form-control" placeholder="">
-                              </div>
+                              </div-->
+
                               <div class="form-group col-lg-12">
                               <button type="button" class="btn btn-success btn-fw form-group col-lg-12">Aseptar</button>
                             </div>

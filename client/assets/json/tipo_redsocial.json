@@ -5,26 +5,38 @@
 	},
 	{
 		"id": "whatsapp",
-		"descripcion": "Whatsapp"
+		"descripcion": "Whatsapp",
+		"background": "badge-success",
+    	"icon": "mdi-whatsapp"
 	},
 	{
 		"id": "facebook",
-		"descripcion": "Facebook"
+		"descripcion": "Facebook",
+		"background": "badge-primary",
+    	"icon": "mdi-facebook"
 	},
 	{
 		"id": "email",
-		"descripcion": "E-mail"
+		"descripcion": "E-mail",
+		"background": "badge-danger",
+    	"icon": "mdi-email-outline"
 	},
 	{
 		"id": "phone",
-		"descripcion": "Teléfono"
+		"descripcion": "Teléfono",
+		"background": "badge-success",
+    	"icon": "mdi-phone"
 	},
 	{
 		"id": "instagram",
-		"descripcion": "Intagram"
+		"descripcion": "Intagram",
+		"background": "badge-danger",
+    	"icon": "mdi-instagram"
 	},
 	{
 		"id": "twitter",
-		"descripcion": "Twitter"
+		"descripcion": "Twitter",
+		"background": "badge-primary",
+    	"icon": "mdi-twitter"
 	}
 ]
