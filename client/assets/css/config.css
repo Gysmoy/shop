@@ -27,6 +27,7 @@
 }
 .cont-icon-social{
     padding: 16px;
+    margin-left: 3px;
 }
 
 .icons-social-icon{
@@ -35,4 +36,15 @@
     font-size: 22px;
     margin-top: -10px;
     margin-left: -11px;
+}
+.badge-outline-success{
+    margin-left: 3px;
+}
+
+#social-networks{
+    display: flex;
+}
+
+@media (max-width: 1590px) {
+    
 }

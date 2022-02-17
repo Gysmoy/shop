@@ -17,7 +17,7 @@ $('form').submit(function (e) {
     request['password'] = $('#pass').val();
     $.ajax({
         type: "POST",
-        url: "../api/client/access",
+        url: "../../../api/client/access",
         dataType: "json",
         data: request
         

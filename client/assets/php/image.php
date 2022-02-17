@@ -13,7 +13,7 @@ if (
   FROM general_users
   WHERE id = ?
   ');
-  $query -> execute([$_GET['id']]);
+  $query -> execute([$_SESSION['user']['id']]);
   $row = $query -> fetch(PDO::FETCH_ASSOC);
   if ($row && $row['profile'] != '' && $row['profile'] != null) {
     header('Content-Type: image/jpg');

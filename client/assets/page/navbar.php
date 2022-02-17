@@ -8,8 +8,7 @@
     <div class="profile-pic">
         <div class="count-indicator">
         <span id_client="<?php echo $_SESSION['user' ]['id']; ?>" id="id_client"></span>
-        <img  class="img-xs rounded-circle " src="http://localhost:8085/shop/api/client/image?id=
-        <?php echo $_SESSION['user' ]['id']; ?>" alt="profile">
+        <img  class="img-xs rounded-circle " src="../php/image.php?id=undefined" alt="profile">
         <span class="count bg-success"></span>
         </div>
         <div class="profile-name">

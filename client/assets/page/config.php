@@ -26,7 +26,7 @@ include_once '../../assets/php/session.php';
   <div class="container-scroller">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <?php
-     include_once '../../assets/php/navbar.php';
+     include_once '../../assets/page/navbar.php';
       ?>
     </nav>
     <!-- partial -->
@@ -34,7 +34,7 @@ include_once '../../assets/php/session.php';
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <?php
-        include_once '../../assets/php/header.php';
+        include_once '../../assets/page/header.php';
         ?>
       </nav>
       <!-- partial -->
@@ -69,7 +69,7 @@ include_once '../../assets/php/session.php';
                               <div class="card">
                                 <div class="card-body row">
                                   <div class="col-lg-12" id="cont-imge-profile">
-                                    <img id="image-profile"  src="http://localhost:8085/shop/api/client/image?id=<?php echo $_SESSION['user' ]['id']; ?>" alt="profile">
+                                    <img id="image-profile"  src="../php/image.php?id=undefined" alt="profile">
                                   </div>
                                   <div class="cont-options mt-4 col-lg-12">
                                     <a class="icons" title="Subir fotografia" href=""><i class="mdi mdi-upload"></i></a>
@@ -118,7 +118,7 @@ include_once '../../assets/php/session.php';
                               <div class="form-group col-lg-6">
                                 <label>Redes Sociales</label>
                                
-                                <div class="row" id="social-networks">
+                                <div id="social-networks">
                                   <!--div class="col-md-1 ">
                                     <div class="badge cont-icon-social badge-pill badge-primary" title="Twitter"><i class="icons-social-icon mdi mdi-twitter"></i></div>
                                   </div>
@@ -137,9 +137,7 @@ include_once '../../assets/php/session.php';
                                   <div class="col-md-1 ">
                                     <div class="badge cont-icon-social badge-pill badge-success" title="WhatsApp"><i class="icons-social-icon mdi mdi-whatsapp"></i></div>
                                   </div-->
-                                  <div class="col-md-1 ">
-                                    <div class="badge badge-pill badge-outline-success">+</div>
-                                  </div>
+                                 
                                 </div>
                               </div>
                               <!--div class="form-group  col-lg-6 ">

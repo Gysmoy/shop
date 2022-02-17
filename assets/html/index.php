@@ -86,8 +86,8 @@
                                 Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="client/login.php">Iniciar Sesíon</a>
-                                <a class="btn custom-btn" href="client/singup.php">Registrarme</a>
+                                <a class="btn custom-btn" href="client/">Iniciar Sesíon</a>
+                                <a class="btn custom-btn" href="client/assets/page/singup.php">Registrarme</a>
                             </div>
                         </div>
                     </div>
