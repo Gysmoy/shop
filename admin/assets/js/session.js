@@ -15,6 +15,7 @@ $.ajax({
     $('[session="rol_name"]').text(session.rol.name)
         .attr('title', session.rol.description);
 }).fail(e => {
-    var res = e.responseJSON;
-    location.href = `login.php?p=${location.href}`;
+    if (!location.href.includes('login.php')) {
+        location.href = `login.php?p=${location.href}`;
+    }
 })

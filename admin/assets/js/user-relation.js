@@ -5,24 +5,35 @@ $(function () {
     dataType: 'JSON',
     success: res => {
       moment.locale('es');
+
+      // Business
       $('#lr_business_date').text(
         res.business.join_date ?
         moment(res.business.join_date, 'YYYY-MM-DD hh:mm:ss').fromNow():
         'Aún no hay registros'
       ).attr('title', res.business.join_date);
       $('#lr_business_quantity').text('+' + res.business.last_week);
+      $('#lr_business_total').text(res.business.quantity);
+
+      // Clients
       $('#lr_clients_date').text(
         res.clients.join_date ?
         moment(res.clients.join_date, 'YYYY-MM-DD hh:mm:ss').fromNow():
         'Aún no hay registros'
       ).attr('title', res.clients.join_date);
       $('#lr_clients_quantity').text('+' + res.clients.last_week);
+      $('#lr_clients_total').text(res.clients.quantity);
+
+      // Marketers
       $('#lr_marketers_date').text(
         res.marketers.join_date ?
         moment(res.marketers.join_date, 'YYYY-MM-DD hh:mm:ss').fromNow():
         'Aún no hay registros'
       ).attr('title', res.marketers.join_date);
       $('#lr_marketers_quantity').text('+' + res.marketers.last_week);
+      $('#lr_marketers_total').text(res.marketers.quantity);
+
+      // Gráfico de torta
       var doughnutPieData = {
         datasets: [
           {
