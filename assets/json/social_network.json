@@ -1,0 +1,42 @@
+[
+	{
+		"id": null,
+		"descripcion": "Elija una opción"
+	},
+	{
+		"id": "whatsapp",
+		"descripcion": "Whatsapp",
+		"background": "badge-success",
+    	"icon": "mdi-whatsapp"
+	},
+	{
+		"id": "facebook",
+		"descripcion": "Facebook",
+		"background": "badge-primary",
+    	"icon": "mdi-facebook"
+	},
+	{
+		"id": "email",
+		"descripcion": "E-mail",
+		"background": "badge-danger",
+    	"icon": "mdi-email-outline"
+	},
+	{
+		"id": "phone",
+		"descripcion": "Teléfono",
+		"background": "badge-success",
+    	"icon": "mdi-phone"
+	},
+	{
+		"id": "instagram",
+		"descripcion": "Intagram",
+		"background": "badge-danger",
+    	"icon": "mdi-instagram"
+	},
+	{
+		"id": "twitter",
+		"descripcion": "Twitter",
+		"background": "badge-primary",
+    	"icon": "mdi-twitter"
+	}
+]

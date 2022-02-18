@@ -2,7 +2,9 @@ $.ajax({
     url: 'assets/php/session.php',
     dataType: 'JSON'
 }).done(res => {
-    console.log(res);
+    if (location.href.includes('login.php')) {
+        location.href = 'home.php';
+    }
     var session = res.data;
     $('[session="user_image"]')
         .attr({
@@ -14,5 +16,5 @@ $.ajax({
         .attr('title', session.rol.description);
 }).fail(e => {
     var res = e.responseJSON;
-    location.href = 'login.php';
+    location.href = `login.php?p=${location.href}`;
 })
