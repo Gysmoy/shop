@@ -12041,9 +12041,9 @@ textarea.is-invalid.tt-hint {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #000000;
+  background-color: #191c24;
   background-clip: padding-box;
-  border: 1px solid #2c2e33;
+  border: 1px solid #2A3038;
   border-radius: 0.3rem;
   outline: 0; }
 
@@ -23395,7 +23395,7 @@ div.tagsinput {
 
 @media (min-width: 1200px) {
   .boxed-layout .container-scroller {
-    background: #737373;
+    background: aliceblue;
     padding: 0 calc((100% - 1200px) / 2); }
   .boxed-layout .navbar {
     right: calc((100% - 1200px) / 2);
