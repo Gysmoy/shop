@@ -37,13 +37,11 @@ $.ajax({
   // pintando redes sociales
   function social_networks() {
     var social = data.data.user.social_networks;
-    social.forEach(function(data, res){
-      console.log(data);
-      type = data.type;
-      $.getJSON('../json/tipo_redsocial.json', function (data) {
-        data.forEach(function(data, res){
-          type_soccial = data.id;
-          
+    social.forEach(function(data){
+      const type = data.type;
+      $.getJSON('../json/tipo_redsocial.json', function (data_r) {
+        data_r.forEach(function(data_u){
+          const type_soccial = data_u.id;
           console.log('red soial: '+type+' array social: '+type_soccial);
           /*
           if (type_soccial.indexOf(type) !=-1) {
