@@ -33,7 +33,7 @@ $version = uniqid();
       </nav>
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
+          <!--div class="row">
             <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -114,35 +114,60 @@ $version = uniqid();
                 </div>
               </div>
             </div>
-          </div>
+          </div-->
           <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Relación de Usuarios</h4>
-                  <canvas id="doughnutChart" style="height:250px"></canvas>
-                  <h4 class="card-title mt-4">Registros recientes</h4>
+                  <canvas id="doughnutChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Registros recientes</h4>
                   <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered text-center">
                       <thead>
                         <tr>
+                          <th> Ver </th>
                           <th> Tipo </th>
                           <th> Último registro </th>
-                          <th> # </th>
+                          <th title="# registros de la última semana"> <span class="mdi mdi-plus"></span> </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
+                          <td>
+                            <button class="btn btn-primary btn-sm btn-block">
+                              <i class="mdi mdi-account"></i>
+                              <span id="lr_business_total"></span>
+                            </button>
+                          </td>
                           <td> Empresas </td>
                           <td id="lr_business_date"></td>
                           <td id="lr_business_quantity"></td>
                         </tr>
                         <tr>
+                          <td>
+                            <button class="btn btn-primary btn-sm btn-block">
+                              <i class="mdi mdi-account"></i>
+                              <span id="lr_clients_total"></span>
+                            </button>
+                          </td>
                           <td> Clientes </td>
                           <td id="lr_clients_date"></td>
                           <td id="lr_clients_quantity"></td>
                         </tr>
                         <tr>
+                          <td>
+                            <button class="btn btn-primary btn-sm btn-block">
+                              <i class="mdi mdi-account"></i>
+                              <span id="lr_marketers_total"></span>
+                            </button>
+                          </td>
                           <td> Marketeros </td>
                           <td id="lr_marketers_date"></td>
                           <td id="lr_marketers_quantity"></td>
@@ -153,7 +178,7 @@ $version = uniqid();
                 </div>
               </div>
             </div>
-            <div class="col-md-8 grid-margin stretch-card">
+            <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-between">
@@ -255,7 +280,7 @@ $version = uniqid();
               </div>
             </div>
           </div>
-          <div class="row">
+          <!--div class="row">
             <div class="col-sm-4 grid-margin">
               <div class="card">
                 <div class="card-body">
@@ -313,8 +338,8 @@ $version = uniqid();
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row ">
+          </div-->
+          <!--div class="row ">
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
@@ -451,8 +476,8 @@ $version = uniqid();
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
+          </div-->
+          <!--div class="row">
             <div class="col-md-6 col-xl-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -611,8 +636,8 @@ $version = uniqid();
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
+          </div-->
+          <!--div class="row">
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
@@ -681,15 +706,14 @@ $version = uniqid();
                 </div>
               </div>
             </div>
-          </div>
+          </div-->
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
-          </div>
+          <?php
+          include_once 'assets/php/footer.php';
+          ?>
         </footer>
         <!-- partial -->
       </div>
@@ -718,9 +742,9 @@ $version = uniqid();
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="assets/js/dashboard.js"></script>
-  <script src="../assets/js//moment.min.js"></script>
-  <script src="assets/js/user-relation.js"></script>
-  <script src="assets/js/session.js"></script>
+  <script src="../assets/js/moment.min.js"></script>
+  <script src="assets/js/user-relation.js?v=<?php echo $version;?>"></script>
+  <script src="assets/js/session.js?v=<?php echo $version;?>"></script>
   <!-- End custom js for this page -->
 </body>
 

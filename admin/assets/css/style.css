@@ -12041,9 +12041,9 @@ textarea.is-invalid.tt-hint {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #000000;
+  background-color: #191c24;
   background-clip: padding-box;
-  border: 1px solid #2c2e33;
+  border: 1px solid #2A3038;
   border-radius: 0.3rem;
   outline: 0; }
 
@@ -22524,14 +22524,17 @@ div.tagsinput {
       .navbar .navbar-brand-wrapper {
         width: 55px; } }
     .navbar .navbar-brand-wrapper .navbar-brand {
-      color: #38425e;
+      color: #ffffff;
+      text-decoration: none;
+      transition: .25s;
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
       padding: 0rem 0rem 0rem 1.3rem;
       width: 100%; }
       .navbar .navbar-brand-wrapper .navbar-brand:active, .navbar .navbar-brand-wrapper .navbar-brand:focus, .navbar .navbar-brand-wrapper .navbar-brand:hover {
-        color: #252b3e; }
+        color: #ffffff88;
+      }
       .navbar .navbar-brand-wrapper .navbar-brand img {
         width: calc(244px - 120px);
         max-width: 100%;
@@ -22813,14 +22816,16 @@ div.tagsinput {
       .sidebar .sidebar-brand-wrapper {
         width: 55px; } }
     .sidebar .sidebar-brand-wrapper .sidebar-brand {
-      color: #38425e;
+      color: #ffffff;
+      text-decoration: none;
+      transition: .25s;
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
       padding: 0rem 0rem 0rem 1.3rem;
       width: 100%; }
       .sidebar .sidebar-brand-wrapper .sidebar-brand:active, .sidebar .sidebar-brand-wrapper .sidebar-brand:focus, .sidebar .sidebar-brand-wrapper .sidebar-brand:hover {
-        color: #252b3e; }
+        color: #ffffff88; }
       .sidebar .sidebar-brand-wrapper .sidebar-brand img {
         width: calc(244px - 120px);
         max-width: 100%;
@@ -23390,7 +23395,7 @@ div.tagsinput {
 
 @media (min-width: 1200px) {
   .boxed-layout .container-scroller {
-    background: #737373;
+    background: aliceblue;
     padding: 0 calc((100% - 1200px) / 2); }
   .boxed-layout .navbar {
     right: calc((100% - 1200px) / 2);

@@ -7,15 +7,6 @@ if (isset($_GET['logout'])) {
   session_destroy();
   header('location: ./login.php');
 }
-// Redireccionar sesión
-if (
-  isset($_SESSION['status']) &&
-  $_SESSION['status'] == true &&
-  isset($_SESSION['type']) &&
-  $_SESSION['type'] == 'admin'
-) {
-  header('location: ./home.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,6 +48,7 @@ if (
     <span id="supported_by" >Soportado por <a href="#">SD Perú</a></span>
   </form>
   <script src="../assets/js/jquery.min.js"></script>
+  <script src="assets/js/session.js?<?php echo $i; ?>"></script>
   <script src="assets/js/login.js?<?php echo $i; ?>"></script>
 </body>
 

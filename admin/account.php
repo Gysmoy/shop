@@ -26,6 +26,26 @@ $version = uniqid(); ?>
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <?php include_once 'assets/php/header.php'; ?>
       </nav>
+      <div class="modal" id="profile-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Actualizar foto de perfil</h5>
+              <button type="button" class="close" data-bs-dismiss="modal">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <label for="profile" class="btn btn-success">Subir una foto</label>
+              <input style="display: none;" type="file" id="profile">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Actualizar</button>
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
@@ -39,7 +59,7 @@ $version = uniqid(); ?>
                             <img session="user_image" src="assets/php/image.php?id=undefined" alt="image">
                             <figcaption>
                             <h4 session="user_name"></h4>
-                            <p>Haga click para cambiar de imagen</p>
+                            <p onclick="updateProfile()">Haga click para cambiar de imagen</p>
                             </figcaption>
                         </figure>
                     </div>
@@ -516,10 +536,9 @@ $version = uniqid(); ?>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
-          </div>
+          <?php
+          include_once 'assets/php/footer.php';
+          ?>
         </footer>
         <!-- partial -->
       </div>
@@ -548,9 +567,9 @@ $version = uniqid(); ?>
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="assets/js/dashboard.js"></script>
-  <script src="../assets/js//moment.min.js"></script>
-  <script src="assets/js/user-relation.js"></script>
+  <script src="../assets/js/moment.min.js"></script>
   <script src="assets/js/session.js"></script>
+  <script src="assets/js/account.js"></script>
   <!-- End custom js for this page -->
 </body>
 

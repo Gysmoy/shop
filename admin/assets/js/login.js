@@ -27,7 +27,19 @@ $('#login').submit(function(form){
         $('blockquote')
             .attr('class', 'success')
             .text(res.message);
-        location.reload();
+        $.ajax({
+            async: false,
+            url: '../assets/json/social_network.json'
+        }).done(social_network => {
+            localStorage.setItem('social_network', JSON.stringify(social_network));
+        })
+        const urlParams = new URLSearchParams(window.location.search);
+        const urltogo = urlParams.get('p');
+        if (urltogo == null) {
+            location.reload();
+        } else {
+            location.href = urltogo;
+        }
     }).fail(function(e){
         $('#btn-icon').attr('class', 'fa fa-exclamation');
         if (e.responseJSON) {
