@@ -19,7 +19,6 @@ include_once '../../assets/php/session.php';
   <link rel="stylesheet" href="../css/style.css?v=<?php /*echo $version;*/ ?>">
   <link rel="shortcut icon" href="../images/favicon.png" />
   <link rel="stylesheet" href="../css/config.css">
-
 </head>
 
 <body class="boxed-layout">
@@ -63,7 +62,7 @@ include_once '../../assets/php/session.php';
                   <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade active show" id="contenedor-datosPersonales">
                       <div class="media d-block content">
-                        <form action="">
+                        <form >
                           <div class="body current d-sm-flex">
                             <div class="col-md-4 content grid-margin stretch-card" id="cont-option-profile" >
                               <div class="card">
@@ -117,41 +116,15 @@ include_once '../../assets/php/session.php';
                               </div>
                               <div class="form-group col-lg-6">
                                 <label>Redes Sociales</label>
-                               
                                 <div id="social-networks">
-                                  <!--div class="col-md-1 ">
-                                    <div class="badge cont-icon-social badge-pill badge-primary" title="Twitter"><i class="icons-social-icon mdi mdi-twitter"></i></div>
+                                  <div>
+                                      <div id="add-social-network" class="badge  badge-pill badge-outline-success">+</div>
                                   </div>
-                                  <div class="col-md-1 ">
-                                    <div class="badge cont-icon-social badge-pill badge-danger" title="Instagram"><i class="icons-social-icon mdi mdi-instagram"></i></div>
-                                  </div>
-                                  <div class="col-md-1 ">
-                                    <div class="badge cont-icon-social badge-pill badge-success" title="Teléfono"><i class="icons-social-icon mdi mdi-phone"></i></div>
-                                  </div>
-                                  <div class="col-md-1 ">
-                                    <div class="badge cont-icon-social badge-pill badge-primary" title="Facebook"><i class="icons-social-icon mdi mdi-facebook"></i></div>
-                                  </div>
-                                  <div class="col-md-1 ">
-                                    <div class="badge cont-icon-social badge-pill badge-danger" title="Email"><i class="icons-social-icon mdi mdi-email-outline"></i></div>
-                                  </div>
-                                  <div class="col-md-1 ">
-                                    <div class="badge cont-icon-social badge-pill badge-success" title="WhatsApp"><i class="icons-social-icon mdi mdi-whatsapp"></i></div>
-                                  </div-->
-                                 
                                 </div>
                               </div>
-                              <!--div class="form-group  col-lg-6 ">
-                                <label>Tipo red social</label>
-                                <select class="form-control" name="" id="cbo-tipoRedSocial"></select>
-                              </div>
-                              <div class="form-group  col-lg-6 ">
-                                <label>Red social</label>
-                                <input id="conf-redSocial" type="text" class="form-control" placeholder="">
-                              </div-->
-
                               <div class="form-group col-lg-12">
-                              <button type="button" class="btn btn-success btn-fw form-group col-lg-12">Aseptar</button>
-                            </div>
+                                <button type="button" id="submit-data-user" class="btn btn-success btn-fw form-group ">Aceptar</button>
+                              </div>
                             </div>
                            
                           </div>
