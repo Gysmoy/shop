@@ -28,6 +28,7 @@
 .cont-icon-social{
     padding: 16px;
     margin-left: 3px;
+    cursor: pointer;
 }
 
 .icons-social-icon{
@@ -40,9 +41,16 @@
 .badge-outline-success{
     margin-left: 3px;
 }
-
+.close{
+    background-color: #ffffff00;
+    color: #fff;
+    border: none;
+}
 #social-networks{
     display: flex;
+}
+#add-social-network{
+    cursor: pointer;
 }
 
 @media (max-width: 1590px) {

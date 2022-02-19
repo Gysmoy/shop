@@ -62,25 +62,27 @@ include_once '../../assets/php/session.php';
                   <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade active show" id="contenedor-datosPersonales">
                       <div class="media d-block content">
-                        <form >
+                        <form>
                           <div class="body current d-sm-flex">
-                            <div class="col-md-4 content grid-margin stretch-card" id="cont-option-profile" >
+                            <div class="col-md-4 content grid-margin stretch-card" id="cont-option-profile">
                               <div class="card">
                                 <div class="card-body row">
                                   <div class="col-lg-12" id="cont-imge-profile">
-                                    <img id="image-profile"  src="../php/image.php?id=undefined" alt="profile">
+                                    <img id="image-profile" src="../php/image.php?id=undefined" alt="profile">
                                   </div>
                                   <div class="cont-options mt-4 col-lg-12">
                                     <a class="icons" title="Subir fotografia" href=""><i class="mdi mdi-upload"></i></a>
-                                    <a class="icons" title="Descargar fotografia" href=""><i class="mdi mdi-download"></i></a>
+                                    <a class="icons" title="Descargar fotografia" href=""><i
+                                        class="mdi mdi-download"></i></a>
                                     <a class="icons" title="Ver fotografia" href=""><i class="mdi mdi-eye"></i></a>
                                     <!--a class="icons" title="Compartir perfil" href=""><i class="mdi mdi-share-variant"></i></a-->
-                                    <a class="icons" title="Eliminar fotografia" href=""><i class="mdi mdi-delete"></i></a>
+                                    <a class="icons" title="Eliminar fotografia" href=""><i
+                                        class="mdi mdi-delete"></i></a>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                           
+
                             <div class="col-md-8 mt-3 content row">
                               <div class="form-group  col-lg-6 ">
                                 <label>Nombres</label>
@@ -117,16 +119,61 @@ include_once '../../assets/php/session.php';
                               <div class="form-group col-lg-6">
                                 <label>Redes Sociales</label>
                                 <div id="social-networks">
-                                  <div>
-                                      <div id="add-social-network" class="badge  badge-pill badge-outline-success">+</div>
-                                  </div>
+                                  <!--div>
+                                    <div id="add-social-network" class="badge  badge-pill badge-outline-success">+</div>
+                                  </div-->
+
+
+                                  <!--div>
+                                    <div class="badge cont-icon-social badge-pill badge-succes" data-bs-toggle="modal" data-bs-target="#W-1">
+                                      <i class="icons-social-icon mdi mdi-whatsapp"></i>
+                                    </div>
+                                    <div class="modal fade" id="W-1" tabindex="-1"
+                                      aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">RED SOCIAL WHATSAPP</h5>
+                                            <button type="button" class="close" data-bs-dismiss="modal"
+                                              aria-label="Close">
+                                              <span aria-hidden="true">×</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form>
+                                              <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
+                                                <select type="text" class="form-control" id="redSocialType"></select>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="message-text" class="col-form-label">RED SOCIAL </label>
+                                                <input type="text" class="form-control" id="redSocialDescription">
+                                              </div>
+                                            </form>
+                                          </div>
+                                          
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-success">Send message</button>
+                                            <button type="button" class="btn btn-light"
+                                              data-bs-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div-->
+
+
+
+                                  
+
                                 </div>
                               </div>
                               <div class="form-group col-lg-12">
-                                <button type="button" id="submit-data-user" class="btn btn-success btn-fw form-group ">Aceptar</button>
+                                <button type="button" id="submit-data-user"
+                                  class="btn btn-success btn-fw form-group ">Aceptar</button>
                               </div>
                             </div>
-                           
+
                           </div>
                         </form>
                       </div>
@@ -135,7 +182,7 @@ include_once '../../assets/php/session.php';
                     <div class="tab-pane fade" id="contenedor-email">
                       <div class="media d-block content ">
                         <div class="body current row clearfix">
-                         
+
                           <div class="form-group  col-lg-6   ">
                             <label>Nuebo email</label>
                             <input type="email" class="form-control" placeholder="Ingese su email">
@@ -189,7 +236,7 @@ include_once '../../assets/php/session.php';
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  
+
 
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
@@ -214,7 +261,7 @@ include_once '../../assets/php/session.php';
   <script src="../js/user-relation.js"></script>
   <!-- End custom js for this page -->
   <!-- PARTE DE LA PAGINA -->
-  
+
   <script src="../js/select2.js"></script>
   <script src="../js/combos.js"></script>
   <script src="../js/general_config.js"></script>

@@ -6,8 +6,11 @@ if (
     isset($_SESSION['type']) &&
     $_SESSION['type'] == 'client' 
 ) {
+
+
     header('Content-Type: json ]');
     $response = [];
+
     $data = [
         'names' => $_POST['names'],
         'apellidoPaterno' => $_POST['apellidoPaterno'],
@@ -40,7 +43,6 @@ if (
             $response['message1'] = $query -> errorInfo();
             $response['data'] = [];
         }
-       
      }
 }else{
     $response['status'] = 400;

@@ -4,7 +4,6 @@ fn_tiporedsocial('cbo-tipoRedSocial', '-1');
 fn_ubigeo_departamento('cbo-departamento', null);
 fn_ubigeo_prov('cbo-provincia', null, null);
 fn_ubigeo_dist('cbo-distrito', null, null);
-
 $('#cbo-departamento').on('change', function () {
   let departamento = $('#cbo-departamento option:selected').val();
   $('#cbo-provincia').empty();
@@ -15,13 +14,13 @@ $('#cbo-provincia').on('change', function () {
   fn_ubigeo_dist('cbo-distrito', null, provincia);
 });
 
+// EVENTOS
 $('#submit-data-user').click(function (e) {
   e.preventDefault();
   sedingDataClient();
 });
 
-
-// traendo datos
+// TRAENDO Y PINTANDO DATOS
 function getDataClient() {
   $.ajax({
     type: "POST",
@@ -32,42 +31,19 @@ function getDataClient() {
     $('#conf-primer-apellido').val(data.data.user.apellidoPaterno);
     $('#conf-segundo-apellido').val(data.data.user.apellidoMaterno);
     $('#conf-calle').val(data.data.user.ubigeo.calle)
-
     fn_ubigeo_departamento('cbo-departamento', data.data.user.ubigeo.departamento);
     fn_ubigeo_prov('cbo-provincia', data.data.user.ubigeo.provincia, data.data.user.ubigeo.departamento)
     fn_ubigeo_dist('cbo-distrito', data.data.user.ubigeo.distrito, data.data.user.ubigeo.provincia)
     fn_tipocalle('cbo-tipoCalle', data.data.user.ubigeo.tipoCalle)
     $('#cbo-tipoCalle').val(data.data.user.ubigeo.tipoCalle);
     $('#conf-calle').val(data.data.user.ubigeo.calle);
-
-    // pintando redes sociales
     social_networks(data);
-
   }).fail(function (data) {
     console.log(data)
     alert('fail')
     location.href = 'login.php';
   });
 }
-
-// pintando redes sociales 
-function social_networks(data) {
-  var social = data.data.user.social_networks;
-  social.forEach(function (data) {
-    $.getJSON('../json/tipo_redsocial.json', function (data_r) {
-      data_r.forEach(function (data_u) {
-        if (data.type == data_u.id) {
-          $('#social-networks').prepend(`
-            <div>
-              <div class="badge cont-icon-social badge-pill ${data_u.background}"><i class="icons-social-icon mdi ${data_u.icon}"></i></div>
-            </div>
-          `);
-        }
-      })
-    });
-  });
-};
-
 
 // subiendo cambios 
 function sedingDataClient() {
@@ -76,15 +52,13 @@ function sedingDataClient() {
   request.names = $('#conf-names').val();
   request.apellidoPaterno = $('#conf-primer-apellido').val();
   request.apellidoMaterno = $('#conf-segundo-apellido').val();
-
   ubigeo.departamento = $('#cbo-departamento').val();
   ubigeo.provincia = $('#cbo-provincia').val();
   ubigeo.distrito = $('#cbo-distrito').val();
   ubigeo.tipoCalle = $('#cbo-tipoCalle').val();
   ubigeo.calle = $('#conf-calle').val();
-
   request.ubigeo = ubigeo;
-
+  request.type = 'data_client'
   $.ajax({
     type: "POST",
     url: "../php/dateUpdate.php",
@@ -95,13 +69,129 @@ function sedingDataClient() {
     alert(data.message);
     getDataClient()
   }).fail(function (data) {
- 
     console.log(data.message);
     alert('Error en la operacion')
   });
 }
+// generador de IDs
+function GID() {
+  var d = new Date().getTime();
+  var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+  return uuid;
+}
+
+// pintando redes sociales 
+function social_networks(data) {
+  var social = data.data.user.social_networks;
+  var i = 0;
+  social.forEach(function (data) {
+    
+    var ids = GID();
+    $.getJSON('../json/tipo_redsocial.json', function (data_r) {
+      data_r.forEach(function (data_u) {
+        if (data.type == data_u.id) {
+          i++;
+          $('#social-networks').prepend(`
+            <div>
+
+              <div class="badge cont-icon-social badge-pill ${data_u.background}" data-bs-toggle="modal" data-bs-target="#s${i}"><i class="icons-social-icon mdi ${data_u.icon}"></i></div>
+           
+              <div class="modal fade" id="s${i}" tabindex="-1"
+                aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="ModalLabel">RED SOCIAL ${data_u.id.toUpperCase()}</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
+                          <select type="text" class="form-control" id="type-social-${i}"></select>
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">RED SOCIAL </label>
+                          <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${i}">
+                        </div>
+                      </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-success">Actualizar</button>
+                      <button type="button" class="btn btn-light"
+                        data-bs-dismiss="modal">Canselar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `);
+
+
+          // 
+          fn_tiporedsocial(`type-social-${i}`, data_u.id)
+          $(`#text-social-${i}`).val(`${data.description}`)
+        }
+      })
+    });
+  });
+  $('#social-networks').append(`
+      <div>
+        <div id="add-social-network" class="badge  badge-pill badge-outline-success" data-bs-toggle="modal" data-bs-target="#modal-add-social-network">+</div>
+
+        <div class="modal fade" id="modal-add-social-network" tabindex="-1"
+          aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">AGREGAR NUEBA RED SOCIAL</h5>
+                <button type="button" class="close" data-bs-dismiss="modal"
+                  aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
+                    <select type="text" class="form-control" id="add-type-red-social"></select>
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">RED SOCIAL </label>
+                    <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${i}">
+                  </div>
+                </form>
+              </div>
+              
+              <div class="modal-footer">
+              <button type="button" class="btn btn-danger">Eliminar</button>
+              <button type="button" class="btn btn-success">Actualizar</button>
+                <button type="button" class="btn btn-light"
+                  data-bs-dismiss="modal">Canselar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>`);
+
+      fn_tiporedsocial('add-type-red-social', -1)
+
+};
+
+// loica para red social
+
+
 
 $(document).ready(function(){
   getDataClient();
-
 });
