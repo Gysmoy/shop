@@ -77,9 +77,9 @@ function sedingDataClient() {
 function GID() {
   var d = new Date().getTime();
   var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      var r = (d + Math.random() * 16) % 16 | 0;
-      d = Math.floor(d / 16);
-      return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    var r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
   });
   return uuid;
 }
@@ -88,25 +88,25 @@ function GID() {
 function social_networks(data) {
   var social = data.data.user.social_networks;
   var i = 0;
-  social.forEach(function (data) {
-    
-    var ids = GID();
+  var f = 0;
+  social.forEach(function (data, index, array) {
+    i++;
     $.getJSON('../json/tipo_redsocial.json', function (data_r) {
+      f++;
       data_r.forEach(function (data_u) {
         if (data.type == data_u.id) {
-          i++;
           $('#social-networks').prepend(`
-            <div>
+            <div id="social-${index}">
 
-              <div class="badge cont-icon-social badge-pill ${data_u.background}" data-bs-toggle="modal" data-bs-target="#s${i}"><i class="icons-social-icon mdi ${data_u.icon}"></i></div>
+              <div class="badge cont-icon-social badge-pill ${data_u.background}" data-bs-toggle="modal" data-bs-target="#s${index}"><i class="icons-social-icon mdi ${data_u.icon}"></i></div>
            
-              <div class="modal fade" id="s${i}" tabindex="-1"
+              <div class="modal fade" id="s${index}" tabindex="-1"
                 aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="ModalLabel">RED SOCIAL ${data_u.id.toUpperCase()}</h5>
-                      <button type="button" class="close" data-bs-dismiss="modal"
+                      <h5 class="modal-title" >ADMINISTRAR ${data_u.id.toUpperCase()}</h5>
+                      <button type="button" id="btn-exit-modal${index}" class="close" data-bs-dismiss="modal"
                         aria-label="Close">
                         <span aria-hidden="true">×</span>
                       </button>
@@ -115,18 +115,18 @@ function social_networks(data) {
                       <form>
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
-                          <select type="text" class="form-control" id="type-social-${i}"></select>
+                          <select type="text" class="form-control" id="type-social-${index}"></select>
                         </div>
                         <div class="form-group">
                           <label for="message-text" class="col-form-label">RED SOCIAL </label>
-                          <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${i}">
+                          <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${index}">
                         </div>
                       </form>
                     </div>
                     
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                    <button type="button" class="btn btn-success">Actualizar</button>
+                    <button type="button" id="eliminar-R${index}" class="btn btn-danger">Eliminar</button>
+                    <button type="button" id="actualizar-R${index}" class="btn btn-success">Actualizar</button>
                       <button type="button" class="btn btn-light"
                         data-bs-dismiss="modal">Canselar</button>
                     </div>
@@ -137,13 +137,26 @@ function social_networks(data) {
           `);
 
 
-          // 
-          fn_tiporedsocial(`type-social-${i}`, data_u.id)
-          $(`#text-social-${i}`).val(`${data.description}`)
+          // rrelenado datos al modal
+          fn_tiporedsocial(`type-social-${index}`, data_u.id)
+          $(`#text-social-${index}`).val(`${data.description}`)
+
+          // eliminado datos del modal
+          
+          $(`#eliminar-R${index}`).click(function () {
+            array.splice(index, 1);
+            $(`#s${index}`).modal('hide');
+            $(`#social-${index}`).hide();
+            console.log(array)
+            console.log(index)
+          });
+
         }
       })
     });
+
   });
+
   $('#social-networks').append(`
       <div>
         <div id="add-social-network" class="badge  badge-pill badge-outline-success" data-bs-toggle="modal" data-bs-target="#modal-add-social-network">+</div>
@@ -167,14 +180,13 @@ function social_networks(data) {
                   </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">RED SOCIAL </label>
-                    <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${i}">
+                    <input type="text" class="form-control" placeholder="Descripcion" id="text-add-social">
                   </div>
                 </form>
               </div>
               
               <div class="modal-footer">
-              <button type="button" class="btn btn-danger">Eliminar</button>
-              <button type="button" class="btn btn-success">Actualizar</button>
+              <button type="button" class="btn btn-success">Aseptar</button>
                 <button type="button" class="btn btn-light"
                   data-bs-dismiss="modal">Canselar</button>
               </div>
@@ -184,7 +196,54 @@ function social_networks(data) {
         </div>
       </div>`);
 
-      fn_tiporedsocial('add-type-red-social', -1)
+
+  function delete_social_network(data, name) {
+    data.forEach(function (val, index, arr) {
+      if (data[index].type == name) {
+        data.splice(index, 1);
+        $(`#s${index}`).modal('hide');
+      }
+    });
+    return data;
+  }
+
+/*
+  social.forEach(function (val, index, arr) {
+    $(`#eliminar-R${index}`).click(function () {
+      array.splice(index, 1);
+      $(`#s${index}`).modal('hide');
+      $(`#social-${index}`).hide();
+      console.log(array)
+      console.log(index)
+
+    });
+  });
+*/
+
+
+  // ELIMINAR RED SOCIAL
+
+  $(`#eliminar-R${f}`).click(function () {
+    function delete_social_network(data, name) {
+      h++;
+      data.forEach(function (val, index, arr) {
+
+        if (data[index].type == name) {
+
+          data.splice(index, 1);
+          console.log(h)
+          $(`#s${h}`).modal('hide');
+
+        }
+      });
+      return data;
+    }
+    res = delete_social_network(social, data.type);
+    console.log(res);
+
+  });
+
+  console.log(social)
 
 };
 
@@ -192,6 +251,8 @@ function social_networks(data) {
 
 
 
-$(document).ready(function(){
+$(document).ready(function () {
   getDataClient();
+
+  fn_tiporedsocial('add-type-red-social', -1)
 });
