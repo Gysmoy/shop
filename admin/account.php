@@ -108,13 +108,13 @@ $version = uniqid(); ?>
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Agregar una red social</h5>
+              <h5 class="modal-title">Agregar una Red Social a tu cuenta</h5>
               <button type="button" class="close" data-bs-dismiss="modal">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
             <div class="modal-body text-center">
-              <div class="form-group">
+              <div class="form-group mb-0">
                 <div class="input-group">
                   <select class="form-control info" id="sn_id" style="width: 30%"></select>
                   <input type="url" class="form-control" id="sn_value" style="width: 70%">
@@ -122,7 +122,7 @@ $version = uniqid(); ?>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">Actualizar</button>
+              <button type="button" class="btn btn-success">Guardar</button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>
