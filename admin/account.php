@@ -15,6 +15,59 @@ $version = uniqid(); ?>
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
   <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $version; ?>">
   <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <style>
+    .profile-picture {
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 1px solid #2A3038;
+      object-fit: cover;
+      -object-fit: cover;
+      object-position: center center;
+      -object-position: center center;
+    }
+    .sn-btn {
+      font-weight: bold;
+      position: relative;
+    }
+    .sn-btn .sn_edit,
+    .sn-btn .sn_remove {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      background-color: grey;
+      color: #fff;
+      padding: 5px;
+      font-size: small;
+      font-weight: bold;
+      transition: all .25s;
+    }
+    .sn-btn:hover .sn_edit,
+    .sn-btn:hover .sn_remove {
+      visibility: visible;
+      opacity: 1;
+      transition: all .25s;
+    }
+    .sn-btn .sn_edit {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 50%;
+      border-radius: 50px 50px 0 0;
+      background-color: #00d25b;
+    }
+    .sn-btn .sn_remove {
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 0 0 50px 50px;
+      background-color: #fc424a;
+    }
+  </style>
 </head>
 
 <body class="boxed-layout">
@@ -26,6 +79,7 @@ $version = uniqid(); ?>
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <?php include_once 'assets/php/header.php'; ?>
       </nav>
+      <!-- INICIO MODALS -->
       <div class="modal" id="profile-modal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -35,17 +89,46 @@ $version = uniqid(); ?>
                 <span aria-hidden="true">×</span>
               </button>
             </div>
-            <div class="modal-body">
-              <label for="profile" class="btn btn-success">Subir una foto</label>
-              <input style="display: none;" type="file" id="profile">
+            <div class="modal-body text-center">
+            <img class="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" width="100%">
+              <label for="profile-input" class="btn btn-primary">
+                <i class="mdi mdi-upload"></i>
+                Subir una foto
+              </label>
+              <input style="display: none;" type="file" id="profile-input" accept="image/*">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-success">Actualizar</button>
-              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>
         </div>
       </div>
+      <div class="modal" id="social_network_modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Agregar una red social</h5>
+              <button type="button" class="close" data-bs-dismiss="modal">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <div class="form-group">
+                <div class="input-group">
+                  <select class="form-control info" id="sn_id" style="width: 30%"></select>
+                  <input type="url" class="form-control" id="sn_value" style="width: 70%">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Actualizar</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- INICIO MODALS -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
@@ -63,6 +146,23 @@ $version = uniqid(); ?>
                             </figcaption>
                         </figure>
                     </div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">REDES SOCIALES</h4>
+                  <div>
+                    <button class="sn-icon btn btn-primary btn-rounded btn-icon">
+                      <i class="mdi mdi-facebook"></i>
+                      <input type="hidden" s_n="id" value="facebook">
+                      <input type="hidden" s_n="value" value="https://facebook.com/gysmoy">
+                    </button>
+                    <button class="sn-icon btn btn-success btn-rounded btn-icon">
+                      <i class="mdi mdi-whatsapp"></i>
+                      <input type="hidden" s_n="id" value="whatsapp">
+                      <input type="hidden" s_n="value" value="https://wa.me/999413711">
+                    </button>
+                    <button id="sn_btn" class="sn-icon btn btn-inverse-info btn-rounded btn-icon">
+                      <i class="mdi mdi-plus"></i>
+                    </button>
                   </div>
                 </div>
               </div>
