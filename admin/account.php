@@ -116,7 +116,7 @@ $version = uniqid(); ?>
             <div class="modal-body text-center">
               <div class="form-group mb-0">
                 <div class="input-group">
-                  <select class="form-control info" id="sn_id" style="width: 30%"></select>
+                  <select class="form-control info js-example-basic-single" id="sn_id" style="width: 30%"></select>
                   <input type="url" class="form-control" id="sn_value" style="width: 70%">
                 </div>
               </div>
@@ -664,12 +664,13 @@ $version = uniqid(); ?>
   <script src="assets/js/misc.js"></script>
   <script src="assets/js/settings.js"></script>
   <script src="assets/js/todolist.js"></script>
+  <script src="assets/js/select2.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="assets/js/dashboard.js"></script>
   <script src="../assets/js/moment.min.js"></script>
   <script src="assets/js/session.js"></script>
-  <script src="assets/js/account.js"></script>
+  <script src="assets/js/account/account.js"></script>
   <!-- End custom js for this page -->
 </body>
 
