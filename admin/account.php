@@ -90,7 +90,7 @@ $version = uniqid(); ?>
               </button>
             </div>
             <div class="modal-body text-center">
-            <img class="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" width="100%">
+              <img class="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" width="100%">
               <label for="profile-input" class="btn btn-primary">
                 <i class="mdi mdi-upload"></i>
                 Subir una foto
@@ -664,13 +664,13 @@ $version = uniqid(); ?>
   <script src="assets/js/misc.js"></script>
   <script src="assets/js/settings.js"></script>
   <script src="assets/js/todolist.js"></script>
-  <script src="assets/js/select2.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="assets/js/dashboard.js"></script>
   <script src="../assets/js/moment.min.js"></script>
   <script src="assets/js/session.js"></script>
   <script src="assets/js/account/account.js"></script>
+  <script src="assets/js/account/profile.js"></script>
   <!-- End custom js for this page -->
 </body>
 
