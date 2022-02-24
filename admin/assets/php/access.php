@@ -1,5 +1,9 @@
 <?php
 $response = [];
+$ip_json = file_get_contents('https://api64.ipify.org?format=json');
+$ip_api = json_decode($ip_json, true);
+$ip = $ip_api['ip'];
+$x_auth_token = hash('md5', $ip);
 if (
     isset($_POST['username']) &&
     isset($_POST['password'])
@@ -8,7 +12,7 @@ if (
     $db = new Database();
     $query = $db -> connect() -> prepare('SELECT
         a.id, a.username, a.password, a.name, a.dni, a.email,
-        a.phone, a.address, r.id AS rol_id, r.rol AS rol_name,
+        a.phone, a.address, a.social_network, r.id AS rol_id, r.rol AS rol_name,
         r.description AS rol_description, a.status
     FROM admins a INNER
     JOIN admin_roles r ON a._rol = r.id
@@ -46,8 +50,11 @@ if (
                 'name' => $row['rol_name'],
                 'description' => $row['rol_description']
             ];
+            $_SESSION['social_network'] = json_decode($row['social_network'], true);
             $_SESSION['status'] = boolval($row['status']);
             $_SESSION['type'] = 'admin';
+            $_SESSION['x-auth-token'] = $x_auth_token;
+            $_SESSION['ip-client'] = $ip;
         } else {
             $response['status'] = 400;
             $response['message'] = 'Este usuario se encuentra inactivo';

@@ -14,6 +14,7 @@ $.ajax({
     $('[session="user_name"]').text(session.user.name);
     $('[session="rol_name"]').text(session.rol.name)
         .attr('title', session.rol.description);
+    sessionStorage.setItem('session', JSON.stringify(res.data));
 }).fail(e => {
     if (!location.href.includes('login.php')) {
         location.href = `login.php?p=${location.href}`;

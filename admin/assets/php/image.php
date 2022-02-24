@@ -9,15 +9,16 @@ if (
   include_once '../../../assets/php/database.php';
   $db = new Database();
   $query = $db -> connect() -> prepare('SELECT
-    profile
+    profile_mini,
+    profile_type
   FROM admins
   WHERE id = ?
   ');
   $query -> execute([$_GET['id']]);
   $row = $query -> fetch(PDO::FETCH_ASSOC);
-  if ($row && $row['profile'] != '' && $row['profile'] != null) {
-    header('Content-Type: image/jpg');
-    echo $row['profile'];
+  if ($row && $row['profile_mini'] != '' && $row['profile_mini'] != null) {
+    header('Content-Type: ' . $row['profile_type']);
+    echo $row['profile_mini'];
   } else {
     header('Content-Type: image/svg+xml');
     echo file_get_contents('../../../assets/img/user-not-found.svg');

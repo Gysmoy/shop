@@ -21,6 +21,7 @@
     # ADMIN API's
     RewriteRule ^api/admin/access  admin/assets/php/access.php [QSA]
     RewriteRule ^api/admin/user-relation  admin/assets/php/user-relation.php [QSA]
+    RewriteRule ^api/admin/updateProfile  admin/assets/php/account/updateProfile.php [QSA]
 
     # Sin .php
     #RewriteCond %{REQUEST_FILENAME} !-f
