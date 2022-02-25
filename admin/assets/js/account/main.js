@@ -37,7 +37,7 @@ function socialData(data) {
     });
 }
 $(document).ready(function () {
-    var data = JSON.parse(sessionStorage.getItem('session'));
+    var data = JSON.parse(localStorage.getItem('session'));
     userData(data);
     personalData(data);
     socialData(data);

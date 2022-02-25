@@ -23,7 +23,8 @@ class Database{
             $pdo = new PDO($connection, $this->user, $this->password, $options);
             return $pdo;
         }catch(PDOException $e){
-            print_r('Error de  conexión: ' . $e->getMessage());
+            return false;
+            #print_r('Error de  conexión: ' . $e->getMessage());
         }
     }
 }

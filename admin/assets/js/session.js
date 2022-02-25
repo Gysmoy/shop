@@ -1,4 +1,5 @@
 $.ajax({
+    async: false,
     url: 'assets/php/session.php',
     dataType: 'JSON'
 }).done(res => {
@@ -14,8 +15,10 @@ $.ajax({
     $('[session="user_name"]').text(session.user.name);
     $('[session="rol_name"]').text(session.rol.name)
         .attr('title', session.rol.description);
-    sessionStorage.setItem('session', JSON.stringify(res.data));
+    localStorage.setItem('session', JSON.stringify(res.data));
 }).fail(e => {
+    sessionStorage.clear();
+    localStorage.clear();
     if (!location.href.includes('login.php')) {
         location.href = `login.php?p=${location.href}`;
     }
