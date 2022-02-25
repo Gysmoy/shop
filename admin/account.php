@@ -30,7 +30,9 @@ $version = uniqid(); ?>
       object-position: center center;
       -object-position: center center;
     }
-    #sn_edit, #sn_delete {
+
+    #sn_edit,
+    #sn_delete {
       opacity: 0;
       visibility: hidden;
       position: absolute;
@@ -39,25 +41,28 @@ $version = uniqid(); ?>
       box-shadow: 0 0 10px #000;
       transition: .25s;
     }
+
     #sn_edit {
       top: 50%;
       left: calc(50% - 20px);
       transform: translate(-50%, -50%);
     }
+
     #sn_delete {
       top: 50%;
       right: calc(50% - 20px);
       transform: translate(50%, -50%);
     }
+
     .social_network {
       cursor: move;
     }
-    .social_network:hover > #sn_edit,
-    .social_network:hover > #sn_delete {
+
+    .social_network:hover>#sn_edit,
+    .social_network:hover>#sn_delete {
       visibility: visible;
       opacity: 1;
     }
-    
   </style>
 </head>
 
@@ -209,7 +214,14 @@ $version = uniqid(); ?>
                               Queremos saber que redes usas más para
                               poder contactarte mas rápido.
                             </p>
-                            <button id="sn_add" class="btn btn-primary">Agregar una red social</button>
+                            <button id="sn_add" class="btn btn-sm btn-primary btn-icon-text">
+                              <i class="mdi mdi-file-check btn-icon-prepend"></i>
+                              Agregar
+                            </button>
+                            <button id="sn_save" class="btn btn-sm btn-info btn-icon-text">
+                              <i class="mdi mdi-printer btn-icon-prepend"></i>
+                              Guardar
+                            </button>
                             <hr>
                             <div class="col-md-12">
                               <div id="social_network">
@@ -252,11 +264,11 @@ $version = uniqid(); ?>
   <!-- Custom js for this page -->
   <script src="assets/js/dashboard.js"></script>
   <script src="../assets/js/moment.min.js"></script>
-  <script src="assets/js/session.js"></script>
-  <script src="assets/js/account/account.js"></script>
-  <script src="assets/js/account/profile.js"></script>
-  <script src="assets/js/account/social_network.js"></script>
-  <script src="assets/js/account/main.js"></script>
+  <script src="assets/js/session.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/social_network.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/main.js?v=<?php echo $version; ?>"></script>
   <!-- End custom js for this page -->
 </body>
 

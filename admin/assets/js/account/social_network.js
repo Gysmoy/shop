@@ -22,6 +22,21 @@ function fn_socialNetwork(value) {
     })
     select.val(value);
 }
+function getSocialNetworks() {
+    var sns = [];
+    $('.social_network').each(function() {
+        var data = JSON.parse($(this).attr('data'));
+        sns.push(data);
+    })
+    return sns;
+}
+function sn_verify() {
+    var session = JSON.parse(localStorage.getItem('session'));
+    var local_sn = session.social_network;
+    var front_sn = getSocialNetworks();
+    console.log(local_sn.length, front_sn.length);
+}
+
 
 $(document).on('click', '#sn_add', function() {
     var title = $('#social_network_modal .modal-title');
