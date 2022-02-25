@@ -214,12 +214,10 @@ $version = uniqid(); ?>
                               Queremos saber que redes usas más para
                               poder contactarte mas rápido.
                             </p>
-                            <button id="sn_add" class="btn btn-sm btn-primary btn-icon-text">
-                              <i class="mdi mdi-file-check btn-icon-prepend"></i>
+                            <button id="sn_add" class="btn btn-inverse-primary">
                               Agregar
                             </button>
-                            <button id="sn_save" class="btn btn-sm btn-info btn-icon-text">
-                              <i class="mdi mdi-printer btn-icon-prepend"></i>
+                            <button id="sn_save" class="btn btn-inverse-info" style="display: none;">
                               Guardar
                             </button>
                             <hr>

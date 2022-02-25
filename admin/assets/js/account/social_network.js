@@ -34,7 +34,25 @@ function sn_verify() {
     var session = JSON.parse(localStorage.getItem('session'));
     var local_sn = session.social_network;
     var front_sn = getSocialNetworks();
-    console.log(local_sn.length, front_sn.length);
+    if (local_sn.length == front_sn.length) {
+        var diff = false;
+        for (let i = 0; i < local_sn.length; i++) {
+            const local = local_sn[i];
+            const front = front_sn[i];
+            if (local.id == front.id) {
+                diff = false;
+            } else {
+                diff = true;
+            }
+        }
+        if (diff) {
+            $('#sn_save').fadeIn();
+        } else {
+            $('#sn_save').fadeOut();
+        }
+    } else {
+        $('#sn_save').fadeIn();
+    }
 }
 
 

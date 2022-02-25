@@ -3,7 +3,7 @@
   var iconTochange;
   dragula([
     document.getElementById("social_network")
-  ]).on('drop', function() {
+  ]).on('out', function() {
     sn_verify();
   });
   dragula([
