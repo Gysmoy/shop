@@ -7,6 +7,7 @@ $version = uniqid(); ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Administración | Configuración</title>
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
@@ -15,8 +16,13 @@ $version = uniqid(); ?>
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
   <link rel="stylesheet" href="assets/vendors/dragula/dragula.min.css">
   <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $version; ?>">
-  <link rel="shortcut icon" href="assets/images/favicon.png" />
   <style>
+    img {
+      object-fit: cover;
+      -object-fit: cover;
+      object-position: center center;
+    }
+
     .profile-picture {
       display: block;
       margin: auto;
@@ -131,11 +137,11 @@ $version = uniqid(); ?>
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">CONFIGURACIÓN DE PERFIL</h4>
+                  <h4 class="card-title text-center">CONFIGURACIÓN DE PERFIL</h4>
                   <div class="row portfolio-grid">
-                    <div class="col-12">
+                    <div class="col-12" style="width: max-content; margin:auto">
                       <figure class="effect-text-in">
-                        <img session="user_image" src="assets/php/image.php?id=undefined" class="img-xx-lg rounded" alt="image">
+                        <img session="user_image" src="assets/php/image.php?id=undefined" class="rounded" alt="image">
                         <figcaption>
                           <h4 session="user_name"></h4>
                           <p onclick="updateProfile()">Haga click para cambiar de imagen</p>
@@ -143,26 +149,39 @@ $version = uniqid(); ?>
                       </figure>
                     </div>
                   </div>
-                  <div class="dropdown">
+                  <div class="dropdown text-center">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="mdi mdi-account"></i>
                       Perfil
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
                       <h6 class="dropdown-header">¿Qué deseas hacer?</h6>
-                      <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">Ver foto</a>
-                      <a class="dropdown-item" id="profile-upload" style="cursor: pointer;">Subir una foto</a>
-                      <a class="dropdown-item" id="profile-delete" style="cursor: pointer;">Quitar foto</a>
+                      <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">
+                        <i class="mdi mdi-crop-free"></i>
+                        Ver foto
+                      </a>
+                      <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">
+                        <i class="mdi mdi-download"></i>
+                        Descargar foto
+                      </a>
+                      <a class="dropdown-item" id="profile-upload" style="cursor: pointer;">
+                        <i class="mdi mdi-upload"></i>
+                        Subir una foto
+                      </a>
+                      <a class="dropdown-item" id="profile-delete" style="cursor: pointer;">
+                        <i class="mdi mdi-delete-forever"></i>
+                        Quitar foto
+                      </a>
                     </div>
                   </div>
                   <hr>
-                  <h4 class="card-title">¿CÓMO TE VEN LOS DEMÁS?</h4>
-                  <div class="d-flex flex-row">
+                  <h4 class="card-title text-center">¿CÓMO TE VEN LOS DEMÁS?</h4>
+                  <div class="d-flex flex-row" style="justify-content: center;">
                     <img session="user_image" src="assets/php/image.php?id=undefined" class="img-lg rounded" alt="image">
                     <div class="ms-3">
-                      <h6 session="user_name"></h6>
-                      <p session="user_username" class="text-muted mb-1">Timcook@gmail.com</p>
-                      <p session="rol_name" class="mt-2 text-success font-weight-bold">Designer</p>
+                      <h6 session="user_username"></h6>
+                      <p session="rol_name" class="text-muted my-1"></p>
+                      <p session="ip_client" class="mt-1 text-success"></p>
                     </div>
                   </div>
                 </div>

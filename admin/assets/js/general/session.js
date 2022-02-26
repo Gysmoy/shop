@@ -17,6 +17,7 @@ $.ajax({
     $('[session="user_email"]').text(session.user.email);
     $('[session="rol_name"]').text(session.rol.name)
         .attr('title', session.rol.description);
+    $('[session="ip_client"]').text(session['ip-client']);
     localStorage.setItem('session', JSON.stringify(res.data));
 }).fail(e => {
     sessionStorage.clear();

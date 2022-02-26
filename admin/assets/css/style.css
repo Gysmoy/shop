@@ -15989,7 +15989,9 @@ html {
   overflow: auto; }
 
 .container-scroller {
-  overflow: hidden; }
+  overflow: hidden; 
+  min-height: 100vh;
+}
 
 pre {
   background: color(gray-lighter);
