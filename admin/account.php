@@ -119,7 +119,7 @@ $version = uniqid(); ?>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">Guardar</button>
+              <button id="sn_new" type="button" class="btn btn-success">Guardar</button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>

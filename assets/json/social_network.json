@@ -6,37 +6,37 @@
 	{
 		"id": "whatsapp",
 		"descripcion": "Whatsapp",
-		"background": "badge-success",
+		"background": "#00a884",
     	"icon": "mdi-whatsapp"
 	},
 	{
 		"id": "facebook",
 		"descripcion": "Facebook",
-		"background": "badge-primary",
+		"background": "#2e89ff",
     	"icon": "mdi-facebook"
 	},
 	{
 		"id": "email",
 		"descripcion": "E-mail",
-		"background": "badge-danger",
+		"background": "#ffffff",
     	"icon": "mdi-email-outline"
 	},
 	{
 		"id": "phone",
 		"descripcion": "Teléfono",
-		"background": "badge-success",
+		"background": "#00d25b",
     	"icon": "mdi-phone"
 	},
 	{
 		"id": "instagram",
 		"descripcion": "Intagram",
-		"background": "badge-danger",
+		"background": "#e1306c",
     	"icon": "mdi-instagram"
 	},
 	{
 		"id": "twitter",
 		"descripcion": "Twitter",
-		"background": "badge-primary",
+		"background": "#1da1f2",
     	"icon": "mdi-twitter"
 	}
 ]
