@@ -28,7 +28,6 @@ $version = uniqid(); ?>
       object-fit: cover;
       -object-fit: cover;
       object-position: center center;
-      -object-position: center center;
     }
 
     #sn_edit,
@@ -149,7 +148,7 @@ $version = uniqid(); ?>
                       <i class="mdi mdi-account"></i>
                       Perfil
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6" style="">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
                       <h6 class="dropdown-header">¿Qué deseas hacer?</h6>
                       <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">Ver foto</a>
                       <a class="dropdown-item" id="profile-upload" style="cursor: pointer;">Subir una foto</a>
