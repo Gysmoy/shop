@@ -1,23 +1,22 @@
-function userData(data) {
-    $('[id="user.username"]').val(data.user.username);
-    $('[id="user.email"]').val(data.user.email);
+function userData(user) {
+    $('[id="user.username"]').val(user.username);
+    $('[id="user.email"]').val(user.email);
 }
-function personalData(data) {
-    $('[id="user.name"]').val(data.user.name);
-    $('[id="user.phone"]').val(data.user.phone);
-    $('[id="user.address"]').val(data.user.address);
+function personalData(user) {
+    $('[id="user.name"]').val(user.name);
+    $('[id="user.phone"]').val(user.phone);
+    $('[id="user.address"]').val(user.address);
 }
-function socialData(data) {
+function socialData(social_network) {
     $('[id="social_network"]').empty();
-    var social_network = JSON.parse(localStorage.getItem('social_network'));
-    data.social_network.forEach(sn => {
+    var social_network_json = JSON.parse(localStorage.getItem('social_network'));
+    social_network.forEach(sn => {
         var sn_complete;
-        social_network.forEach(function(social) {
+        social_network_json.forEach(function(social) {
             if (social.id == sn.id) {
                 sn_complete = social;
             }
         });
-        console.log(sn_complete);
         $('[id="social_network"]').append(`
         <div data="${sn.id}" class="social_network card rounded border mb-2"
             style="background-color: ${sn_complete.background}11;">
@@ -26,7 +25,7 @@ function socialData(data) {
                     <i class="mdi mdi-${sn.id} align-self-center me-3" style="color: ${sn_complete.background};"></i>
                     <div class="media-body">
                         <h6 class="mb-1">
-                            <a href="${sn.value}" target="_blank"
+                            <a href="${sn_complete.href}${sn.value}" target="_blank"
                                 style="color: ${sn_complete.background};">
                                 ${sn_complete.descripcion}
                             </a>
@@ -53,7 +52,7 @@ function socialData(data) {
 }
 $(document).ready(function () {
     var data = JSON.parse(localStorage.getItem('session'));
-    userData(data);
-    personalData(data);
-    socialData(data);
+    userData(data.user);
+    personalData(data.user);
+    socialData(data.social_network);
 });

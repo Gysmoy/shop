@@ -36,15 +36,20 @@ function sn_verify() {
     var session = JSON.parse(localStorage.getItem('session'));
     var local_sn = session.social_network;
     var front_sn = getSocialNetworks();
+    console.log(local_sn, front_sn);
     if (local_sn.length == front_sn.length) {
         var diff = false;
         for (let i = 0; i < local_sn.length; i++) {
             const local = local_sn[i];
             const front = front_sn[i];
-            if (local.id == front.id) {
+            if (
+                local.id == front.id &&
+                local.value == front.value
+            ) {
                 diff = false;
             } else {
                 diff = true;
+                break;
             }
         }
         if (diff) {
@@ -77,4 +82,12 @@ $(document).on('click', '#sn_edit', function() {
     $('#social_network_modal').modal('show');
 })
 
-$(document).on('click', '#sn_new')
+$(document).on('click', '#sn_new', function() {
+    var id = $('#sn_id').val();
+    var value = $('#sn_value').val();
+    var social_network = getSocialNetworks();
+    social_network.push({'id': id, 'value': value});
+    socialData(social_network);
+    sn_verify();
+    $('#social_network_modal').modal('hide');
+})

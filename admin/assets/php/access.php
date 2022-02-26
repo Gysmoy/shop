@@ -58,8 +58,7 @@ try {
                     'name' => $row['rol_name'],
                     'description' => $row['rol_description']
                 ];
-                $social_network = json_decode($row['social_network'], true);
-                $_SESSION['social_network'] = $social_network == null ? [] : $social_network;
+                $_SESSION['social_network'] = empty($row['social_network']) ? []: json_decode($row['social_network'], true);
                 $_SESSION['status'] = boolval($row['status']);
                 $_SESSION['type'] = 'admin';
                 $_SESSION['x-auth-token'] = $x_auth_token;

@@ -113,14 +113,14 @@ $version = uniqid(); ?>
               <div class="form-group mb-0">
                 <label>TIPO RED SOCIAL / DESCRIPCIÓN RED SOCIAL</label>
                 <div class="input-group">
-                  <select class="form-control js-example-basic-single select2-hidden-accessible" id="sn_id" style="width: 40%" required></select>
-                  <input type="url" class="form-control" id="sn_value" style="width: 60%">
+                  <select id="sn_id" class="form-control" style="width: 40%" required></select>
+                  <input id="sn_value" class="form-control" style="width: 60%" required>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button id="sn_new" type="button" class="btn btn-success">Guardar</button>
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button id="sn_new" class="btn btn-success">Guardar</button>
+              <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>
         </div>
@@ -136,12 +136,34 @@ $version = uniqid(); ?>
                   <div class="row portfolio-grid">
                     <div class="col-12">
                       <figure class="effect-text-in">
-                        <img session="user_image" src="assets/php/image.php?id=undefined" alt="image">
+                        <img session="user_image" src="assets/php/image.php?id=undefined" class="img-xx-lg rounded" alt="image">
                         <figcaption>
                           <h4 session="user_name"></h4>
                           <p onclick="updateProfile()">Haga click para cambiar de imagen</p>
                         </figcaption>
                       </figure>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="mdi mdi-account"></i>
+                      Perfil
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6" style="">
+                      <h6 class="dropdown-header">¿Qué deseas hacer?</h6>
+                      <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">Ver foto</a>
+                      <a class="dropdown-item" id="profile-upload" style="cursor: pointer;">Subir una foto</a>
+                      <a class="dropdown-item" id="profile-delete" style="cursor: pointer;">Quitar foto</a>
+                    </div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">¿CÓMO TE VEN LOS DEMÁS?</h4>
+                  <div class="d-flex flex-row">
+                    <img session="user_image" src="assets/php/image.php?id=undefined" class="img-lg rounded" alt="image">
+                    <div class="ms-3">
+                      <h6 session="user_name"></h6>
+                      <p session="user_username" class="text-muted mb-1">Timcook@gmail.com</p>
+                      <p session="rol_name" class="mt-2 text-success font-weight-bold">Designer</p>
                     </div>
                   </div>
                 </div>
@@ -178,10 +200,32 @@ $version = uniqid(); ?>
                       <div class="card">
                         <div class="card-header" role="tab" id="heading-2">
                           <h6 class="mb-0">
-                            <a class="collapsed" data-bs-toggle="collapse" href="#personal-data" aria-expanded="false" aria-controls="collapseTwo"> CONFIGURACIÓN DE DATOS </a>
+                            <a class="collapsed" data-bs-toggle="collapse" href="#user-pass" aria-expanded="false" aria-controls="collapse-2"> CONFIGURACIÓN DE CONTRASEÑA </a>
                           </h6>
                         </div>
-                        <div id="personal-data" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-bs-parent="#accordion">
+                        <div id="user-pass" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-bs-parent="#accordion">
+                          <div class="card-body">
+                            <form class="mt-2">
+                              <div class="form-group">
+                                <label for="user.password">Nueva contraseña</label>
+                                <input type="text" class="form-control" id="user.password" placeholder="Ingrese una contraseña" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="user.email">Repita la nueva contraseña</label>
+                                <input type="email" class="form-control" id="user.password" placeholder="Repita la nueva contraseña" required>
+                              </div>
+                              <button type="submit" class="btn btn-primary me-2">Actualizar</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" role="tab" id="heading-3">
+                          <h6 class="mb-0">
+                            <a class="collapsed" data-bs-toggle="collapse" href="#personal-data" aria-expanded="false" aria-controls="collapse-3"> CONFIGURACIÓN DE DATOS </a>
+                          </h6>
+                        </div>
+                        <div id="personal-data" class="collapse" role="tabpanel" aria-labelledby="heading-3" data-bs-parent="#accordion">
                           <div class="card-body">
                             <form class="mt-2">
                               <div class="form-group">
@@ -202,12 +246,12 @@ $version = uniqid(); ?>
                         </div>
                       </div>
                       <div class="card">
-                        <div class="card-header" role="tab" id="heading-3">
+                        <div class="card-header" role="tab" id="heading-4">
                           <h6 class="mb-0">
-                            <a class="collapsed" data-bs-toggle="collapse" href="#social-network" aria-expanded="false" aria-controls="collapse-3"> REDES SOCIALES DE CONTACTO </a>
+                            <a class="collapsed" data-bs-toggle="collapse" href="#social-network" aria-expanded="false" aria-controls="collapse-4"> REDES SOCIALES DE CONTACTO </a>
                           </h6>
                         </div>
-                        <div id="social-network" class="collapse" role="tabpanel" aria-labelledby="heading-3" data-bs-parent="#accordion">
+                        <div id="social-network" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-bs-parent="#accordion">
                           <div class="card-body">
                             <p>
                               Arrastra tus redes según frecuencia de uso.
@@ -260,9 +304,8 @@ $version = uniqid(); ?>
   <script src="assets/js/dragula.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
-  <script src="assets/js/dashboard.js"></script>
   <script src="../assets/js/moment.min.js"></script>
-  <script src="assets/js/session.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/general/session.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/social_network.js?v=<?php echo $version; ?>"></script>
