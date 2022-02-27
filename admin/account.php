@@ -81,6 +81,21 @@ $version = uniqid(); ?>
         <?php include_once 'assets/php/header.php'; ?>
       </nav>
       <!-- INICIO MODALS -->
+      <div id="profile-watcher" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">VER FOTO DE PERFIL</h5>
+              <button type="button" class="close" data-bs-dismiss="modal">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body p-0">
+              <img session="user_image" class="rounded" src="assets/php/image.php?id=undefined" alt="image" width="100%">
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal" id="profile-modal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -144,7 +159,7 @@ $version = uniqid(); ?>
                         <img session="user_image" src="assets/php/image.php?id=undefined" class="rounded" alt="image">
                         <figcaption>
                           <h4 session="user_name"></h4>
-                          <p onclick="updateProfile()">Haga click para cambiar de imagen</p>
+                          <p id="profile-update">Haga click para cambiar de imagen</p>
                         </figcaption>
                       </figure>
                     </div>
@@ -176,7 +191,7 @@ $version = uniqid(); ?>
                   </div>
                   <hr>
                   <h4 class="card-title text-center">¿CÓMO TE VEN LOS DEMÁS?</h4>
-                  <div class="d-flex flex-row rounded" style="justify-content: center;">
+                  <div class="d-flex flex-row" style="justify-content: center;">
                     <img session="user_image" src="assets/php/image.php?id=undefined" class="img-lg rounded" alt="image">
                     <div class="ms-3">
                       <h6 session="user_username"></h6>

@@ -17,7 +17,6 @@ if (isset($_GET['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administración | Login</title>
   <link rel="stylesheet" href="../assets/css/fontawesome.css">
-  <script src="../assets/js/fontawesome.min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/login.css?<?php echo $i; ?>">
 </head>
 
@@ -47,9 +46,10 @@ if (isset($_GET['logout'])) {
     </button>
     <span id="supported_by" >Soportado por <a href="#">SD Perú</a></span>
   </form>
+  <script src="../assets/js/fontawesome.min.js" crossorigin="anonymous"></script>
   <script src="../assets/js/jquery.min.js"></script>
-  <script src="assets/js/session.js?<?php echo $i; ?>"></script>
-  <script src="assets/js/login.js?<?php echo $i; ?>"></script>
+  <script src="assets/js/general/session.js?<?php echo $i; ?>"></script>
+  <script src="assets/js/login/main.js?<?php echo $i; ?>"></script>
 </body>
 
 </html>
