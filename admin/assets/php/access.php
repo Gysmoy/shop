@@ -20,7 +20,8 @@ try {
         
         $query = $connection->prepare('SELECT
             a.id, a.username, a.password, a.name, a.dni, a.email,
-            a.phone, a.address, a.social_network, r.id AS rol_id, r.rol AS rol_name,
+            a.phone, a.address, a.social_network, profile_type,
+            r.id AS rol_id, r.rol AS rol_name,
             r.description AS rol_description, a.status
         FROM admins a INNER
         JOIN admin_roles r ON a._rol = r.id
@@ -53,6 +54,7 @@ try {
                     'phone' => $row['phone'],
                     'address' => $row['address']
                 ];
+                $_SESSION['profile'] = !empty($row['profile_type']);
                 $_SESSION['rol'] = [
                     'id' => $row['rol_id'],
                     'name' => $row['rol_name'],

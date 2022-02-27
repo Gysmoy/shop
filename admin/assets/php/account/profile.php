@@ -5,8 +5,6 @@ session_start();
 error_reporting(0);
 $request = json_decode(file_get_contents('php://input'), true);
 $response = [];
-$response['status'] = 400;
-$response['message'] = 'Ocurrió un error';
 try {
     require_once '../../../../assets/php/database.php';
     $db = new Database();
@@ -31,7 +29,7 @@ try {
             WHERE `id` = ?');
             $result = $query -> execute([$_SESSION['user']['id']]);
             if ($result) {
-                $response['message'] = 'Operación correcta';
+                $response['message'] = 'La foto de perfil ha sido eliminada';
             } else {
                 throw new Exception('No se pudo eliminar la foto de pefil', 1);
             }
@@ -42,6 +40,7 @@ try {
     }
     $response['status'] = 200;
 } catch (Exception $e) {
+    $response['status'] = 400;
     $response['message'] = $e -> getMessage();
 } finally {
     http_response_code($response['status']);

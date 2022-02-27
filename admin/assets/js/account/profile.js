@@ -35,7 +35,7 @@ $(document).on('click', '#profile-upload', function () {
 $(document).on('click', '#profile-delete', function () {
     var session = JSON.parse(localStorage.getItem('session'));
     $.ajax({
-        url: 'assets/php/account/profile.php',
+        url: '../api/admin/profile',
         type: 'DELETE',
         dataType: 'JSON',
         data: JSON.stringify(session),
@@ -43,6 +43,21 @@ $(document).on('click', '#profile-delete', function () {
         console.log(res);
     })
 })
+// PROFILE ERROR MANAGEMENT
+function profile_button(status) {
+    $('#profile-watch').attr('disabled', !status);
+    $('#profile-download').attr('disabled', !status);
+    $('#profile-delete').attr('disabled', !status);
+    if (status) {
+        $('#profile-watch').removeClass('disabled');
+        $('#profile-download').removeClass('disabled');
+        $('#profile-delete').removeClass('disabled');
+    } else {
+        $('#profile-watch').addClass('disabled');
+        $('#profile-download').addClass('disabled');
+        $('#profile-delete').addClass('disabled');
+    }
+}
 $('#profile-input').on('change', function() {
     var file = this.files[0];
     var reader = new FileReader();
@@ -68,16 +83,16 @@ $('.profile-btn').on('click', function() {
     img.type = data[0];
     img.source = data[1];
     $.ajax({
-        url: '../api/admin/updateProfile',
+        url: '../api/admin/profile',
         dataType: 'JSON',
-        type: 'POST',
+        type: 'PATCH',
         headers: {
             'x-auth-token': token
         },
-        data: img
-    }).done(function (data) {
-        console.log('correcto');
-    }).fail(function (e) {
+        data: JSON.stringify(img)
+    }).done(res => {
+        console.log(res);
+    }).fail(e => {
         console.log(e);
     })
 })

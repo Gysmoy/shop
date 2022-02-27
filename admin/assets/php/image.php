@@ -20,6 +20,7 @@ if (
     header('Content-Type: ' . $row['profile_type']);
     echo $row['profile_mini'];
   } else {
+    http_response_code(400);
     header('Content-Type: image/svg+xml');
     echo file_get_contents('../../../assets/img/user-not-found.svg');
   }

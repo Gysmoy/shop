@@ -156,7 +156,10 @@ $version = uniqid(); ?>
                   <div class="row portfolio-grid">
                     <div class="col-12" style="width: max-content; margin:auto">
                       <figure class="effect-text-in">
-                        <img session="user_image" src="assets/php/image.php?id=undefined" class="rounded" alt="image">
+                        <img session="user_image" src="assets/php/image.php?id=undefined"
+                          class="rounded" alt="image"
+                          onerror="profile_button(false)"
+                          oncanplay="profile_button(true)">
                         <figcaption>
                           <h4 session="user_name"></h4>
                           <p id="profile-update">Haga click para cambiar de imagen</p>
@@ -171,19 +174,19 @@ $version = uniqid(); ?>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
                       <h6 class="dropdown-header">¿Qué deseas hacer?</h6>
-                      <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">
+                      <a class="dropdown-item" id="profile-watch">
                         <i class="mdi mdi-crop-free"></i>
                         Ver foto
                       </a>
-                      <a class="dropdown-item" id="profile-download" style="cursor: pointer;">
+                      <a class="dropdown-item" id="profile-download">
                         <i class="mdi mdi-download"></i>
                         Descargar foto
                       </a>
-                      <a class="dropdown-item" id="profile-upload" style="cursor: pointer;">
+                      <a class="dropdown-item" id="profile-upload">
                         <i class="mdi mdi-upload"></i>
                         Subir una foto
                       </a>
-                      <a class="dropdown-item" id="profile-delete" style="cursor: pointer;">
+                      <a class="dropdown-item" id="profile-delete">
                         <i class="mdi mdi-delete-forever"></i>
                         Quitar foto
                       </a>

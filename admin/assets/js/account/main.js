@@ -52,6 +52,7 @@ function socialData(social_network) {
 }
 $(document).ready(function () {
     var data = JSON.parse(localStorage.getItem('session'));
+    profile_button(data.profile)
     userData(data.user);
     personalData(data.user);
     socialData(data.social_network);
