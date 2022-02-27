@@ -65,6 +65,11 @@ $('#profile-input').on('change', function() {
         var arrayBuffer = reader.result;
         reader.result;
         $('.profile-picture').attr('src', arrayBuffer);
+        html2canvas($('#profile-canvas'), {
+            onrendered: function (canvas) {
+                   getCanvas = canvas;
+                }
+            });
         sessionStorage.setItem('profile', arrayBuffer);
     }
     if (file) {
@@ -76,12 +81,12 @@ $('#profile-input').on('change', function() {
 })
 $('.profile-btn').on('click', function() {
     var img = {};
-    var data = sessionStorage.getItem('profile');
+    var data = getCanvas.toDataURL('image/png');
     var token = localStorage.getItem('x-auth-token');
     data= data.replace('data:', '').replace('base64,', '');
     data = data.split(';');
     img.type = data[0];
-    img.source = data[1];
+    img.base64 = data[1];
     $.ajax({
         url: '../api/admin/profile',
         dataType: 'JSON',

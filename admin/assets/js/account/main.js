@@ -50,6 +50,10 @@ function socialData(social_network) {
         $(`.social_network[data="${sn.id}"]`).attr('data', JSON.stringify(sn))
     });
 }
+
+// Variables globales
+var getCanvas;
+
 $(document).ready(function () {
     var data = JSON.parse(localStorage.getItem('session'));
     profile_button(data.profile)

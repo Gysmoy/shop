@@ -35,6 +35,12 @@ $version = uniqid(); ?>
       -object-fit: cover;
       object-position: center center;
     }
+    .profile-picture.to-upload {
+      background-color: #fff;
+      border-radius: 0;
+      width: 480px;
+      height: 480px;
+    }
 
     #sn_edit,
     #sn_delete {
@@ -106,6 +112,9 @@ $version = uniqid(); ?>
               </button>
             </div>
             <div class="modal-body text-center">
+              <div id="profile-canvas">
+                <img class="profile-picture to-upload" session="user_image" src="assets/php/image.php?id=undefined" alt="image">
+              </div>
               <img class="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" width="100%">
               <label for="profile-input" class="btn btn-primary">
                 <i class="mdi mdi-upload"></i>
@@ -341,6 +350,7 @@ $version = uniqid(); ?>
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="../assets/js/moment.min.js"></script>
+  <script src="../assets/js/html2canvas.js"></script>
   <script src="assets/js/general/session.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
