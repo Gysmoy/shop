@@ -160,7 +160,7 @@ $version = uniqid(); ?>
                         <i class="mdi mdi-crop-free"></i>
                         Ver foto
                       </a>
-                      <a class="dropdown-item" id="profile-watch" style="cursor: pointer;">
+                      <a class="dropdown-item" id="profile-download" style="cursor: pointer;">
                         <i class="mdi mdi-download"></i>
                         Descargar foto
                       </a>
@@ -176,7 +176,7 @@ $version = uniqid(); ?>
                   </div>
                   <hr>
                   <h4 class="card-title text-center">¿CÓMO TE VEN LOS DEMÁS?</h4>
-                  <div class="d-flex flex-row" style="justify-content: center;">
+                  <div class="d-flex flex-row rounded" style="justify-content: center;">
                     <img session="user_image" src="assets/php/image.php?id=undefined" class="img-lg rounded" alt="image">
                     <div class="ms-3">
                       <h6 session="user_username"></h6>
