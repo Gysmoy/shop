@@ -23,23 +23,27 @@ $version = uniqid(); ?>
       object-position: center center;
     }
 
-    .profile-picture {
+    #profile-canvas {
+      width: max-content;
       display: block;
       margin: auto;
       margin-bottom: 20px;
+    }
+    #profile-picture {
+      display: block;
+      background-color: #ffffff;
       width: 250px;
       height: 250px;
       border-radius: 50%;
       border: 1px solid #2A3038;
       object-fit: cover;
-      -object-fit: cover;
+      -o-object-fit: cover;
       object-position: center center;
+      -o-object-position: center center;
     }
-    .profile-picture.to-upload {
-      background-color: #fff;
+    #profile-picture.to-upload {
       border-radius: 0;
-      width: 480px;
-      height: 480px;
+      border: none;
     }
 
     #sn_edit,
@@ -113,14 +117,13 @@ $version = uniqid(); ?>
             </div>
             <div class="modal-body text-center">
               <div id="profile-canvas">
-                <img class="profile-picture to-upload" session="user_image" src="assets/php/image.php?id=undefined" alt="image">
+                <img id="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" onload="setCanvas()">
               </div>
-              <img class="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" width="100%">
               <label for="profile-input" class="btn btn-primary">
                 <i class="mdi mdi-upload"></i>
                 Subir una foto
               </label>
-              <input style="display: none;" type="file" id="profile-input" accept="image/*">
+              <input style="display: none;" type="file" id="profile-input" accept="image/png,image/jpeg,image/jpg,image/svg">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-success profile-btn" disabled>Actualizar</button>

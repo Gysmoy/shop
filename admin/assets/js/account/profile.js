@@ -38,6 +38,10 @@ $(document).on('click', '#profile-delete', function () {
         url: '../api/admin/profile',
         type: 'DELETE',
         dataType: 'JSON',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         data: JSON.stringify(session),
     }).done(res => {
         console.log(res);
@@ -58,40 +62,51 @@ function profile_button(status) {
         $('#profile-delete').addClass('disabled');
     }
 }
+function setCanvas() {
+    console.log('Canvas ha sido seteado')
+    $('#profile-picture').addClass('to-upload');
+    setTimeout(() => {
+        html2canvas($('#profile-canvas'), {
+            onrendered: function (canvas) {
+                getCanvas = canvas;
+                $('#profile-picture').removeClass('to-upload');
+            }
+        });
+    }, 250);
+}
 $('#profile-input').on('change', function() {
     var file = this.files[0];
     var reader = new FileReader();
     reader.onloadend = function () {
         var arrayBuffer = reader.result;
         reader.result;
-        $('.profile-picture').attr('src', arrayBuffer);
-        html2canvas($('#profile-canvas'), {
-            onrendered: function (canvas) {
-                   getCanvas = canvas;
-                }
-            });
-        sessionStorage.setItem('profile', arrayBuffer);
+        $('#profile-picture').attr('src', arrayBuffer);
     }
     if (file) {
         reader.readAsDataURL(file);
         $('.profile-btn').prop('disabled', false);
     } else {
+        $('#profile-picture').attr('src', `assets/php/image.php?id=undefined`);
         $('.profile-btn').prop('disabled', true);
     }
 })
 $('.profile-btn').on('click', function() {
     var img = {};
-    var data = getCanvas.toDataURL('image/png');
+    $('#profile-picture').addClass('to-upload');
+    var data = getCanvas.toDataURL('image/jpeg');
+    $('#profile-picture').removeClass('to-upload');
     var token = localStorage.getItem('x-auth-token');
     data= data.replace('data:', '').replace('base64,', '');
     data = data.split(';');
     img.type = data[0];
-    img.base64 = data[1];
+    img.source = data[1];
     $.ajax({
         url: '../api/admin/profile',
         dataType: 'JSON',
         type: 'PATCH',
         headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
             'x-auth-token': token
         },
         data: JSON.stringify(img)
