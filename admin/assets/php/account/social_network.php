@@ -6,7 +6,7 @@ error_reporting(0);
 $request = json_decode(file_get_contents('php://input'), true);
 $response = [];
 try {
-    if (!$_SESSION['status']) {
+    if (!$_SESSION['status'] && $_SESSION['type'] == 'admin') {
         throw new Exception('Error de sesión, intente recargar la pagina', 1);
     }
     require_once '../../../../assets/php/database.php';

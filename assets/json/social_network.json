@@ -11,6 +11,13 @@
 		"href": "https://wa.me/051"
 	},
 	{
+		"id": "telegram",
+		"descripcion": "Telegram",
+		"background": "#179cde",
+    	"icon": "mdi-telegram",
+		"href": "https://t.me/"
+	},
+	{
 		"id": "facebook",
 		"descripcion": "Facebook",
 		"background": "#2e89ff",

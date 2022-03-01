@@ -103,7 +103,7 @@ $version = uniqid(); ?>
               </button>
             </div>
             <div class="modal-body p-0">
-              <img session="user_image" class="rounded" src="assets/php/image.php?id=undefined" alt="image" width="100%">
+              <img session="user_image_full" class="rounded" src="../api/admin/image/mini/undefined" alt="image" width="100%">
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ $version = uniqid(); ?>
             </div>
             <div class="modal-body text-center">
               <div id="profile-canvas">
-                <img id="profile-picture" session="user_image" src="assets/php/image.php?id=undefined" alt="image" onload="setCanvas()">
+                <img id="profile-picture" session="user_image_full" src="../api/admin/image/mini/undefined" alt="image" onload="setCanvas()">
               </div>
               <label for="profile-input" class="btn btn-primary">
                 <i class="mdi mdi-upload"></i>
@@ -187,7 +187,7 @@ $version = uniqid(); ?>
                   <div class="row portfolio-grid">
                     <div class="col-12" style="width: max-content; margin:auto">
                       <figure class="effect-text-in">
-                        <img session="user_image" src="assets/php/image.php?id=undefined" class="rounded" alt="image" onerror="profile_button(false)" oncanplay="profile_button(true)">
+                        <img session="user_image_full" src="../api/admin/image/mini/undefined" class="rounded" alt="image" onerror="profile_button(false)" oncanplay="profile_button(true)">
                         <figcaption>
                           <h4 session="user_name"></h4>
                           <p id="profile-update">Haga click para cambiar de imagen</p>
@@ -223,7 +223,7 @@ $version = uniqid(); ?>
                   <hr>
                   <h4 class="card-title text-center">¿CÓMO TE VEN LOS DEMÁS?</h4>
                   <div class="d-flex flex-row" style="justify-content: center;">
-                    <img session="user_image" src="assets/php/image.php?id=undefined" class="img-lg rounded" alt="image">
+                    <img session="user_image" src="../api/admin/image/mini/undefined" class="img-lg rounded" alt="image">
                     <div class="ms-3">
                       <h6 session="user_username"></h6>
                       <p session="rol_name" class="text-muted my-1"></p>

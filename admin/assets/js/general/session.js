@@ -9,7 +9,12 @@ $.ajax({
     var session = res.data;
     $('[session="user_image"]')
         .attr({
-            'src': `assets/php/image.php?id=${session.user.id}`,
+            'src': `../api/admin/image/mini/${session.user.id}`,
+            'alt': session.user.name
+        });
+    $('[session="user_image_full"]')
+        .attr({
+            'src': `../api/admin/image/full/${session.user.id}`,
             'alt': session.user.name
         });
     $('[session="user_name"]').text(session.user.name);
