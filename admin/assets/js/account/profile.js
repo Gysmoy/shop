@@ -6,14 +6,14 @@ $(document).on('click', '#profile-update', function () {
 $(document).on('click', '#profile-watch', function () {
     var session = JSON.parse(localStorage.getItem('session'));
     $('#profile-watcher [session="user_image"]')
-        .attr('href', `assets/php/image.php?id=${session.user.id}`)
+        .attr('href', `../api/admin/image/full/${session.user.id}`)
     $('#profile-watcher').modal('show');
 })
 // DOWNLOAD PROFILE
 $(document).on('click', '#profile-download', function () {
     var session = JSON.parse(localStorage.getItem('session'));
     try {
-        const url = `assets/php/image.php?id=${session.user.id}`;
+        const url = `../api/admin/image/full/${session.user.id}`;
         const a =  document.createElement('a');
         a.style.display = 'none';
         a.href = url;
@@ -47,7 +47,7 @@ $(document).on('click', '#profile-delete', function () {
     }).done(res => {
         var session = JSON.parse(localStorage.getItem('session'));
         session.profile = false;
-        $('[session="user_image"]').attr('src', `assets/php/image.php?id=undefined`);
+        $('[session="user_image"]').attr('src', `../api/admin/image/mini/undefined`);
         localStorage.setItem('session', JSON.stringify(session));
         profile_button(session.profile);
         $.notify(res.message, 'success');
@@ -98,7 +98,7 @@ $('#profile-input').on('change', function() {
         $('#profile-save').prop('disabled', false);
         $.notify('La imagen se cargó correctamente', 'info');
     } else {
-        $('#profile-picture').attr('src', `assets/php/image.php?id=undefined`);
+        $('#profile-picture').attr('src', `../api/admin/image/mini/undefined`);
         $('#profile-save').prop('disabled', true);
         $.notify('Ocurrió un error al intentar cargar la imagen', 'warn')
     }
@@ -123,7 +123,8 @@ $('#profile-save').on('click', function() {
         data: JSON.stringify(img)
     }).done(res => {
         var session = JSON.parse(localStorage.getItem('session'));
-        $('[session="user_image"]').attr('src', `assets/php/image.php?id=${session.user.id}`);
+        $('[session="user_image"]').attr('src', `../api/admin/image/mini/${session.user.id}`);
+        $('[session="user_image_full"]').attr('src', `../api/admin/image/full/${session.user.id}`);
         session.profile = true;
         localStorage.setItem('session', JSON.stringify(session));
         $('#profile-modal').modal('hide');

@@ -103,7 +103,7 @@ $version = uniqid(); ?>
               </button>
             </div>
             <div class="modal-body p-0">
-              <img session="user_image_full" class="rounded" src="../api/admin/image/mini/undefined" alt="image" width="100%">
+              <img session="user_image" class="rounded" src="../api/admin/image/mini/undefined" alt="image" width="100%">
             </div>
           </div>
         </div>
