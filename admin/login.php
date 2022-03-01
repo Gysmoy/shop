@@ -24,14 +24,14 @@ if (isset($_GET['logout'])) {
   <form id="login" action="../api/admin/access" method="POST" autocomplete="off">
     <img src="../assets/img/lock.svg" alt="Iniciar sesión en SHOP">
     <h1>Administración | Login</h1>
-    <!--button type="button" class="btn-google">
+    <!-- <button type="button" class="btn-google">
       <i class="fa fa-google"></i>
       Iniciar sesión con Google
     </button>
     <button type="button" class="btn-facebook">
       <i class="fa fa-facebook"></i>
       Iniciar sesión con Facebook
-    </button-->
+    </button> -->
     <label for="username">Usuario o correo electrónico</label>
     <input type="text" id="username" placeholder="ejemplo@dominio.com">
     <label for="password">Contraseña</label>
@@ -44,7 +44,7 @@ if (isset($_GET['logout'])) {
       <i id="btn-icon" class="fa fa-user"></i>
       Acceder
     </button>
-    <span id="supported_by" >Soportado por <a href="#">SD Perú</a></span>
+    <span id="supported_by">Soportado por <a href="#">SD Perú</a></span>
   </form>
   <script src="../assets/js/fontawesome.min.js" crossorigin="anonymous"></script>
   <script src="../assets/js/jquery.min.js"></script>

@@ -21,9 +21,10 @@ $(document).on('click', '#profile-download', function () {
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
+        $.notify('La imagen ha sido descargada', 'success');
     } catch (e) {
         console.log(e);
-        alert('Ocurrió un error en la descarga');
+        $.notify('Ocurrió un error en la descarga', 'error');
     }
 })
 // UPLOAD PROFILE
@@ -44,7 +45,13 @@ $(document).on('click', '#profile-delete', function () {
         },
         data: JSON.stringify(session),
     }).done(res => {
-        console.log(res);
+        var session = JSON.parse(localStorage.getItem('session'));
+        session.profile = false;
+        localStorage.setItem('session', JSON.stringify(session));
+        profile_button(session.profile);
+        $.notify(res.message, 'success');
+    }).fail(e => {
+        $.notify(e.responseJSON.message, 'error');
     })
 })
 // PROFILE ERROR MANAGEMENT
@@ -75,22 +82,30 @@ function setCanvas() {
     }, 250);
 }
 $('#profile-input').on('change', function() {
+    var files = ['image/png','image/jpeg','image/jpg','image/svg+xml'];
     var file = this.files[0];
+    console.log(file);
     var reader = new FileReader();
     reader.onloadend = function () {
         var arrayBuffer = reader.result;
         reader.result;
         $('#profile-picture').attr('src', arrayBuffer);
     }
-    if (file) {
+    console.log(files.includes(file));
+    if (
+        file &&
+        files.includes(file.type)
+    ) {
         reader.readAsDataURL(file);
-        $('.profile-btn').prop('disabled', false);
+        $('#profile-save').prop('disabled', false);
+        $.notify('La imagen se cargó correctamente', 'info');
     } else {
         $('#profile-picture').attr('src', `assets/php/image.php?id=undefined`);
-        $('.profile-btn').prop('disabled', true);
+        $('#profile-save').prop('disabled', true);
+        $.notify('Ocurrió un error al intentar cargar la imagen', 'warn')
     }
 })
-$('.profile-btn').on('click', function() {
+$('#profile-save').on('click', function() {
     var img = {};
     $('#profile-picture').addClass('to-upload');
     var data = getCanvas.toDataURL('image/jpeg');
@@ -111,8 +126,16 @@ $('.profile-btn').on('click', function() {
         },
         data: JSON.stringify(img)
     }).done(res => {
-        console.log(res);
+        var session = JSON.parse(localStorage.getItem('session'));
+        $('[session="user_image"]').attr('src', `assets/php/image.php?id=${session.user.id}`);
+        session.profile = true;
+        localStorage.setItem('session', JSON.stringify(session));
+        $('#profile-modal').modal('hide');
+        $.notify(res.message, 'success');
     }).fail(e => {
-        console.log(e);
+        $.notify(e.responseJSON.message, 'error')
+    }).always(() => {
+        var session = JSON.parse(localStorage.getItem('session'));
+        profile_button(session.profile);
     })
 })

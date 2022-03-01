@@ -123,10 +123,10 @@ $version = uniqid(); ?>
                 <i class="mdi mdi-upload"></i>
                 Subir una foto
               </label>
-              <input style="display: none;" type="file" id="profile-input" accept="image/png,image/jpeg,image/jpg,image/svg">
+              <input style="display: none;" type="file" id="profile-input" accept="image/png,image/jpeg,image/jpg,image/svg+xml">
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success profile-btn" disabled>Actualizar</button>
+              <button id="profile-save" type="button" class="btn btn-success" disabled>Actualizar</button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>
@@ -354,6 +354,7 @@ $version = uniqid(); ?>
   <!-- Custom js for this page -->
   <script src="../assets/js/moment.min.js"></script>
   <script src="../assets/js/html2canvas.js"></script>
+  <script src="../assets/js/notify.min.js"></script>
   <script src="assets/js/general/session.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
