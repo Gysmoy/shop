@@ -36,7 +36,6 @@ function sn_verify() {
     var session = JSON.parse(localStorage.getItem('session'));
     var local_sn = session.social_network;
     var front_sn = getSocialNetworks();
-    console.log(local_sn, front_sn);
     if (local_sn.length == front_sn.length) {
         var diff = false;
         for (let i = 0; i < local_sn.length; i++) {
@@ -67,27 +66,72 @@ $(document).on('click', '#sn_add', function() {
     var title = $('#social_network_modal .modal-title');
     title.text('Agrega una red social de contacto')
     fn_socialNetwork(null);
+    $('#sn_position').val(null);
     $('#sn_id').prop('disabled', false);
     $('#sn_value').val(null);
     $('#social_network_modal').modal('show');
 })
 
 $(document).on('click', '#sn_edit', function() {
-    var title = $('#social_network_modal .modal-title');
-    title.text('Edita tu red social de contacto')
+    $('#social_network_modal .modal-title')
+        .text('Edita tu red social de contacto')
     var data = JSON.parse($(this).parents('.social_network').attr('data'));
+    var social_network = getSocialNetworks();
+    var position;
+    for (let i = 0; i < social_network.length; i++) {
+        const sn = social_network[i];
+        if (
+            sn.id == data.id &&
+            sn.value == data.value
+        ) {
+            position = i;
+            break;
+        }
+    }
     fn_socialNetwork(data.id);
+    $('#sn_position').val(position);
     $('#sn_id').prop('disabled', true);
     $('#sn_value').val(data.value);
     $('#social_network_modal').modal('show');
 })
 
 $(document).on('click', '#sn_new', function() {
+    var position = $('#sn_position').val();
     var id = $('#sn_id').val();
     var value = $('#sn_value').val();
     var social_network = getSocialNetworks();
-    social_network.push({'id': id, 'value': value});
+    if(position) {
+        social_network[position] = {'id': id, 'value': value};
+    } else {
+        social_network.push({'id': id, 'value': value});
+    }
     socialData(social_network);
     sn_verify();
     $('#social_network_modal').modal('hide');
+})
+$(document).on('click', '#sn_delete', function() {
+    $(this).parents('.social_network').remove();
+    sn_verify();
+})
+$(document).on('click', '#sn_save', function () {
+    var social_network = getSocialNetworks();
+    var session = JSON.parse(localStorage.getItem('session'));
+    session.social_network = social_network;
+    $.ajax({
+        url: '../api/admin/social_network',
+        type: 'PATCH',
+        dataType: 'JSON',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify(session)
+    }).done(res => {
+        localStorage.setItem('session', JSON.stringify(session));
+        socialData(session.social_network);
+        sn_verify();
+        $.notify(res.message, 'success');
+    }).fail(e => {
+        $.notify(e.responseJSON.message, 'error');
+    })
 })

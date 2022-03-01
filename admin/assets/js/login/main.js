@@ -9,7 +9,7 @@ $('#showHidePassword').on('click', function(){
         btn.attr('class', 'fa fa-eye');
     }
 })
-$('#login').submit(function(form){
+$('#login').on('submit', function(form){
     form.preventDefault();
     $('#btn-icon').attr('class', 'fa fa-spin fa-spinner');
     var username = $('#username').val().trim() == '' ? undefined: $('#username').val().trim();
@@ -38,7 +38,7 @@ $('#login').submit(function(form){
         if (urltogo == null) {
             location.reload();
         } else {
-            location.href = urltogo;
+            location.href = `./${urltogo}.php`;
         }
     }).fail(function(e){
         $('#btn-icon').attr('class', 'fa fa-exclamation');

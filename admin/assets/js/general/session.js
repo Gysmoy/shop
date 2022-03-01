@@ -4,7 +4,7 @@ $.ajax({
     dataType: 'JSON'
 }).done(res => {
     if (location.href.includes('login.php')) {
-        location.href = 'home.php';
+        location.href = './home.php';
     }
     var session = res.data;
     $('[session="user_image"]')
@@ -13,7 +13,7 @@ $.ajax({
             'alt': session.user.name
         });
     $('[session="user_name"]').text(session.user.name);
-    $('[session="user_username"]').text(`@${session.user.username}`);
+    $('[session="user_username"]').text(`@${session.user.username}`).attr('title', session.user.name);
     $('[session="user_email"]').text(session.user.email);
     $('[session="rol_name"]').text(session.rol.name)
         .attr('title', session.rol.description);
@@ -23,6 +23,8 @@ $.ajax({
     sessionStorage.clear();
     localStorage.clear();
     if (!location.href.includes('login.php')) {
-        location.href = `login.php?p=${location.href}`;
+        var pattern = location.pathname.split('/').reverse();
+        var url = pattern[0].replace('.php', '');
+        location.href = `login.php?p=${url}`;
     }
 })

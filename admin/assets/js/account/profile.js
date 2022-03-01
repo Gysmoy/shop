@@ -47,6 +47,7 @@ $(document).on('click', '#profile-delete', function () {
     }).done(res => {
         var session = JSON.parse(localStorage.getItem('session'));
         session.profile = false;
+        $('[session="user_image"]').attr('src', `assets/php/image.php?id=undefined`);
         localStorage.setItem('session', JSON.stringify(session));
         profile_button(session.profile);
         $.notify(res.message, 'success');
@@ -70,7 +71,6 @@ function profile_button(status) {
     }
 }
 function setCanvas() {
-    console.log('Canvas ha sido seteado')
     $('#profile-picture').addClass('to-upload');
     setTimeout(() => {
         html2canvas($('#profile-canvas'), {
@@ -84,14 +84,12 @@ function setCanvas() {
 $('#profile-input').on('change', function() {
     var files = ['image/png','image/jpeg','image/jpg','image/svg+xml'];
     var file = this.files[0];
-    console.log(file);
     var reader = new FileReader();
     reader.onloadend = function () {
         var arrayBuffer = reader.result;
         reader.result;
         $('#profile-picture').attr('src', arrayBuffer);
     }
-    console.log(files.includes(file));
     if (
         file &&
         files.includes(file.type)
@@ -110,7 +108,6 @@ $('#profile-save').on('click', function() {
     $('#profile-picture').addClass('to-upload');
     var data = getCanvas.toDataURL('image/jpeg');
     $('#profile-picture').removeClass('to-upload');
-    var token = localStorage.getItem('x-auth-token');
     data= data.replace('data:', '').replace('base64,', '');
     data = data.split(';');
     img.type = data[0];
@@ -121,8 +118,7 @@ $('#profile-save').on('click', function() {
         type: 'PATCH',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'x-auth-token': token
+            'Content-Type': 'application/json'
         },
         data: JSON.stringify(img)
     }).done(res => {

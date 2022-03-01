@@ -29,6 +29,7 @@ $version = uniqid(); ?>
       margin: auto;
       margin-bottom: 20px;
     }
+
     #profile-picture {
       display: block;
       background-color: #ffffff;
@@ -41,6 +42,7 @@ $version = uniqid(); ?>
       object-position: center center;
       -o-object-position: center center;
     }
+
     #profile-picture.to-upload {
       border-radius: 0;
       border: none;
@@ -132,6 +134,22 @@ $version = uniqid(); ?>
           </div>
         </div>
       </div>
+      <div class="modal" id="password-modal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="form-group mb-0">
+                <label for="exampleInputPassword1">INGRESE SU CONTRASEÑA</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success">Confirmar</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal" id="social_network_modal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -142,6 +160,7 @@ $version = uniqid(); ?>
               </button>
             </div>
             <div class="modal-body">
+              <input type="hidden" id="sn_position" value="">
               <div class="form-group mb-0">
                 <label>TIPO RED SOCIAL / DESCRIPCIÓN RED SOCIAL</label>
                 <div class="input-group">
@@ -168,10 +187,7 @@ $version = uniqid(); ?>
                   <div class="row portfolio-grid">
                     <div class="col-12" style="width: max-content; margin:auto">
                       <figure class="effect-text-in">
-                        <img session="user_image" src="assets/php/image.php?id=undefined"
-                          class="rounded" alt="image"
-                          onerror="profile_button(false)"
-                          oncanplay="profile_button(true)">
+                        <img session="user_image" src="assets/php/image.php?id=undefined" class="rounded" alt="image" onerror="profile_button(false)" oncanplay="profile_button(true)">
                         <figcaption>
                           <h4 session="user_name"></h4>
                           <p id="profile-update">Haga click para cambiar de imagen</p>
@@ -221,12 +237,13 @@ $version = uniqid(); ?>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">CONFIGURACIÓN</h4>
+                  <p class="text-muted">* Requiere confirmación por contraseña</p>
                   <div class="mt-4">
                     <div class="accordion" id="accordion" role="tablist">
                       <div class="card">
                         <div class="card-header" role="tab" id="heading-1">
                           <h6 class="mb-0">
-                            <a data-bs-toggle="collapse" href="#user-data" aria-expanded="true" aria-controls="collapse-1" class=""> CONFIGURACIÓN DE USUARIO </a>
+                            <a data-bs-toggle="collapse" href="#user-data" aria-expanded="true" aria-controls="collapse-1" class=""> CONFIGURACIÓN DE USUARIO *</a>
                           </h6>
                         </div>
                         <div id="user-data" class="collapse show" role="tabpanel" aria-labelledby="heading-1" data-bs-parent="#accordion">
@@ -248,7 +265,7 @@ $version = uniqid(); ?>
                       <div class="card">
                         <div class="card-header" role="tab" id="heading-2">
                           <h6 class="mb-0">
-                            <a class="collapsed" data-bs-toggle="collapse" href="#user-pass" aria-expanded="false" aria-controls="collapse-2"> CONFIGURACIÓN DE CONTRASEÑA </a>
+                            <a class="collapsed" data-bs-toggle="collapse" href="#user-pass" aria-expanded="false" aria-controls="collapse-2"> CONFIGURACIÓN DE CONTRASEÑA *</a>
                           </h6>
                         </div>
                         <div id="user-pass" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-bs-parent="#accordion">
@@ -270,7 +287,7 @@ $version = uniqid(); ?>
                       <div class="card">
                         <div class="card-header" role="tab" id="heading-3">
                           <h6 class="mb-0">
-                            <a class="collapsed" data-bs-toggle="collapse" href="#personal-data" aria-expanded="false" aria-controls="collapse-3"> CONFIGURACIÓN DE DATOS </a>
+                            <a class="collapsed" data-bs-toggle="collapse" href="#personal-data" aria-expanded="false" aria-controls="collapse-3"> CONFIGURACIÓN DE DATOS *</a>
                           </h6>
                         </div>
                         <div id="personal-data" class="collapse" role="tabpanel" aria-labelledby="heading-3" data-bs-parent="#accordion">
