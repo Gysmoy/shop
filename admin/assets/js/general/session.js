@@ -18,7 +18,8 @@ $.ajax({
             'alt': session.user.name
         });
     $('[session="user_name"]').text(session.user.name);
-    $('[session="user_username"]').text(`@${session.user.username}`).attr('title', session.user.name);
+    $('[session="user_username"]').text(`@${session.user.username}`)
+        .attr('title', session.user.name);
     $('[session="user_email"]').text(session.user.email);
     $('[session="rol_name"]').text(session.rol.name)
         .attr('title', session.rol.description);

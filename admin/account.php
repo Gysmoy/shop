@@ -273,13 +273,13 @@ $version = uniqid(); ?>
                             <form class="mt-2">
                               <div class="form-group">
                                 <label for="user.password">Nueva contraseña</label>
-                                <input type="text" class="form-control" id="user.password" placeholder="Ingrese una contraseña" required>
+                                <input type="password" class="form-control" id="user.password" pass="1" placeholder="Ingrese una contraseña" required>
                               </div>
-                              <div class="form-group">
+                              <div class="form-group mb-0">
                                 <label for="user.email">Repita la nueva contraseña</label>
-                                <input type="email" class="form-control" id="user.password" placeholder="Repita la nueva contraseña" required>
+                                <input type="password" class="form-control" id="user.password" pass="2" placeholder="Repita la nueva contraseña" required>
                               </div>
-                              <button type="submit" class="btn btn-primary me-2">Actualizar</button>
+                              <button type="submit" class="btn btn-primary mt-3" style="display: none;">Actualizar</button>
                             </form>
                           </div>
                         </div>
@@ -373,8 +373,9 @@ $version = uniqid(); ?>
   <script src="../assets/js/html2canvas.js"></script>
   <script src="../assets/js/notify.min.js"></script>
   <script src="assets/js/general/session.js?v=<?php echo $version; ?>"></script>
-  <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/password.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/social_network.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/main.js?v=<?php echo $version; ?>"></script>
   <!-- End custom js for this page -->
