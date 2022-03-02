@@ -6,7 +6,7 @@ $(document).on('click', '#profile-update', function () {
 $(document).on('click', '#profile-watch', function () {
     var session = JSON.parse(localStorage.getItem('session'));
     $('#profile-watcher [session="user_image"]')
-        .attr('href', `../api/admin/image/full/${session.user.id}`)
+        .attr('src', `../api/admin/image/full/${session.user.id}`)
     $('#profile-watcher').modal('show');
 })
 // DOWNLOAD PROFILE
