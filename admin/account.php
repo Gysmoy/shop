@@ -139,12 +139,12 @@ $version = uniqid(); ?>
           <div class="modal-content">
             <div class="modal-body">
               <div class="form-group mb-0">
-                <label for="exampleInputPassword1">INGRESE SU CONTRASEÑA</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="password-confirmation">INGRESE SU CONTRASEÑA</label>
+                <input type="password" class="form-control" id="password-confirmation" placeholder="">
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success">Confirmar</button>
+              <button id="password-confirm" onclick="" type="button" class="btn btn-primary">Confirmar</button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>
@@ -270,7 +270,7 @@ $version = uniqid(); ?>
                         </div>
                         <div id="user-pass" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-bs-parent="#accordion">
                           <div class="card-body">
-                            <form class="mt-2">
+                            <form class="mt-2" autocomplete="off">
                               <div class="form-group">
                                 <label for="user.password">Nueva contraseña</label>
                                 <input type="password" class="form-control" id="user.password" pass="1" placeholder="Ingrese una contraseña" required>
@@ -372,6 +372,7 @@ $version = uniqid(); ?>
   <script src="../assets/js/moment.min.js"></script>
   <script src="../assets/js/html2canvas.js"></script>
   <script src="../assets/js/notify.min.js"></script>
+  <script src="assets/js/general/loading.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/general/session.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
