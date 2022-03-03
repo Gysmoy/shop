@@ -4,6 +4,8 @@ fn_tiporedsocial('cbo-tipoRedSocial', '-1');
 fn_ubigeo_departamento('cbo-departamento', null);
 fn_ubigeo_prov('cbo-provincia', null, null);
 fn_ubigeo_dist('cbo-distrito', null, null);
+
+// LLENADO UBIGEO
 $('#cbo-departamento').on('change', function () {
   let departamento = $('#cbo-departamento option:selected').val();
   $('#cbo-provincia').empty();
@@ -19,6 +21,8 @@ $('#submit-data-user').click(function (e) {
   e.preventDefault();
   sedingDataClient();
 });
+
+
 
 // TRAENDO Y PINTANDO DATOS
 function getDataClient() {
@@ -73,19 +77,10 @@ function sedingDataClient() {
     alert('Error en la operacion')
   });
 }
-// generador de IDs
-function GID() {
-  var d = new Date().getTime();
-  var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    var r = (d + Math.random() * 16) % 16 | 0;
-    d = Math.floor(d / 16);
-    return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-  });
-  return uuid;
-}
+
 
 // pintando redes sociales 
-function social_networks(data) {
+function get_networks(data) {
   var social = data.data.user.social_networks;
   var i = 0;
   var f = 0;
@@ -96,17 +91,17 @@ function social_networks(data) {
       data_r.forEach(function (data_u) {
         if (data.type == data_u.id) {
           $('#social-networks').prepend(`
-            <div id="social-${index}">
+            <div id="social-${data.type}">
 
-              <div class="badge cont-icon-social badge-pill ${data_u.background}" data-bs-toggle="modal" data-bs-target="#s${index}"><i class="icons-social-icon mdi ${data_u.icon}"></i></div>
+              <div class="badge cont-icon-social badge-pill ${data_u.background}" data-bs-toggle="modal" data-bs-target="#s${data.type}"><i class="icons-social-icon mdi ${data_u.icon}"></i></div>
            
-              <div class="modal fade" id="s${index}" tabindex="-1"
+              <div class="modal fade" id="s${data.type}" tabindex="-1"
                 aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" >ADMINISTRAR ${data_u.id.toUpperCase()}</h5>
-                      <button type="button" id="btn-exit-modal${index}" class="close" data-bs-dismiss="modal"
+                      <button type="button" id="btn-exit-modal${data.type}" class="close" data-bs-dismiss="modal"
                         aria-label="Close">
                         <span aria-hidden="true">×</span>
                       </button>
@@ -115,18 +110,18 @@ function social_networks(data) {
                       <form>
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
-                          <select type="text" class="form-control" id="type-social-${index}"></select>
+                          <select type="text" class="form-control" id="type-social-${data.type}"></select>
                         </div>
                         <div class="form-group">
                           <label for="message-text" class="col-form-label">RED SOCIAL </label>
-                          <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${index}">
+                          <input type="text" class="form-control" placeholder="Descripcion" id="text-social-${data.type}">
                         </div>
                       </form>
                     </div>
                     
                     <div class="modal-footer">
-                    <button type="button" id="eliminar-R${index}" class="btn btn-danger">Eliminar</button>
-                    <button type="button" id="actualizar-R${index}" class="btn btn-success">Actualizar</button>
+                    <button type="button" id="eliminar-R${data.type}" class="btn btn-danger">Eliminar</button>
+                    <button type="button" id="actualizar-R${data.type}" class="btn btn-success">Actualizar</button>
                       <button type="button" class="btn btn-light"
                         data-bs-dismiss="modal">Canselar</button>
                     </div>
@@ -138,15 +133,15 @@ function social_networks(data) {
 
 
           // rrelenado datos al modal
-          fn_tiporedsocial(`type-social-${index}`, data_u.id)
-          $(`#text-social-${index}`).val(`${data.description}`)
+          fn_tiporedsocial(`type-social-${data.type}`, data_u.id)
+          $(`#text-social-${data.type}`).val(`${data.description}`)
 
           // eliminado datos del modal
-          
-          $(`#eliminar-R${index}`).click(function () {
+
+          $(`#eliminar-R${data.type}`).click(function () {
             array.splice(index, 1);
-            $(`#s${index}`).modal('hide');
-            $(`#social-${index}`).hide();
+            $(`#s${data.type}`).modal('hide');
+            $(`#social-${data.type}`).hide();
             console.log(array)
             console.log(index)
           });
@@ -157,44 +152,6 @@ function social_networks(data) {
 
   });
 
-  $('#social-networks').append(`
-      <div>
-        <div id="add-social-network" class="badge  badge-pill badge-outline-success" data-bs-toggle="modal" data-bs-target="#modal-add-social-network">+</div>
-
-        <div class="modal fade" id="modal-add-social-network" tabindex="-1"
-          aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">AGREGAR NUEBA RED SOCIAL</h5>
-                <button type="button" class="close" data-bs-dismiss="modal"
-                  aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
-                    <select type="text" class="form-control" id="add-type-red-social"></select>
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">RED SOCIAL </label>
-                    <input type="text" class="form-control" placeholder="Descripcion" id="text-add-social">
-                  </div>
-                </form>
-              </div>
-              
-              <div class="modal-footer">
-              <button type="button" class="btn btn-success">Aseptar</button>
-                <button type="button" class="btn btn-light"
-                  data-bs-dismiss="modal">Canselar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>`);
 
 
   function delete_social_network(data, name) {
@@ -207,18 +164,61 @@ function social_networks(data) {
     return data;
   }
 
-/*
-  social.forEach(function (val, index, arr) {
-    $(`#eliminar-R${index}`).click(function () {
-      array.splice(index, 1);
-      $(`#s${index}`).modal('hide');
-      $(`#social-${index}`).hide();
-      console.log(array)
-      console.log(index)
 
+  function add_social_network(data) {
+
+
+    $('#social-networks').append(`
+    <div>
+      <div id="add-social-network" class="badge  badge-pill badge-outline-success" data-bs-toggle="modal" data-bs-target="#modal-add-social-network">+</div>
+
+      <div class="modal fade" id="modal-add-social-network" tabindex="-1"
+        aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">AGREGAR NUEBA RED SOCIAL</h5>
+              <button type="button" class="close" data-bs-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Tipo de red social:</label>
+                  <select type="text" class="form-control" id="add-type-red-social"></select>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">RED SOCIAL </label>
+                  <input type="text" class="form-control" placeholder="Descripcion" id="text-add-social">
+                </div>
+              </form>
+            </div>
+            
+            <div class="modal-footer">
+            <button type="button" class="btn btn-success">Aseptar</button>
+              <button type="button" class="btn btn-light"
+                data-bs-dismiss="modal">Canselar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>`);
+  }
+  /*
+    social.forEach(function (val, index, arr) {
+      $(`#eliminar-R${index}`).click(function () {
+        array.splice(index, 1);
+        $(`#s${index}`).modal('hide');
+        $(`#social-${index}`).hide();
+        console.log(array)
+        console.log(index)
+  
+      });
     });
-  });
-*/
+  */
 
 
   // ELIMINAR RED SOCIAL
