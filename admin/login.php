@@ -17,7 +17,6 @@ if (isset($_GET['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administración | Login</title>
   <link rel="stylesheet" href="../assets/css/fontawesome.css">
-  <script src="../assets/js/fontawesome.min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/login.css?<?php echo $i; ?>">
 </head>
 
@@ -25,14 +24,14 @@ if (isset($_GET['logout'])) {
   <form id="login" action="../api/admin/access" method="POST" autocomplete="off">
     <img src="../assets/img/lock.svg" alt="Iniciar sesión en SHOP">
     <h1>Administración | Login</h1>
-    <!--button type="button" class="btn-google">
+    <!-- <button type="button" class="btn-google">
       <i class="fa fa-google"></i>
       Iniciar sesión con Google
     </button>
     <button type="button" class="btn-facebook">
       <i class="fa fa-facebook"></i>
       Iniciar sesión con Facebook
-    </button-->
+    </button> -->
     <label for="username">Usuario o correo electrónico</label>
     <input type="text" id="username" placeholder="ejemplo@dominio.com">
     <label for="password">Contraseña</label>
@@ -45,11 +44,12 @@ if (isset($_GET['logout'])) {
       <i id="btn-icon" class="fa fa-user"></i>
       Acceder
     </button>
-    <span id="supported_by" >Soportado por <a href="#">SD Perú</a></span>
+    <span id="supported_by">Soportado por <a href="#">SD Perú</a></span>
   </form>
+  <script src="../assets/js/fontawesome.min.js" crossorigin="anonymous"></script>
   <script src="../assets/js/jquery.min.js"></script>
-  <script src="assets/js/session.js?<?php echo $i; ?>"></script>
-  <script src="assets/js/login.js?<?php echo $i; ?>"></script>
+  <script src="assets/js/general/session.js?<?php echo $i; ?>"></script>
+  <script src="assets/js/login/main.js?<?php echo $i; ?>"></script>
 </body>
 
 </html>

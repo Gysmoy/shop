@@ -7,7 +7,7 @@
     <div class="profile-desc">
     <div class="profile-pic">
         <div class="count-indicator">
-        <img session="user_image" class="img-xs rounded-circle" src="assets/php/image.php?id=undefined" alt="">
+        <img session="user_image" class="img-xs rounded-circle" src="../api/admin/image/mini/undefined" alt="">
         <span class="count bg-success"></span>
         </div>
         <div class="profile-name">

@@ -6,37 +6,50 @@
 	{
 		"id": "whatsapp",
 		"descripcion": "Whatsapp",
-		"background": "badge-success",
-    	"icon": "mdi-whatsapp"
+		"background": "#00a884",
+    	"icon": "mdi-whatsapp",
+		"href": "https://wa.me/051"
+	},
+	{
+		"id": "telegram",
+		"descripcion": "Telegram",
+		"background": "#179cde",
+    	"icon": "mdi-telegram",
+		"href": "https://t.me/"
 	},
 	{
 		"id": "facebook",
 		"descripcion": "Facebook",
-		"background": "badge-primary",
-    	"icon": "mdi-facebook"
+		"background": "#2e89ff",
+    	"icon": "mdi-facebook",
+		"href": "https://www.facebook.com/"
 	},
 	{
 		"id": "email",
 		"descripcion": "E-mail",
-		"background": "badge-danger",
-    	"icon": "mdi-email-outline"
+		"background": "#ffffff",
+    	"icon": "mdi-email-outline",
+		"href": "mailto:"
 	},
 	{
 		"id": "phone",
 		"descripcion": "Teléfono",
-		"background": "badge-success",
-    	"icon": "mdi-phone"
+		"background": "#00d25b",
+    	"icon": "mdi-phone",
+		"href": "tel:"
 	},
 	{
 		"id": "instagram",
 		"descripcion": "Intagram",
-		"background": "badge-danger",
-    	"icon": "mdi-instagram"
+		"background": "#e1306c",
+    	"icon": "mdi-instagram",
+		"href": "https://www.instagram.com/"
 	},
 	{
 		"id": "twitter",
 		"descripcion": "Twitter",
-		"background": "badge-primary",
-    	"icon": "mdi-twitter"
+		"background": "#1da1f2",
+    	"icon": "mdi-twitter",
+		"href": "https://twitter.com/"
 	}
 ]

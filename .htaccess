@@ -22,6 +22,13 @@
     RewriteRule ^api/admin/access  admin/assets/php/access.php [QSA]
     RewriteRule ^api/admin/user-relation  admin/assets/php/user-relation.php [QSA]
 
+    # ADMIN PROFILE PICTURE
+    RewriteRule ^api/admin/image/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ admin/assets/php/image.php?type=$1&id=$2 [QSA]
+    
+    # ADMIN ACCOUNT API's
+    RewriteRule ^api/admin/profile  admin/assets/php/account/profile.php [QSA]
+    RewriteRule ^api/admin/social_network  admin/assets/php/account/social_network.php [QSA]
+
     # Sin .php
     #RewriteCond %{REQUEST_FILENAME} !-f
     #RewriteRule ^([^\.]+)$ $1.php [NC,L]

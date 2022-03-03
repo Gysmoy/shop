@@ -150,7 +150,7 @@
     <li class="nav-item dropdown">
         <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
         <div class="navbar-profile">
-            <img session="user_image" class="img-xs rounded-circle" src="assets/php/image.php?id=undefined" alt="">
+            <img session="user_image" class="img-xs rounded-circle" src="../api/admin/image/mini/undefined" alt="">
             <p session="user_name" class="mb-0 d-none d-sm-block navbar-profile-name"></p>
             <i class="mdi mdi-menu-down d-none d-sm-block"></i>
         </div>
