@@ -1,0 +1,45 @@
+APARTADOS MOZO EN LÍNEA
+ADMIN
+BUSINESS
+CLIENT
+MARKETER
+
+APARTADOS
+- Manuel -> ADMIN
+- Najhely ->
+- Yon -> CLIENTE
+
+DOMINGO
+- Manuel (Opcional)
+- Najhely (Opcional)
+- Yon (Opcional)
+
+LUNES
+- Manuel 08:00PM - SUEÑO
+- Najhely 08:00PM - SUEÑO (Opcional)
+- Yon 08:00PM - SUEÑO
+
+MARTES
+- Manuel 08:00AM - 12:00PM (Opcional) | 08:00PM - SUEÑO
+- Najhely 08:00AM - 12:00PM (Opcional) | 08:00PM - SUEÑO (Opcional)
+- Yon 08:00PM - SUEÑO
+
+MIÉRCOLES
+- Manuel 08:00PM - SUEÑO
+- Najhely 08:00PM - SUEÑO (Opcional)
+- Yon 08:00PM - SUEÑO
+
+JUEVES
+- Manuel 08:00PM - SUEÑO
+- Najhely 08:00PM - SUEÑO (Opcional)
+- Yon 08:00PM - SUEÑO
+
+VIERNES
+- Manuel 08:00PM - SUEÑO
+- Najhely 08:00PM - SUEÑO (Opcional)
+- Yon 08:00PM - SUEÑO (Opcional)
+
+SÁBADO
+- Manuel (Opcional)
+- Najhely (Opcional)
+- Yon (Opcional)
