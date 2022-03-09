@@ -12,6 +12,9 @@ try {
     if ($connection == false) {
         throw new Exception('No se pudo conectar a la base de datos', 1);
     }
+    if ($request['id'] == 'undefined') {
+        throw new Exception('Error al obtener datos de imagen', 1);
+    }
     // Tipos de imagen
     switch ($request['type']) {
         case 'mini':

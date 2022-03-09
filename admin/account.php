@@ -276,7 +276,7 @@ $version = uniqid(); ?>
                                 <input type="password" class="form-control" id="user.password" pass="1" placeholder="Ingrese una contraseña" required>
                               </div>
                               <div class="form-group mb-0">
-                                <label for="user.email">Repita la nueva contraseña</label>
+                                <label for="user.password">Repita la nueva contraseña</label>
                                 <input type="password" class="form-control" id="user.password" pass="2" placeholder="Repita la nueva contraseña" required>
                               </div>
                               <button type="submit" class="btn btn-primary mt-3" style="display: none;">Actualizar</button>
@@ -292,6 +292,7 @@ $version = uniqid(); ?>
                         </div>
                         <div id="personal-data" class="collapse" role="tabpanel" aria-labelledby="heading-3" data-bs-parent="#accordion">
                           <div class="card-body">
+                            <p>Requerimos este dato para poder contactarnos con usted en caso sea necesario.</p>
                             <form class="mt-2">
                               <div class="form-group">
                                 <label for="user.name">Primer Nombre / Primer Apellido</label>
@@ -301,11 +302,11 @@ $version = uniqid(); ?>
                                 <label for="user.phone">Teléfono de contacto</label>
                                 <input type="tel" class="form-control" id="user.phone" placeholder="Ingrese un teléfono celular" required>
                               </div>
-                              <div class="form-group">
+                              <div class="form-group mb-0">
                                 <label for="user.address">Dirección de domicilio</label>
                                 <input type="text" class="form-control" id="user.address" placeholder="Ingrese una dirección" required>
                               </div>
-                              <button type="submit" class="btn btn-primary me-2">Actualizar</button>
+                              <button type="submit" class="btn btn-primary mt-3" disabled style="display: none;">Actualizar</button>
                             </form>
                           </div>
                         </div>
@@ -377,6 +378,7 @@ $version = uniqid(); ?>
   <script src="assets/js/account/profile.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/account.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/password.js?v=<?php echo $version; ?>"></script>
+  <script src="assets/js/account/personalData.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/social_network.js?v=<?php echo $version; ?>"></script>
   <script src="assets/js/account/main.js?v=<?php echo $version; ?>"></script>
   <!-- End custom js for this page -->
