@@ -27,8 +27,9 @@
     
     # ADMIN ACCOUNT API's
     RewriteRule ^api/admin/profile  admin/assets/php/account/profile.php [QSA]
-    RewriteRule ^api/admin/social_network  admin/assets/php/account/social_network.php [QSA]
     RewriteRule ^api/admin/password  admin/assets/php/account/password.php [QSA]
+    RewriteRule ^api/admin/personalData  admin/assets/php/account/personalData.php [QSA]
+    RewriteRule ^api/admin/social_network  admin/assets/php/account/social_network.php [QSA]
 
     # Sin .php
     #RewriteCond %{REQUEST_FILENAME} !-f

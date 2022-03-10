@@ -32,14 +32,14 @@ $(document).on('submit', '#user-pass form', e => {
         var password = $('[id="user.password"]').val();
         pass.password = password;
         pass.length = password.length;
-        $('#password-confirm').attr('onclick', 'submit_password()');
+        $('#password-confirm').attr('onclick', 'submitPassword()');
         $('#password-modal')
             .attr('data', JSON.stringify(pass))
             .modal('show');
     }
 })
 
-function submit_password() {
+function submitPassword() {
     loading('#password-confirm', true);
     var data = JSON.parse($('#password-modal').attr('data'));
     data.confirmation = $('#password-confirmation').val();

@@ -300,7 +300,7 @@ $version = uniqid(); ?>
                               </div>
                               <div class="form-group">
                                 <label for="user.phone">Teléfono de contacto</label>
-                                <input type="tel" class="form-control" id="user.phone" placeholder="Ingrese un teléfono celular" required>
+                                <input type="tel" class="form-control has-error" id="user.phone" placeholder="Ingrese un teléfono celular" required>
                               </div>
                               <div class="form-group mb-0">
                                 <label for="user.address">Dirección de domicilio</label>

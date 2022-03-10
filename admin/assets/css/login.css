@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: aliceblue;
+    background-color: #2A3038;
 }
 form {
     padding: 100px 20px 20px;
@@ -129,12 +129,12 @@ button i {
     text-align: center;
     bottom: -40px;
     font-size: larger;
-    color: #181d24;
+    color: rgb(228, 234, 236);
 }
 #supported_by a {
     text-decoration-line: underline;
-    color: #0099cc;
-    text-decoration-color: #0099cc;
+    color: #0090e7;
+    text-decoration-color: #0090e7;
 }
 @media (max-height: 720px) {
     form {

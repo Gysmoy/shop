@@ -23295,7 +23295,7 @@ div.tagsinput {
 
 @media (min-width: 1200px) {
   .boxed-layout .container-scroller {
-    background: aliceblue;
+    background: #2A3038;
     padding: 0 calc((100% - 1200px) / 2);
     min-height: 100vh;
   }
