@@ -17,7 +17,7 @@ try {
         if ($connection == false) {
             throw new Exception("No se pudo conectar a la BD", 1);
         }
-        
+
         $query = $connection->prepare('SELECT
             a.id, a.username, a.password, a.name, a.dni, a.email,
             a.phone, a.address, a.social_network, profile_type,
@@ -60,7 +60,7 @@ try {
                     'name' => $row['rol_name'],
                     'description' => $row['rol_description']
                 ];
-                $_SESSION['social_network'] = empty($row['social_network']) ? []: json_decode($row['social_network'], true);
+                $_SESSION['social_network'] = empty($row['social_network']) ? [] : json_decode($row['social_network'], true);
                 $_SESSION['status'] = boolval($row['status']);
                 $_SESSION['type'] = 'admin';
                 $_SESSION['x-auth-token'] = $x_auth_token;
